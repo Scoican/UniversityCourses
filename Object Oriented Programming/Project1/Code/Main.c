@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int primalitate(int x) {
+int prime(int x) {
 	if (x < 2 || x>2 && x % 2 == 0) {
 		return 0;
 	}
@@ -24,7 +24,7 @@ void goldbach() {
 	printf("Descompuneri:\n");
 		int i;
 		for (i = 2; i < n; i++) {
-			if (primalitate(i) == 1 && primalitate(n - i) == 1) {
+			if (prime(i) == 1 && prime(n - i) == 1) {
 				printf("%d+%d\n", i, n - i);
 			}
 		}
