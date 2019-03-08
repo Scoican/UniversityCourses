@@ -1,0 +1,540 @@
+08 Mar 2019 17:16:39,588 [main] Repository.UserRepository 26 <init> - Initializing UserRepository with properties: {url="jdbc:sqlite:C:/Users/Scoican/Desktop/Facultate/Medii de proiectare si programare/Laborator/TicketManager/TicketManager.db"} 
+08 Mar 2019 17:16:39,591 [main] Repository.UserRepository 133 findAll - Enter
+08 Mar 2019 17:16:39,592 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:16:39,596 [main] Utils.JdbcUtils 25 getNewConnection - Loaded driver ...org.sqlite.JDBC
+08 Mar 2019 17:16:39,923 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@198b6731)
+08 Mar 2019 17:16:39,927 [main] Repository.UserRepository 150 findAll - Exit with([User{id=100, username='Alex', password='FMI123131'}, User{id=101, username='Alex', password='FMI123131'}])
+08 Mar 2019 17:16:39,928 [main] Repository.UserRepository 51 save - Enter saving userUser{id=101, username='Alex', password='FMI123131'}
+08 Mar 2019 17:16:39,928 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:16:39,928 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@198b6731)
+08 Mar 2019 17:16:39,931 [main] Repository.UserRepository 60 save - org.sqlite.SQLiteException: [SQLITE_CONSTRAINT_PRIMARYKEY]  A PRIMARY KEY constraint failed (UNIQUE constraint failed: Users.id)
+08 Mar 2019 17:16:39,931 [main] Repository.UserRepository 63 save - Exit
+08 Mar 2019 17:16:39,931 [main] Repository.UserRepository 133 findAll - Enter
+08 Mar 2019 17:16:39,931 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:16:39,931 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@198b6731)
+08 Mar 2019 17:16:39,932 [main] Repository.UserRepository 150 findAll - Exit with([User{id=100, username='Alex', password='FMI123131'}, User{id=101, username='Alex', password='FMI123131'}])
+08 Mar 2019 17:16:54,480 [main] Repository.UserRepository 26 <init> - Initializing UserRepository with properties: {url="jdbc:sqlite:C:/Users/Scoican/Desktop/Facultate/Medii de proiectare si programare/Laborator/TicketManager/TicketManager.db"} 
+08 Mar 2019 17:16:54,483 [main] Repository.UserRepository 133 findAll - Enter
+08 Mar 2019 17:16:54,484 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:16:54,490 [main] Utils.JdbcUtils 25 getNewConnection - Loaded driver ...org.sqlite.JDBC
+08 Mar 2019 17:16:54,907 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@55fe41ea)
+08 Mar 2019 17:16:54,911 [main] Repository.UserRepository 150 findAll - Exit with([User{id=100, username='Alex', password='FMI123131'}, User{id=101, username='Alex', password='FMI123131'}])
+08 Mar 2019 17:16:54,912 [main] Repository.UserRepository 51 save - Enter saving userUser{id=101, username='Alex', password='FMI123131'}
+08 Mar 2019 17:16:54,912 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:16:54,912 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@55fe41ea)
+08 Mar 2019 17:16:54,915 [main] Repository.UserRepository 60 save - org.sqlite.SQLiteException: [SQLITE_CONSTRAINT_PRIMARYKEY]  A PRIMARY KEY constraint failed (UNIQUE constraint failed: Users.id)
+08 Mar 2019 17:16:54,915 [main] Repository.UserRepository 63 save - Exit
+08 Mar 2019 17:16:54,915 [main] Repository.UserRepository 133 findAll - Enter
+08 Mar 2019 17:16:54,915 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:16:54,915 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@55fe41ea)
+08 Mar 2019 17:16:54,916 [main] Repository.UserRepository 150 findAll - Exit with([User{id=100, username='Alex', password='FMI123131'}, User{id=101, username='Alex', password='FMI123131'}])
+08 Mar 2019 17:27:40,212 [main] Repository.UserRepository 26 <init> - Initializing UserRepository with properties: {url="jdbc:sqlite:C:/Users/Scoican/Desktop/Facultate/Medii de proiectare si programare/Laborator/TicketManager/TicketManager.db"} 
+08 Mar 2019 17:27:40,240 [main] Repository.TicketRepository 26 <init> - Initializing TicketRepository with properties: {url="jdbc:sqlite:C:/Users/Scoican/Desktop/Facultate/Medii de proiectare si programare/Laborator/TicketManager/TicketManager.db"} 
+08 Mar 2019 17:27:40,243 [main] Repository.EventRepository 24 <init> - Initializing EventRepository with properties: {url="jdbc:sqlite:C:/Users/Scoican/Desktop/Facultate/Medii de proiectare si programare/Laborator/TicketManager/TicketManager.db"} 
+08 Mar 2019 17:27:40,245 [main] Repository.UserRepository 133 findAll - Enter
+08 Mar 2019 17:27:40,245 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:27:40,256 [main] Utils.JdbcUtils 25 getNewConnection - Loaded driver ...org.sqlite.JDBC
+08 Mar 2019 17:27:40,615 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@55fe41ea)
+08 Mar 2019 17:27:40,619 [main] Repository.UserRepository 150 findAll - Exit with([User{id=100, username='Alex', password='FMI123131'}, User{id=101, username='Alex', password='FMI123131'}])
+08 Mar 2019 17:27:40,620 [main] Repository.UserRepository 51 save - Enter saving userUser{id=102, username='User1', password='FMI123131'}
+08 Mar 2019 17:27:40,620 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:27:40,620 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@55fe41ea)
+08 Mar 2019 17:27:40,774 [main] Repository.UserRepository 63 save - Exit
+08 Mar 2019 17:27:40,774 [main] Repository.UserRepository 51 save - Enter saving userUser{id=103, username='User2', password='FMI123131'}
+08 Mar 2019 17:27:40,774 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:27:40,774 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@55fe41ea)
+08 Mar 2019 17:27:40,890 [main] Repository.UserRepository 63 save - Exit
+08 Mar 2019 17:27:40,890 [main] Repository.UserRepository 51 save - Enter saving userUser{id=104, username='User3', password='FMI123131'}
+08 Mar 2019 17:27:40,890 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:27:40,890 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@55fe41ea)
+08 Mar 2019 17:27:40,994 [main] Repository.UserRepository 63 save - Exit
+08 Mar 2019 17:27:40,994 [main] Repository.UserRepository 133 findAll - Enter
+08 Mar 2019 17:27:40,995 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:27:40,995 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@55fe41ea)
+08 Mar 2019 17:27:40,995 [main] Repository.UserRepository 150 findAll - Exit with([User{id=100, username='Alex', password='FMI123131'}, User{id=101, username='Alex', password='FMI123131'}, User{id=102, username='User1', password='FMI123131'}, User{id=103, username='User2', password='FMI123131'}, User{id=104, username='User3', password='FMI123131'}])
+08 Mar 2019 17:27:40,995 [main] Repository.UserRepository 68 delete - Enter deleting user with 102
+08 Mar 2019 17:27:40,995 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:27:40,995 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@55fe41ea)
+08 Mar 2019 17:27:41,133 [main] Repository.UserRepository 77 delete - Exit
+08 Mar 2019 17:27:41,133 [main] Repository.UserRepository 68 delete - Enter deleting user with 103
+08 Mar 2019 17:27:41,133 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:27:41,133 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@55fe41ea)
+08 Mar 2019 17:27:41,260 [main] Repository.UserRepository 77 delete - Exit
+08 Mar 2019 17:27:41,260 [main] Repository.UserRepository 68 delete - Enter deleting user with 104
+08 Mar 2019 17:27:41,260 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:27:41,260 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@55fe41ea)
+08 Mar 2019 17:27:41,388 [main] Repository.UserRepository 77 delete - Exit
+08 Mar 2019 17:27:41,388 [main] Repository.TicketRepository 137 findAll - Enter
+08 Mar 2019 17:27:41,388 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:27:41,388 [main] Utils.JdbcUtils 25 getNewConnection - Loaded driver ...org.sqlite.JDBC
+08 Mar 2019 17:27:41,389 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@2a5c8d3f)
+08 Mar 2019 17:27:41,390 [main] Repository.TicketRepository 155 findAll - Exit with([])
+08 Mar 2019 17:27:41,390 [main] Repository.TicketRepository 51 save - Enter saving ticketTicket{id=102, event=101, buyer='name1', price=200.0}
+08 Mar 2019 17:27:41,390 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:27:41,390 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@2a5c8d3f)
+08 Mar 2019 17:27:41,515 [main] Repository.TicketRepository 64 save - Exit
+08 Mar 2019 17:27:41,515 [main] Repository.TicketRepository 51 save - Enter saving ticketTicket{id=103, event=102, buyer='name2', price=201.0}
+08 Mar 2019 17:27:41,515 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:27:41,515 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@2a5c8d3f)
+08 Mar 2019 17:27:41,663 [main] Repository.TicketRepository 64 save - Exit
+08 Mar 2019 17:27:41,663 [main] Repository.TicketRepository 51 save - Enter saving ticketTicket{id=104, event=103, buyer='name3', price=202.0}
+08 Mar 2019 17:27:41,663 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:27:41,664 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@2a5c8d3f)
+08 Mar 2019 17:27:41,801 [main] Repository.TicketRepository 64 save - Exit
+08 Mar 2019 17:27:41,801 [main] Repository.UserRepository 133 findAll - Enter
+08 Mar 2019 17:27:41,802 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:27:41,802 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@55fe41ea)
+08 Mar 2019 17:27:41,802 [main] Repository.UserRepository 150 findAll - Exit with([User{id=100, username='Alex', password='FMI123131'}, User{id=101, username='Alex', password='FMI123131'}])
+08 Mar 2019 17:27:41,802 [main] Repository.TicketRepository 69 delete - Enter deleting ticket with 102
+08 Mar 2019 17:27:41,802 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:27:41,802 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@2a5c8d3f)
+08 Mar 2019 17:27:41,906 [main] Repository.TicketRepository 78 delete - Exit
+08 Mar 2019 17:27:41,906 [main] Repository.TicketRepository 69 delete - Enter deleting ticket with 103
+08 Mar 2019 17:27:41,906 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:27:41,906 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@2a5c8d3f)
+08 Mar 2019 17:27:42,033 [main] Repository.TicketRepository 78 delete - Exit
+08 Mar 2019 17:27:42,033 [main] Repository.TicketRepository 69 delete - Enter deleting ticket with 104
+08 Mar 2019 17:27:42,033 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:27:42,033 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@2a5c8d3f)
+08 Mar 2019 17:27:42,137 [main] Repository.TicketRepository 78 delete - Exit
+08 Mar 2019 17:27:42,137 [main] Repository.EventRepository 131 findAll - Enter
+08 Mar 2019 17:27:42,137 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:27:42,137 [main] Utils.JdbcUtils 25 getNewConnection - Loaded driver ...org.sqlite.JDBC
+08 Mar 2019 17:27:42,138 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@752325ad)
+08 Mar 2019 17:27:42,139 [main] Repository.EventRepository 148 findAll - Exit with([Event{id=100, name='Alex', seats=0}])
+08 Mar 2019 17:27:42,139 [main] Repository.EventRepository 49 save - Enter saving eventEvent{id=102, name='Event1', seats=200}
+08 Mar 2019 17:27:42,139 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:27:42,139 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@752325ad)
+08 Mar 2019 17:27:42,265 [main] Repository.EventRepository 61 save - Exit
+08 Mar 2019 17:27:42,265 [main] Repository.EventRepository 49 save - Enter saving eventEvent{id=103, name='Event2', seats=201}
+08 Mar 2019 17:27:42,265 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:27:42,265 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@752325ad)
+08 Mar 2019 17:27:42,381 [main] Repository.EventRepository 61 save - Exit
+08 Mar 2019 17:27:42,381 [main] Repository.EventRepository 49 save - Enter saving eventEvent{id=104, name='Event3', seats=202}
+08 Mar 2019 17:27:42,381 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:27:42,381 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@752325ad)
+08 Mar 2019 17:27:42,508 [main] Repository.EventRepository 61 save - Exit
+08 Mar 2019 17:27:42,509 [main] Repository.UserRepository 133 findAll - Enter
+08 Mar 2019 17:27:42,509 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:27:42,509 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@55fe41ea)
+08 Mar 2019 17:27:42,509 [main] Repository.UserRepository 150 findAll - Exit with([User{id=100, username='Alex', password='FMI123131'}, User{id=101, username='Alex', password='FMI123131'}])
+08 Mar 2019 17:27:42,509 [main] Repository.EventRepository 66 delete - Enter deleting event with 102
+08 Mar 2019 17:27:42,509 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:27:42,509 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@752325ad)
+08 Mar 2019 17:27:42,635 [main] Repository.EventRepository 75 delete - Exit
+08 Mar 2019 17:27:42,635 [main] Repository.EventRepository 66 delete - Enter deleting event with 103
+08 Mar 2019 17:27:42,635 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:27:42,635 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@752325ad)
+08 Mar 2019 17:27:42,762 [main] Repository.EventRepository 75 delete - Exit
+08 Mar 2019 17:27:42,763 [main] Repository.EventRepository 66 delete - Enter deleting event with 104
+08 Mar 2019 17:27:42,763 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:27:42,763 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@752325ad)
+08 Mar 2019 17:27:42,878 [main] Repository.EventRepository 75 delete - Exit
+08 Mar 2019 17:28:27,894 [main] Repository.UserRepository 26 <init> - Initializing UserRepository with properties: {url="jdbc:sqlite:C:/Users/Scoican/Desktop/Facultate/Medii de proiectare si programare/Laborator/TicketManager/TicketManager.db"} 
+08 Mar 2019 17:28:27,897 [main] Repository.TicketRepository 26 <init> - Initializing TicketRepository with properties: {url="jdbc:sqlite:C:/Users/Scoican/Desktop/Facultate/Medii de proiectare si programare/Laborator/TicketManager/TicketManager.db"} 
+08 Mar 2019 17:28:27,898 [main] Repository.EventRepository 24 <init> - Initializing EventRepository with properties: {url="jdbc:sqlite:C:/Users/Scoican/Desktop/Facultate/Medii de proiectare si programare/Laborator/TicketManager/TicketManager.db"} 
+08 Mar 2019 17:28:27,899 [main] Repository.UserRepository 133 findAll - Enter
+08 Mar 2019 17:28:27,899 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:28:27,904 [main] Utils.JdbcUtils 25 getNewConnection - Loaded driver ...org.sqlite.JDBC
+08 Mar 2019 17:28:28,282 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@1ce24091)
+08 Mar 2019 17:28:28,286 [main] Repository.UserRepository 150 findAll - Exit with([User{id=100, username='Alex', password='FMI123131'}, User{id=101, username='Alex', password='FMI123131'}])
+08 Mar 2019 17:28:28,286 [main] Repository.UserRepository 51 save - Enter saving userUser{id=102, username='User1', password='FMI123131'}
+08 Mar 2019 17:28:28,287 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:28:28,287 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@1ce24091)
+08 Mar 2019 17:28:28,844 [main] Repository.UserRepository 63 save - Exit
+08 Mar 2019 17:28:28,845 [main] Repository.UserRepository 51 save - Enter saving userUser{id=103, username='User2', password='FMI123131'}
+08 Mar 2019 17:28:28,845 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:28:28,845 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@1ce24091)
+08 Mar 2019 17:28:28,972 [main] Repository.UserRepository 63 save - Exit
+08 Mar 2019 17:28:28,973 [main] Repository.UserRepository 51 save - Enter saving userUser{id=104, username='User3', password='FMI123131'}
+08 Mar 2019 17:28:28,973 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:28:28,973 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@1ce24091)
+08 Mar 2019 17:28:29,131 [main] Repository.UserRepository 63 save - Exit
+08 Mar 2019 17:28:29,132 [main] Repository.UserRepository 133 findAll - Enter
+08 Mar 2019 17:28:29,132 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:28:29,132 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@1ce24091)
+08 Mar 2019 17:28:29,132 [main] Repository.UserRepository 150 findAll - Exit with([User{id=100, username='Alex', password='FMI123131'}, User{id=101, username='Alex', password='FMI123131'}, User{id=102, username='User1', password='FMI123131'}, User{id=103, username='User2', password='FMI123131'}, User{id=104, username='User3', password='FMI123131'}])
+08 Mar 2019 17:28:29,132 [main] Repository.UserRepository 68 delete - Enter deleting user with 102
+08 Mar 2019 17:28:29,133 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:28:29,133 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@1ce24091)
+08 Mar 2019 17:28:29,238 [main] Repository.UserRepository 77 delete - Exit
+08 Mar 2019 17:28:29,238 [main] Repository.UserRepository 68 delete - Enter deleting user with 103
+08 Mar 2019 17:28:29,238 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:28:29,238 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@1ce24091)
+08 Mar 2019 17:28:29,396 [main] Repository.UserRepository 77 delete - Exit
+08 Mar 2019 17:28:29,396 [main] Repository.UserRepository 68 delete - Enter deleting user with 104
+08 Mar 2019 17:28:29,397 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:28:29,397 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@1ce24091)
+08 Mar 2019 17:28:29,507 [main] Repository.UserRepository 77 delete - Exit
+08 Mar 2019 17:28:29,507 [main] Repository.TicketRepository 137 findAll - Enter
+08 Mar 2019 17:28:29,507 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:28:29,508 [main] Utils.JdbcUtils 25 getNewConnection - Loaded driver ...org.sqlite.JDBC
+08 Mar 2019 17:28:29,508 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@279fedbd)
+08 Mar 2019 17:28:29,509 [main] Repository.TicketRepository 155 findAll - Exit with([])
+08 Mar 2019 17:28:29,510 [main] Repository.TicketRepository 51 save - Enter saving ticketTicket{id=102, event=101, buyer='name1', price=200.0}
+08 Mar 2019 17:28:29,510 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:28:29,510 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@279fedbd)
+08 Mar 2019 17:28:29,661 [main] Repository.TicketRepository 64 save - Exit
+08 Mar 2019 17:28:29,662 [main] Repository.TicketRepository 51 save - Enter saving ticketTicket{id=103, event=102, buyer='name2', price=201.0}
+08 Mar 2019 17:28:29,662 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:28:29,662 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@279fedbd)
+08 Mar 2019 17:28:29,805 [main] Repository.TicketRepository 64 save - Exit
+08 Mar 2019 17:28:29,805 [main] Repository.TicketRepository 51 save - Enter saving ticketTicket{id=104, event=103, buyer='name3', price=202.0}
+08 Mar 2019 17:28:29,805 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:28:29,805 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@279fedbd)
+08 Mar 2019 17:28:29,932 [main] Repository.TicketRepository 64 save - Exit
+08 Mar 2019 17:28:29,932 [main] Repository.TicketRepository 137 findAll - Enter
+08 Mar 2019 17:28:29,932 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:28:29,932 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@279fedbd)
+08 Mar 2019 17:28:29,932 [main] Repository.TicketRepository 155 findAll - Exit with([Ticket{id=102, event=200, buyer='101', price=0.0}, Ticket{id=103, event=201, buyer='102', price=0.0}, Ticket{id=104, event=202, buyer='103', price=0.0}])
+08 Mar 2019 17:28:29,932 [main] Repository.TicketRepository 69 delete - Enter deleting ticket with 102
+08 Mar 2019 17:28:29,933 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:28:29,933 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@279fedbd)
+08 Mar 2019 17:28:30,047 [main] Repository.TicketRepository 78 delete - Exit
+08 Mar 2019 17:28:30,047 [main] Repository.TicketRepository 69 delete - Enter deleting ticket with 103
+08 Mar 2019 17:28:30,048 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:28:30,048 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@279fedbd)
+08 Mar 2019 17:28:30,174 [main] Repository.TicketRepository 78 delete - Exit
+08 Mar 2019 17:28:30,174 [main] Repository.TicketRepository 69 delete - Enter deleting ticket with 104
+08 Mar 2019 17:28:30,174 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:28:30,175 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@279fedbd)
+08 Mar 2019 17:28:30,302 [main] Repository.TicketRepository 78 delete - Exit
+08 Mar 2019 17:28:30,302 [main] Repository.EventRepository 131 findAll - Enter
+08 Mar 2019 17:28:30,302 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:28:30,302 [main] Utils.JdbcUtils 25 getNewConnection - Loaded driver ...org.sqlite.JDBC
+08 Mar 2019 17:28:30,303 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@b3ca52e)
+08 Mar 2019 17:28:30,304 [main] Repository.EventRepository 148 findAll - Exit with([Event{id=100, name='Alex', seats=0}])
+08 Mar 2019 17:28:30,305 [main] Repository.EventRepository 49 save - Enter saving eventEvent{id=102, name='Event1', seats=200}
+08 Mar 2019 17:28:30,305 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:28:30,305 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@b3ca52e)
+08 Mar 2019 17:28:30,417 [main] Repository.EventRepository 61 save - Exit
+08 Mar 2019 17:28:30,417 [main] Repository.EventRepository 49 save - Enter saving eventEvent{id=103, name='Event2', seats=201}
+08 Mar 2019 17:28:30,417 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:28:30,418 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@b3ca52e)
+08 Mar 2019 17:28:30,534 [main] Repository.EventRepository 61 save - Exit
+08 Mar 2019 17:28:30,534 [main] Repository.EventRepository 49 save - Enter saving eventEvent{id=104, name='Event3', seats=202}
+08 Mar 2019 17:28:30,534 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:28:30,534 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@b3ca52e)
+08 Mar 2019 17:28:30,639 [main] Repository.EventRepository 61 save - Exit
+08 Mar 2019 17:28:30,639 [main] Repository.EventRepository 131 findAll - Enter
+08 Mar 2019 17:28:30,639 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:28:30,639 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@b3ca52e)
+08 Mar 2019 17:28:30,639 [main] Repository.EventRepository 148 findAll - Exit with([Event{id=100, name='Alex', seats=0}, Event{id=102, name='Event1', seats=200}, Event{id=103, name='Event2', seats=201}, Event{id=104, name='Event3', seats=202}])
+08 Mar 2019 17:28:30,640 [main] Repository.EventRepository 66 delete - Enter deleting event with 102
+08 Mar 2019 17:28:30,640 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:28:30,640 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@b3ca52e)
+08 Mar 2019 17:28:30,756 [main] Repository.EventRepository 75 delete - Exit
+08 Mar 2019 17:28:30,756 [main] Repository.EventRepository 66 delete - Enter deleting event with 103
+08 Mar 2019 17:28:30,756 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:28:30,756 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@b3ca52e)
+08 Mar 2019 17:28:30,871 [main] Repository.EventRepository 75 delete - Exit
+08 Mar 2019 17:28:30,871 [main] Repository.EventRepository 66 delete - Enter deleting event with 104
+08 Mar 2019 17:28:30,871 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:28:30,871 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@b3ca52e)
+08 Mar 2019 17:28:31,316 [main] Repository.EventRepository 75 delete - Exit
+08 Mar 2019 17:30:09,393 [main] Repository.UserRepository 26 <init> - Initializing UserRepository with properties: {url="jdbc:sqlite:C:/Users/Scoican/Desktop/Facultate/Medii de proiectare si programare/Laborator/TicketManager/TicketManager.db"} 
+08 Mar 2019 17:30:09,397 [main] Repository.TicketRepository 26 <init> - Initializing TicketRepository with properties: {url="jdbc:sqlite:C:/Users/Scoican/Desktop/Facultate/Medii de proiectare si programare/Laborator/TicketManager/TicketManager.db"} 
+08 Mar 2019 17:30:09,398 [main] Repository.EventRepository 24 <init> - Initializing EventRepository with properties: {url="jdbc:sqlite:C:/Users/Scoican/Desktop/Facultate/Medii de proiectare si programare/Laborator/TicketManager/TicketManager.db"} 
+08 Mar 2019 17:30:09,399 [main] Repository.UserRepository 133 findAll - Enter
+08 Mar 2019 17:30:09,400 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:30:09,406 [main] Utils.JdbcUtils 25 getNewConnection - Loaded driver ...org.sqlite.JDBC
+08 Mar 2019 17:30:09,871 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@55fe41ea)
+08 Mar 2019 17:30:09,877 [main] Repository.UserRepository 150 findAll - Exit with([User{id=100, username='Alex', password='FMI123131'}, User{id=101, username='Alex', password='FMI123131'}])
+08 Mar 2019 17:30:09,877 [main] Repository.UserRepository 51 save - Enter saving userUser{id=102, username='User1', password='FMI123131'}
+08 Mar 2019 17:30:09,877 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:30:09,877 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@55fe41ea)
+08 Mar 2019 17:30:10,047 [main] Repository.UserRepository 63 save - Exit
+08 Mar 2019 17:30:10,047 [main] Repository.UserRepository 51 save - Enter saving userUser{id=103, username='User2', password='FMI123131'}
+08 Mar 2019 17:30:10,048 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:30:10,048 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@55fe41ea)
+08 Mar 2019 17:30:10,123 [main] Repository.UserRepository 63 save - Exit
+08 Mar 2019 17:30:10,123 [main] Repository.UserRepository 51 save - Enter saving userUser{id=104, username='User3', password='FMI123131'}
+08 Mar 2019 17:30:10,123 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:30:10,123 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@55fe41ea)
+08 Mar 2019 17:30:10,227 [main] Repository.UserRepository 63 save - Exit
+08 Mar 2019 17:30:10,227 [main] Repository.UserRepository 133 findAll - Enter
+08 Mar 2019 17:30:10,227 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:30:10,227 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@55fe41ea)
+08 Mar 2019 17:30:10,228 [main] Repository.UserRepository 150 findAll - Exit with([User{id=100, username='Alex', password='FMI123131'}, User{id=101, username='Alex', password='FMI123131'}, User{id=102, username='User1', password='FMI123131'}, User{id=103, username='User2', password='FMI123131'}, User{id=104, username='User3', password='FMI123131'}])
+08 Mar 2019 17:30:10,228 [main] Repository.UserRepository 68 delete - Enter deleting user with 102
+08 Mar 2019 17:30:10,228 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:30:10,228 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@55fe41ea)
+08 Mar 2019 17:30:10,332 [main] Repository.UserRepository 77 delete - Exit
+08 Mar 2019 17:30:10,332 [main] Repository.UserRepository 68 delete - Enter deleting user with 103
+08 Mar 2019 17:30:10,332 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:30:10,332 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@55fe41ea)
+08 Mar 2019 17:30:10,448 [main] Repository.UserRepository 77 delete - Exit
+08 Mar 2019 17:30:10,448 [main] Repository.UserRepository 68 delete - Enter deleting user with 104
+08 Mar 2019 17:30:10,448 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:30:10,448 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@55fe41ea)
+08 Mar 2019 17:30:10,564 [main] Repository.UserRepository 77 delete - Exit
+08 Mar 2019 17:30:10,564 [main] Repository.TicketRepository 137 findAll - Enter
+08 Mar 2019 17:30:10,564 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:30:10,564 [main] Utils.JdbcUtils 25 getNewConnection - Loaded driver ...org.sqlite.JDBC
+08 Mar 2019 17:30:10,565 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@2a5c8d3f)
+08 Mar 2019 17:30:10,566 [main] Repository.TicketRepository 155 findAll - Exit with([])
+08 Mar 2019 17:30:10,567 [main] Repository.TicketRepository 51 save - Enter saving ticketTicket{id=102, event=101, buyer='name1', price=200.0}
+08 Mar 2019 17:30:10,568 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:30:10,568 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@2a5c8d3f)
+08 Mar 2019 17:30:10,724 [main] Repository.TicketRepository 64 save - Exit
+08 Mar 2019 17:30:10,724 [main] Repository.TicketRepository 51 save - Enter saving ticketTicket{id=103, event=102, buyer='name2', price=201.0}
+08 Mar 2019 17:30:10,724 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:30:10,724 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@2a5c8d3f)
+08 Mar 2019 17:30:10,829 [main] Repository.TicketRepository 64 save - Exit
+08 Mar 2019 17:30:10,829 [main] Repository.TicketRepository 51 save - Enter saving ticketTicket{id=104, event=103, buyer='name3', price=202.0}
+08 Mar 2019 17:30:10,829 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:30:10,829 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@2a5c8d3f)
+08 Mar 2019 17:30:10,945 [main] Repository.TicketRepository 64 save - Exit
+08 Mar 2019 17:30:10,946 [main] Repository.TicketRepository 137 findAll - Enter
+08 Mar 2019 17:30:10,946 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:30:10,946 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@2a5c8d3f)
+08 Mar 2019 17:30:10,946 [main] Repository.TicketRepository 155 findAll - Exit with([Ticket{id=102, event=200, buyer='101', price=0.0}, Ticket{id=103, event=201, buyer='102', price=0.0}, Ticket{id=104, event=202, buyer='103', price=0.0}])
+08 Mar 2019 17:30:10,946 [main] Repository.TicketRepository 69 delete - Enter deleting ticket with 102
+08 Mar 2019 17:30:10,946 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:30:10,946 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@2a5c8d3f)
+08 Mar 2019 17:30:11,061 [main] Repository.TicketRepository 78 delete - Exit
+08 Mar 2019 17:30:11,061 [main] Repository.TicketRepository 69 delete - Enter deleting ticket with 103
+08 Mar 2019 17:30:11,062 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:30:11,062 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@2a5c8d3f)
+08 Mar 2019 17:30:11,188 [main] Repository.TicketRepository 78 delete - Exit
+08 Mar 2019 17:30:11,188 [main] Repository.TicketRepository 69 delete - Enter deleting ticket with 104
+08 Mar 2019 17:30:11,188 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:30:11,188 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@2a5c8d3f)
+08 Mar 2019 17:30:11,315 [main] Repository.TicketRepository 78 delete - Exit
+08 Mar 2019 17:30:11,315 [main] Repository.EventRepository 131 findAll - Enter
+08 Mar 2019 17:30:11,315 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:30:11,315 [main] Utils.JdbcUtils 25 getNewConnection - Loaded driver ...org.sqlite.JDBC
+08 Mar 2019 17:30:11,316 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@752325ad)
+08 Mar 2019 17:30:11,317 [main] Repository.EventRepository 148 findAll - Exit with([Event{id=100, name='Alex', seats=0}])
+08 Mar 2019 17:30:11,317 [main] Repository.EventRepository 49 save - Enter saving eventEvent{id=102, name='Event1', seats=200}
+08 Mar 2019 17:30:11,317 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:30:11,318 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@752325ad)
+08 Mar 2019 17:30:11,442 [main] Repository.EventRepository 61 save - Exit
+08 Mar 2019 17:30:11,443 [main] Repository.EventRepository 49 save - Enter saving eventEvent{id=103, name='Event2', seats=201}
+08 Mar 2019 17:30:11,443 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:30:11,443 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@752325ad)
+08 Mar 2019 17:30:11,580 [main] Repository.EventRepository 61 save - Exit
+08 Mar 2019 17:30:11,580 [main] Repository.EventRepository 49 save - Enter saving eventEvent{id=104, name='Event3', seats=202}
+08 Mar 2019 17:30:11,580 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:30:11,581 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@752325ad)
+08 Mar 2019 17:30:11,696 [main] Repository.EventRepository 61 save - Exit
+08 Mar 2019 17:30:11,697 [main] Repository.EventRepository 131 findAll - Enter
+08 Mar 2019 17:30:11,697 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:30:11,697 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@752325ad)
+08 Mar 2019 17:30:11,697 [main] Repository.EventRepository 148 findAll - Exit with([Event{id=100, name='Alex', seats=0}, Event{id=102, name='Event1', seats=200}, Event{id=103, name='Event2', seats=201}, Event{id=104, name='Event3', seats=202}])
+08 Mar 2019 17:30:11,697 [main] Repository.EventRepository 66 delete - Enter deleting event with 102
+08 Mar 2019 17:30:11,697 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:30:11,698 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@752325ad)
+08 Mar 2019 17:30:11,813 [main] Repository.EventRepository 75 delete - Exit
+08 Mar 2019 17:30:11,813 [main] Repository.EventRepository 66 delete - Enter deleting event with 103
+08 Mar 2019 17:30:11,814 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:30:11,814 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@752325ad)
+08 Mar 2019 17:30:11,950 [main] Repository.EventRepository 75 delete - Exit
+08 Mar 2019 17:30:11,950 [main] Repository.EventRepository 66 delete - Enter deleting event with 104
+08 Mar 2019 17:30:11,950 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:30:11,950 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@752325ad)
+08 Mar 2019 17:30:12,067 [main] Repository.EventRepository 75 delete - Exit
+08 Mar 2019 17:30:33,689 [main] Repository.UserRepository 26 <init> - Initializing UserRepository with properties: {url="jdbc:sqlite:C:/Users/Scoican/Desktop/Facultate/Medii de proiectare si programare/Laborator/TicketManager/TicketManager.db"} 
+08 Mar 2019 17:30:33,692 [main] Repository.TicketRepository 26 <init> - Initializing TicketRepository with properties: {url="jdbc:sqlite:C:/Users/Scoican/Desktop/Facultate/Medii de proiectare si programare/Laborator/TicketManager/TicketManager.db"} 
+08 Mar 2019 17:30:33,693 [main] Repository.EventRepository 24 <init> - Initializing EventRepository with properties: {url="jdbc:sqlite:C:/Users/Scoican/Desktop/Facultate/Medii de proiectare si programare/Laborator/TicketManager/TicketManager.db"} 
+08 Mar 2019 17:30:33,694 [main] Repository.UserRepository 133 findAll - Enter
+08 Mar 2019 17:30:33,694 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:30:33,698 [main] Utils.JdbcUtils 25 getNewConnection - Loaded driver ...org.sqlite.JDBC
+08 Mar 2019 17:30:34,117 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@55fe41ea)
+08 Mar 2019 17:30:34,122 [main] Repository.UserRepository 150 findAll - Exit with([User{id=100, username='Alex', password='FMI123131'}])
+08 Mar 2019 17:30:34,122 [main] Repository.UserRepository 51 save - Enter saving userUser{id=102, username='User1', password='FMI123131'}
+08 Mar 2019 17:30:34,122 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:30:34,122 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@55fe41ea)
+08 Mar 2019 17:30:34,258 [main] Repository.UserRepository 63 save - Exit
+08 Mar 2019 17:30:34,259 [main] Repository.UserRepository 51 save - Enter saving userUser{id=103, username='User2', password='FMI123131'}
+08 Mar 2019 17:30:34,259 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:30:34,259 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@55fe41ea)
+08 Mar 2019 17:30:34,385 [main] Repository.UserRepository 63 save - Exit
+08 Mar 2019 17:30:34,385 [main] Repository.UserRepository 51 save - Enter saving userUser{id=104, username='User3', password='FMI123131'}
+08 Mar 2019 17:30:34,385 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:30:34,385 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@55fe41ea)
+08 Mar 2019 17:30:34,490 [main] Repository.UserRepository 63 save - Exit
+08 Mar 2019 17:30:34,490 [main] Repository.UserRepository 133 findAll - Enter
+08 Mar 2019 17:30:34,490 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:30:34,491 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@55fe41ea)
+08 Mar 2019 17:30:34,491 [main] Repository.UserRepository 150 findAll - Exit with([User{id=100, username='Alex', password='FMI123131'}, User{id=102, username='User1', password='FMI123131'}, User{id=103, username='User2', password='FMI123131'}, User{id=104, username='User3', password='FMI123131'}])
+08 Mar 2019 17:30:34,491 [main] Repository.UserRepository 68 delete - Enter deleting user with 102
+08 Mar 2019 17:30:34,491 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:30:34,491 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@55fe41ea)
+08 Mar 2019 17:30:34,573 [main] Repository.UserRepository 77 delete - Exit
+08 Mar 2019 17:30:34,573 [main] Repository.UserRepository 68 delete - Enter deleting user with 103
+08 Mar 2019 17:30:34,573 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:30:34,574 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@55fe41ea)
+08 Mar 2019 17:30:34,678 [main] Repository.UserRepository 77 delete - Exit
+08 Mar 2019 17:30:34,678 [main] Repository.UserRepository 68 delete - Enter deleting user with 104
+08 Mar 2019 17:30:34,678 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:30:34,678 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@55fe41ea)
+08 Mar 2019 17:30:34,794 [main] Repository.UserRepository 77 delete - Exit
+08 Mar 2019 17:30:34,794 [main] Repository.TicketRepository 137 findAll - Enter
+08 Mar 2019 17:30:34,794 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:30:34,795 [main] Utils.JdbcUtils 25 getNewConnection - Loaded driver ...org.sqlite.JDBC
+08 Mar 2019 17:30:34,795 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@2a5c8d3f)
+08 Mar 2019 17:30:34,796 [main] Repository.TicketRepository 155 findAll - Exit with([])
+08 Mar 2019 17:30:34,797 [main] Repository.TicketRepository 51 save - Enter saving ticketTicket{id=102, event=101, buyer='name1', price=200.0}
+08 Mar 2019 17:30:34,797 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:30:34,798 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@2a5c8d3f)
+08 Mar 2019 17:30:34,931 [main] Repository.TicketRepository 64 save - Exit
+08 Mar 2019 17:30:34,931 [main] Repository.TicketRepository 51 save - Enter saving ticketTicket{id=103, event=102, buyer='name2', price=201.0}
+08 Mar 2019 17:30:34,932 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:30:34,932 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@2a5c8d3f)
+08 Mar 2019 17:30:35,058 [main] Repository.TicketRepository 64 save - Exit
+08 Mar 2019 17:30:35,059 [main] Repository.TicketRepository 51 save - Enter saving ticketTicket{id=104, event=103, buyer='name3', price=202.0}
+08 Mar 2019 17:30:35,059 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:30:35,059 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@2a5c8d3f)
+08 Mar 2019 17:30:35,202 [main] Repository.TicketRepository 64 save - Exit
+08 Mar 2019 17:30:35,203 [main] Repository.TicketRepository 137 findAll - Enter
+08 Mar 2019 17:30:35,203 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:30:35,203 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@2a5c8d3f)
+08 Mar 2019 17:30:35,203 [main] Repository.TicketRepository 155 findAll - Exit with([Ticket{id=102, event=200, buyer='101', price=0.0}, Ticket{id=103, event=201, buyer='102', price=0.0}, Ticket{id=104, event=202, buyer='103', price=0.0}])
+08 Mar 2019 17:30:35,203 [main] Repository.TicketRepository 69 delete - Enter deleting ticket with 102
+08 Mar 2019 17:30:35,204 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:30:35,204 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@2a5c8d3f)
+08 Mar 2019 17:30:35,329 [main] Repository.TicketRepository 78 delete - Exit
+08 Mar 2019 17:30:35,329 [main] Repository.TicketRepository 69 delete - Enter deleting ticket with 103
+08 Mar 2019 17:30:35,329 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:30:35,330 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@2a5c8d3f)
+08 Mar 2019 17:30:35,478 [main] Repository.TicketRepository 78 delete - Exit
+08 Mar 2019 17:30:35,478 [main] Repository.TicketRepository 69 delete - Enter deleting ticket with 104
+08 Mar 2019 17:30:35,478 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:30:35,478 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@2a5c8d3f)
+08 Mar 2019 17:30:35,595 [main] Repository.TicketRepository 78 delete - Exit
+08 Mar 2019 17:30:35,595 [main] Repository.EventRepository 131 findAll - Enter
+08 Mar 2019 17:30:35,595 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:30:35,595 [main] Utils.JdbcUtils 25 getNewConnection - Loaded driver ...org.sqlite.JDBC
+08 Mar 2019 17:30:35,596 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@752325ad)
+08 Mar 2019 17:30:35,597 [main] Repository.EventRepository 148 findAll - Exit with([Event{id=100, name='Alex', seats=0}])
+08 Mar 2019 17:30:35,597 [main] Repository.EventRepository 49 save - Enter saving eventEvent{id=102, name='Event1', seats=200}
+08 Mar 2019 17:30:35,597 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:30:35,597 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@752325ad)
+08 Mar 2019 17:30:35,722 [main] Repository.EventRepository 61 save - Exit
+08 Mar 2019 17:30:35,722 [main] Repository.EventRepository 49 save - Enter saving eventEvent{id=103, name='Event2', seats=201}
+08 Mar 2019 17:30:35,722 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:30:35,722 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@752325ad)
+08 Mar 2019 17:30:35,838 [main] Repository.EventRepository 61 save - Exit
+08 Mar 2019 17:30:35,838 [main] Repository.EventRepository 49 save - Enter saving eventEvent{id=104, name='Event3', seats=202}
+08 Mar 2019 17:30:35,838 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:30:35,838 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@752325ad)
+08 Mar 2019 17:30:35,954 [main] Repository.EventRepository 61 save - Exit
+08 Mar 2019 17:30:35,954 [main] Repository.EventRepository 131 findAll - Enter
+08 Mar 2019 17:30:35,954 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:30:35,954 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@752325ad)
+08 Mar 2019 17:30:35,954 [main] Repository.EventRepository 148 findAll - Exit with([Event{id=100, name='Alex', seats=0}, Event{id=102, name='Event1', seats=200}, Event{id=103, name='Event2', seats=201}, Event{id=104, name='Event3', seats=202}])
+08 Mar 2019 17:30:35,955 [main] Repository.EventRepository 66 delete - Enter deleting event with 102
+08 Mar 2019 17:30:35,955 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:30:35,955 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@752325ad)
+08 Mar 2019 17:30:36,081 [main] Repository.EventRepository 75 delete - Exit
+08 Mar 2019 17:30:36,081 [main] Repository.EventRepository 66 delete - Enter deleting event with 103
+08 Mar 2019 17:30:36,081 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:30:36,081 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@752325ad)
+08 Mar 2019 17:30:36,196 [main] Repository.EventRepository 75 delete - Exit
+08 Mar 2019 17:30:36,196 [main] Repository.EventRepository 66 delete - Enter deleting event with 104
+08 Mar 2019 17:30:36,196 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:30:36,196 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@752325ad)
+08 Mar 2019 17:30:36,324 [main] Repository.EventRepository 75 delete - Exit
+08 Mar 2019 17:30:46,315 [main] Repository.UserRepository 26 <init> - Initializing UserRepository with properties: {url="jdbc:sqlite:C:/Users/Scoican/Desktop/Facultate/Medii de proiectare si programare/Laborator/TicketManager/TicketManager.db"} 
+08 Mar 2019 17:30:46,317 [main] Repository.TicketRepository 26 <init> - Initializing TicketRepository with properties: {url="jdbc:sqlite:C:/Users/Scoican/Desktop/Facultate/Medii de proiectare si programare/Laborator/TicketManager/TicketManager.db"} 
+08 Mar 2019 17:30:46,318 [main] Repository.EventRepository 24 <init> - Initializing EventRepository with properties: {url="jdbc:sqlite:C:/Users/Scoican/Desktop/Facultate/Medii de proiectare si programare/Laborator/TicketManager/TicketManager.db"} 
+08 Mar 2019 17:30:46,319 [main] Repository.UserRepository 133 findAll - Enter
+08 Mar 2019 17:30:46,320 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:30:46,324 [main] Utils.JdbcUtils 25 getNewConnection - Loaded driver ...org.sqlite.JDBC
+08 Mar 2019 17:30:46,799 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@55fe41ea)
+08 Mar 2019 17:30:46,804 [main] Repository.UserRepository 150 findAll - Exit with([User{id=100, username='Alex', password='FMI123131'}])
+08 Mar 2019 17:30:46,804 [main] Repository.UserRepository 51 save - Enter saving userUser{id=102, username='User1', password='FMI123131'}
+08 Mar 2019 17:30:46,804 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:30:46,804 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@55fe41ea)
+08 Mar 2019 17:30:46,936 [main] Repository.UserRepository 63 save - Exit
+08 Mar 2019 17:30:46,936 [main] Repository.UserRepository 51 save - Enter saving userUser{id=103, username='User2', password='FMI123131'}
+08 Mar 2019 17:30:46,936 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:30:46,936 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@55fe41ea)
+08 Mar 2019 17:30:47,052 [main] Repository.UserRepository 63 save - Exit
+08 Mar 2019 17:30:47,052 [main] Repository.UserRepository 51 save - Enter saving userUser{id=104, username='User3', password='FMI123131'}
+08 Mar 2019 17:30:47,052 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:30:47,053 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@55fe41ea)
+08 Mar 2019 17:30:47,157 [main] Repository.UserRepository 63 save - Exit
+08 Mar 2019 17:30:47,157 [main] Repository.UserRepository 133 findAll - Enter
+08 Mar 2019 17:30:47,158 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:30:47,158 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@55fe41ea)
+08 Mar 2019 17:30:47,158 [main] Repository.UserRepository 150 findAll - Exit with([User{id=100, username='Alex', password='FMI123131'}, User{id=102, username='User1', password='FMI123131'}, User{id=103, username='User2', password='FMI123131'}, User{id=104, username='User3', password='FMI123131'}])
+08 Mar 2019 17:30:47,158 [main] Repository.UserRepository 68 delete - Enter deleting user with 102
+08 Mar 2019 17:30:47,158 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:30:47,158 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@55fe41ea)
+08 Mar 2019 17:30:47,262 [main] Repository.UserRepository 77 delete - Exit
+08 Mar 2019 17:30:47,262 [main] Repository.UserRepository 68 delete - Enter deleting user with 103
+08 Mar 2019 17:30:47,262 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:30:47,262 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@55fe41ea)
+08 Mar 2019 17:30:47,411 [main] Repository.UserRepository 77 delete - Exit
+08 Mar 2019 17:30:47,411 [main] Repository.UserRepository 68 delete - Enter deleting user with 104
+08 Mar 2019 17:30:47,411 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:30:47,411 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@55fe41ea)
+08 Mar 2019 17:30:47,571 [main] Repository.UserRepository 77 delete - Exit
+08 Mar 2019 17:30:47,571 [main] Repository.TicketRepository 137 findAll - Enter
+08 Mar 2019 17:30:47,571 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:30:47,572 [main] Utils.JdbcUtils 25 getNewConnection - Loaded driver ...org.sqlite.JDBC
+08 Mar 2019 17:30:47,573 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@2a5c8d3f)
+08 Mar 2019 17:30:47,574 [main] Repository.TicketRepository 155 findAll - Exit with([])
+08 Mar 2019 17:30:47,575 [main] Repository.TicketRepository 51 save - Enter saving ticketTicket{id=102, event=101, buyer='name1', price=200.0}
+08 Mar 2019 17:30:47,575 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:30:47,575 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@2a5c8d3f)
+08 Mar 2019 17:30:47,719 [main] Repository.TicketRepository 64 save - Exit
+08 Mar 2019 17:30:47,719 [main] Repository.TicketRepository 51 save - Enter saving ticketTicket{id=103, event=102, buyer='name2', price=201.0}
+08 Mar 2019 17:30:47,720 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:30:47,720 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@2a5c8d3f)
+08 Mar 2019 17:30:48,148 [main] Repository.TicketRepository 64 save - Exit
+08 Mar 2019 17:30:48,148 [main] Repository.TicketRepository 51 save - Enter saving ticketTicket{id=104, event=103, buyer='name3', price=202.0}
+08 Mar 2019 17:30:48,148 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:30:48,148 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@2a5c8d3f)
+08 Mar 2019 17:30:48,276 [main] Repository.TicketRepository 64 save - Exit
+08 Mar 2019 17:30:48,276 [main] Repository.TicketRepository 137 findAll - Enter
+08 Mar 2019 17:30:48,276 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:30:48,276 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@2a5c8d3f)
+08 Mar 2019 17:30:48,276 [main] Repository.TicketRepository 155 findAll - Exit with([Ticket{id=102, event=200, buyer='101', price=0.0}, Ticket{id=103, event=201, buyer='102', price=0.0}, Ticket{id=104, event=202, buyer='103', price=0.0}])
+08 Mar 2019 17:30:48,277 [main] Repository.TicketRepository 69 delete - Enter deleting ticket with 102
+08 Mar 2019 17:30:48,277 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:30:48,277 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@2a5c8d3f)
+08 Mar 2019 17:30:48,402 [main] Repository.TicketRepository 78 delete - Exit
+08 Mar 2019 17:30:48,402 [main] Repository.TicketRepository 69 delete - Enter deleting ticket with 103
+08 Mar 2019 17:30:48,402 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:30:48,403 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@2a5c8d3f)
+08 Mar 2019 17:30:48,540 [main] Repository.TicketRepository 78 delete - Exit
+08 Mar 2019 17:30:48,540 [main] Repository.TicketRepository 69 delete - Enter deleting ticket with 104
+08 Mar 2019 17:30:48,541 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:30:48,541 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@2a5c8d3f)
+08 Mar 2019 17:30:48,667 [main] Repository.TicketRepository 78 delete - Exit
+08 Mar 2019 17:30:48,668 [main] Repository.EventRepository 131 findAll - Enter
+08 Mar 2019 17:30:48,668 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:30:48,668 [main] Utils.JdbcUtils 25 getNewConnection - Loaded driver ...org.sqlite.JDBC
+08 Mar 2019 17:30:48,668 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@752325ad)
+08 Mar 2019 17:30:48,670 [main] Repository.EventRepository 148 findAll - Exit with([Event{id=100, name='Name100', seats=1000}])
+08 Mar 2019 17:30:48,670 [main] Repository.EventRepository 49 save - Enter saving eventEvent{id=102, name='Event1', seats=200}
+08 Mar 2019 17:30:48,670 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:30:48,670 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@752325ad)
+08 Mar 2019 17:30:48,795 [main] Repository.EventRepository 61 save - Exit
+08 Mar 2019 17:30:48,795 [main] Repository.EventRepository 49 save - Enter saving eventEvent{id=103, name='Event2', seats=201}
+08 Mar 2019 17:30:48,795 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:30:48,795 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@752325ad)
+08 Mar 2019 17:30:48,939 [main] Repository.EventRepository 61 save - Exit
+08 Mar 2019 17:30:48,939 [main] Repository.EventRepository 49 save - Enter saving eventEvent{id=104, name='Event3', seats=202}
+08 Mar 2019 17:30:48,939 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:30:48,940 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@752325ad)
+08 Mar 2019 17:30:49,077 [main] Repository.EventRepository 61 save - Exit
+08 Mar 2019 17:30:49,077 [main] Repository.EventRepository 131 findAll - Enter
+08 Mar 2019 17:30:49,077 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:30:49,077 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@752325ad)
+08 Mar 2019 17:30:49,077 [main] Repository.EventRepository 148 findAll - Exit with([Event{id=100, name='Name100', seats=1000}, Event{id=102, name='Event1', seats=200}, Event{id=103, name='Event2', seats=201}, Event{id=104, name='Event3', seats=202}])
+08 Mar 2019 17:30:49,078 [main] Repository.EventRepository 66 delete - Enter deleting event with 102
+08 Mar 2019 17:30:49,078 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:30:49,078 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@752325ad)
+08 Mar 2019 17:30:49,204 [main] Repository.EventRepository 75 delete - Exit
+08 Mar 2019 17:30:49,204 [main] Repository.EventRepository 66 delete - Enter deleting event with 103
+08 Mar 2019 17:30:49,204 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:30:49,204 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@752325ad)
+08 Mar 2019 17:30:49,331 [main] Repository.EventRepository 75 delete - Exit
+08 Mar 2019 17:30:49,331 [main] Repository.EventRepository 66 delete - Enter deleting event with 104
+08 Mar 2019 17:30:49,331 [main] Utils.JdbcUtils 38 getConnection - Enter
+08 Mar 2019 17:30:49,331 [main] Utils.JdbcUtils 47 getConnection - Exit with(org.sqlite.SQLiteConnection@752325ad)
+08 Mar 2019 17:30:49,446 [main] Repository.EventRepository 75 delete - Exit
