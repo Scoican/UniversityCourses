@@ -1,0 +1,9 @@
+#pragma once
+#include "Validator.h"
+#include <assert.h>
+void callTestsValidator();
+void testValidateNumber();
+void testValidateType();
+void testValidateDestination();
+void testValidateDate();
+void testValidatePrice();

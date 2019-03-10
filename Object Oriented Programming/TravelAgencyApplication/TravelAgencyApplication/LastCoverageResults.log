@@ -1,0 +1,21 @@
+[2019-03-10 17:56:47] [info] Start Program:
+Path:"C:\Users\Scoican\Desktop\Facultate\Programare orientata obiect\Laboratoare Anul 2\TravelAgencyApplication\Debug\TravelAgencyApplication.exe"
+Arguments:
+Working directory: "C:\Users\Scoican\Desktop\Facultate\Programare orientata obiect\Laboratoare Anul 2\TravelAgencyApplication\TravelAgencyApplication\"
+Modules: Selected: C:\Users\Scoican\Desktop\Facultate\Programare orientata obiect\Laboratoare Anul 2\TravelAgencyApplication\Debug\TravelAgencyApplication.exe Excluded: 
+Sources: Selected: C:\Users\Scoican\Desktop\Facultate\Programare orientata obiect\Laboratoare Anul 2\TravelAgencyApplication\TravelAgencyApplication Excluded: 
+Log Level: Normal
+Cover Children: 0
+Aggregate by file: 1
+Continue after C++ exception: 0
+Optimized build support: 0
+Export: Binary C:\Users\Scoican\AppData\Local\Temp\wv0zm103.wap 
+Input coverage: 
+Unified diff: 
+Excluded line regular expressions: 
+Substitute pdb source paths: 
+
+[2019-03-10 17:56:47] [info] Module: C:\Users\Scoican\Desktop\Facultate\Programare orientata obiect\Laboratoare Anul 2\TravelAgencyApplication\Debug\TravelAgencyApplication.exe is selected because it matches selected pattern: C:\Users\Scoican\Desktop\Facultate\Programare orientata obiect\Laboratoare Anul 2\TravelAgencyApplication\Debug\TravelAgencyApplication.exe
+[2019-03-10 17:56:47] [info] ----------------------------------------------------
+[2019-03-10 17:56:47] [info] Coverage binary generated in file: C:\Users\Scoican\AppData\Local\Temp\wv0zm103.wap
+[2019-03-10 17:56:47] [info] ----------------------------------------------------
