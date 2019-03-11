@@ -1,0 +1,231 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+
+<head>
+    <title>Amazing title</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+</head>
+
+<body bgcolor="#E6E6FA">
+    <form id="form-div" action="POST">
+        <table id="form-table">
+            <thead>
+                <tr>
+                    <th>Beta testing review form</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="vertical-align: initial;">
+                        <table id="form-table-user">
+                            <thead>
+                                <tr>
+                                    <th colspan="4">Tester details</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td>First name:</td>
+                                    <td><input required id="fname" type="text" name="fname" maxlength="30" placeholder="John"></td>
+                                    <td>Last name:</td>
+                                    <td><input required id="lname" type="text" name="lname" maxlength="30" placeholder="Johnson"></td>
+                                </tr>
+                                <tr>
+                                    <td>Username:</td>
+                                    <td><input required id="uname" type="text" name="uname" maxlength="30" placeholder="@Hertos13"></td>
+                                    <td>Platform:</td>
+                                    <td>
+                                        <select id="Platform">
+                                            <option value="">Choose</option>
+                                            <option value="PC">PC</option>
+                                            <option value="XB">XBox One</option>
+                                            <option value="PS">PlayStation 4</option>
+                                            <option value="ND">Nintendo DS</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>E-mail:</td>
+                                    <td><input required id="email" type="email" name="email" maxlength="60" placeholder="@gmail.com"></td>
+                                    <td>Gender:</td>
+                                    <td>
+                                        <input required type="radio" name="gender" value="m">Male
+                                        <input type="radio" name="gender" value="f">Female
+                                        <input type="radio" name="gender" value="o">Other
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="3">Adress:</td>
+                                    <td>Country</td>
+                                    <td colspan="2">
+                                        <select id="Country">
+                                            <option value="">Choose</option>
+                                            <option value="ar">Romania</option>
+                                            <option value="bh">Germany</option>
+                                            <option value="bv">United States of America</option>
+                                            <option value="cj">Hungary</option>
+                                            <option value="mm">Turkey</option>
+                                            <option value="sb">Spain</option>
+                                            <option value="sj">Great Britain</option>
+                                            <option value="tm">Canada</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Adress 1:</td>
+                                    <td colspan="2"><input type="text" maxlength="100" name="adr1" size="50"></td>
+                                </tr>
+                                <tr>
+                                    <td>Adress 2:</td>
+                                    <td colspan="2"><input type="text" maxlength="100" name="adr2" size="50"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table id="form-table-feedback">
+                            <thead>
+                                <tr>
+                                    <th>Feedback</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <ol type="1" start="1">
+                                            <li>Instalation
+                                                <ol type="a" start="-">
+                                                    <li>How fast was the instalation process?<br>
+                                                        <input type="radio" name="rating1" value="1">1
+                                                        <input type="radio" name="rating1" value="2">2
+                                                        <input type="radio" name="rating1" value="3">3
+                                                        <input type="radio" name="rating1" value="4">4
+                                                        <input type="radio" name="rating1" value="5">5
+                                                    </li>
+                                                    <li>How easy was the instalation process?<br>
+                                                        <input type="radio" name="rating2" value="1">1
+                                                        <input type="radio" name="rating2" value="2">2
+                                                        <input type="radio" name="rating2" value="3">3
+                                                        <input type="radio" name="rating2" value="4">4
+                                                        <input type="radio" name="rating2" value="5">5
+                                                    </li>
+                                                    <li>How fast was the instalation process?<br>
+                                                        <input type="radio" name="rating3" value="1">1
+                                                        <input type="radio" name="rating3" value="2">2
+                                                        <input type="radio" name="rating3" value="3">3
+                                                        <input type="radio" name="rating3" value="4">4
+                                                        <input type="radio" name="rating3" value="5">5
+                                                    </li>
+                                                </ol>
+                                            </li>
+                                            <li>Experience
+                                                <ol type="a" start="-">
+                                                    <li>How much would you play for this game?<br>
+                                                        <input type="radio" name="rating4" value="1">1
+                                                        <input type="radio" name="rating4" value="2">2
+                                                        <input type="radio" name="rating4" value="3">3
+                                                        <input type="radio" name="rating4" value="4">4
+                                                        <input type="radio" name="rating4" value="5">5
+                                                    </li>
+                                                    <li>How fun did you have while playing?<br>
+                                                        <input type="radio" name="rating" value="1">1
+                                                        <input type="radio" name="rating" value="2">2
+                                                        <input type="radio" name="rating" value="3">3
+                                                        <input type="radio" name="rating" value="4">4
+                                                        <input type="radio" name="rating" value="5">5
+                                                    </li>
+                                                    <li>How do you rate the multiplayer experience?<br>
+                                                        <input type="radio" name="rating5" value="1">1
+                                                        <input type="radio" name="rating5" value="2">2
+                                                        <input type="radio" name="rating5" value="3">3
+                                                        <input type="radio" name="rating5" value="4">4
+                                                        <input type="radio" name="rating5" value="5">5
+                                                    </li>
+                                                </ol>
+                                            </li>
+                                            <li>Would you recommend this game to a friend?<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                <input type="radio" name="recommend" value="yes">Yes
+                                                <input type="radio" name="recommend" value="no">No
+                                            </li>
+                                            <li>What was your favorite part from the game?
+                                                <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                <input type="checkbox" name="features" value="autopilot">Gameplay
+                                                <input type="checkbox" name="features" value="autopilot">Graphics
+                                                <input type="checkbox" name="features" value="autopilot">Playerbase
+                                                <input type="checkbox" name="features" value="autopilot">Story
+                                                <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                <input type="checkbox" name="features" value="autopilot">Difficulty
+                                                <input type="checkbox" name="features" value="autopilot">Interface
+                                                <input type="checkbox" name="features" value="autopilot">Soundtrack
+                                                <input type="checkbox" name="features" value="autopilot">Character customization
+                                            </li>
+                                            <li>Final questions<br>
+                                                <ol type="a" start="-">
+                                                    <li>Would you buy this game?<br>
+                                                        <input type="radio" name="buy" value="yes">Yes
+                                                        <input type="radio" name="buy" value="no">No</li>
+
+                                                    <li>What price would you recommend for this game? (dollars)<br>
+                                                        <input type="number" value="150" min="0" max="150"></li>
+
+                                                    <li>How does this game compare with other games from the same category?<br>
+                                                        <input type="text" maxlength="200" size="76"></li>
+
+                                                    <li>What would be a good addition to the game experience?<br>
+                                                        <input type="text" maxlength="100" size="76"></li>
+                                                </ol>
+                                            </li>
+                                        </ol>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <table id="form-table-comments">
+                                            <thead>
+                                                <tr>
+                                                    <th colspan="2">Comments</th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                <tr>
+                                                    <td>Pros</td>
+                                                    <td>Cons</td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td><textarea cols="40" rows="10"></textarea></td>
+                                                    <td><textarea cols="40" rows="10"></textarea></td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2">Do you have any questions for us?</td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2"><textarea cols="84" rows="10"></textarea></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="submit">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+    <br><br>
+    <p dir="rtl">Încă nu știu dacă acest mesaj va fi găsit.Până când îl mai țin aici?!</p>
+    <span style="color:red">Powered by</span><br>
+    <a href="https://www.ea.com/games/apex-legends"><img src="C:/Users/Scoican/Downloads/nmIdYkv.png" alt="ApexLegends"></a>
+</body>
+
+</html>
