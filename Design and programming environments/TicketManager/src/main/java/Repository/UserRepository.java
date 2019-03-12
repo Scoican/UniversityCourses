@@ -89,13 +89,12 @@ public class UserRepository implements IRepository<Integer, User> {
         String newUsername=entity.getUsername();
         String newPassword=entity.getPassword();
 
-        try(PreparedStatement preStmt=con.prepareStatement("update Users"+
-                " set id = ?,username = ?,password = ? "+
-                " where id = ? ")){
+        try(PreparedStatement preStmt=con.prepareStatement("update Users set id = ?,username = ?,password = ? where id = ? ")){
             preStmt.setInt(4,integer);
             preStmt.setInt(1,newId);
             preStmt.setString(2,newUsername);
             preStmt.setString(3,newPassword);
+            int result=preStmt.executeUpdate();
         }catch(SQLException e) {
             logger.error(e);
             System.out.println("Error DB User Update " + e);

@@ -52,9 +52,9 @@ public class TicketRepository implements IRepository<Integer, Ticket> {
         Connection con=dbUtils.getConnection();
         try(PreparedStatement preStmt=con.prepareStatement("insert into Tickets values (?,?,?,?)")) {
             preStmt.setInt(1,entity.getId());
-            preStmt.setInt(2,entity.getEvent());
-            preStmt.setString(3,entity.getBuyer());
-            preStmt.setDouble(4,entity.getPrice());
+            preStmt.setString(2,entity.getBuyer());
+            preStmt.setDouble(3,entity.getPrice());
+            preStmt.setInt(4,entity.getEvent());
             int result = preStmt.executeUpdate();
         }
         catch (SQLException e) {
@@ -99,6 +99,7 @@ public class TicketRepository implements IRepository<Integer, Ticket> {
             preStmt.setInt(2,newEvent);
             preStmt.setString(3,newBuyer);
             preStmt.setDouble(4,newPrice);
+            int result=preStmt.executeUpdate();
         }catch(SQLException e) {
             logger.error(e);
             System.out.println("Error DB Ticket Update " + e);

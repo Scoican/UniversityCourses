@@ -94,6 +94,7 @@ public class EventRepository implements IRepository<Integer, Event> {
             preStmt.setInt(1,newId);
             preStmt.setString(2,newName);
             preStmt.setInt(3,newSeats);
+            int result=preStmt.executeUpdate();
         }catch(SQLException e) {
             logger.error(e);
             System.out.println("Error DB Event Update " + e);
