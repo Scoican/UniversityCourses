@@ -1,0 +1,43 @@
+%a.Sa se scrie un predicat care elimina dintr-o lista toate elementele
+%care se repeta (ex: l=[1,2,1,4,1,3,4] => l=[2,3])
+%b.Sa se elimine toate aparitiile elementului maxim dintr-o lista de
+%numere intregi.
+
+
+cautareElement([],_,0).
+cautareElement([E|T],E,R):-!,cautareElement(T,E,R1),R is R1+1.
+cautareElement([_|T],E,R):-cautareElement(T,E,R).
+
+%elimina(L,E,R)
+%L-lista din care se elimina
+%E-elementul de eleminat
+%R-Rezultatul
+%(i,i,o)
+
+elimina([],_,[]).
+elimina([E|T],E,R):-!,elimina(T,E,R).
+elimina([H|T],E,[H|R1]):-elimina(T,E,R1).
+
+%eliminareMultipla(L,R)
+%L-lista din care eliminam
+%R-rezultat
+
+eliminareMultipla([],[]).
+eliminareMultipla([H|T],[H|R]):-cautareElement(T,H,N),
+	N=:=0,
+	eliminareMultipla(T,R).
+eliminareMultipla([H|T],R):-cautareElement(T,H,N),
+	N>0,
+	elimina(T,H,R1),
+	eliminareMultipla(R1,R).
+
+
+%cautareMaxim(L,M,R)
+%L-lista in care cautam
+%M-elementul maxim curent
+%R-Rezultat
+%(i,i,o)
+
+cautareMaxim([],M,M).
+cautareMaxim([H|T],M,R):-H>M,!,cautareMaxim(T,H,R).
+cautareMaxim([_|T],M,R):-cautareMaxim(T,M,R).

@@ -1,0 +1,31 @@
+4)
+(defun inlocuire(a k e)
+    
+	(cond
+        
+		((null a)nil)
+        
+		((= k 0)(cons e (cdr a)))
+        
+		(t(cons (car a) (mapcar #'(lambda(l)(inlocuire l (- k 1) e)) (cdr a))))))
+        
+
+
+(write (inlocuire '(a(b(g))(c(d(e))(f))) 4 'h))
+
+
+(defun determinare(a)
+    
+	(cond
+        
+		((null a)nil)
+        
+		((atom a)0)
+        
+		((= (mod (returnare a) 2) 0)(+ 1 (apply '+ (mapcar 'determinare a))))
+        
+		(t(apply '+ (mapcar 'determinare a)))))
+        
+
+
+(write (determinare '(A 3 (B 2)(1 C 4)(D 2(6 F))((G 3) 5))))

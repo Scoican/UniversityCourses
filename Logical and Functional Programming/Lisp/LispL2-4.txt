@@ -1,0 +1,21 @@
+(defun suma(a)
+    (cond
+        ((null a)0)
+        ((numberp (car a))(+ (car a) (suma (cdr a))))
+        (t(suma (cdr a)))))
+        
+(defun sumaNiveluri(a k)
+    (cond
+        ((null a)0)
+        ((atom a)0)
+        ((and(listp a)(=(mod k 2)1))(+ (suma a) (apply '+ (mapcar #'(lambda(l)(sumaNiveluri l (+ k 1)))a))))
+        (t(apply '+ (mapcar #'(lambda(l)(sumaNiveluri l (+ k 1)))a)))))
+
+(defun verificare(a)
+    (cond
+        ((null a)0)
+        ((atom a)0)
+        ((and(listp a)(=(mod (sumaNiveluri a 1) 2)0))(+ 1 (apply '+ (mapcar 'verificare a))))
+        (t(apply '+ (mapcar 'verificare a)))))
+
+(write (verificare '(A 1 (B 2) (1 C 4) (D 1 (5 F))((G 4 ) 6))))

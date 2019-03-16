@@ -1,0 +1,36 @@
+5.
+a) Definiti o functie care interclaseaza cu pastrarea dublurilor doua liste
+liniare sortate.
+b) Definiti o functie care substituie un element E prin elementele unei liste
+L1 la toate nivelurile unei liste date L.
+c) Definiti o functie care determina suma a doua numere in reprezentare de
+lista si calculeaza numarul zecimal corespunzator sumei.
+d) Definiti o functie care intoarce cel mai mare divizor comun al numerelor
+dintr-o lista liniara.
+
+a)
+(defun insert(l e)
+    (cond
+        ((null l) (list e))
+        ((= (car l)(max e (car l)))(cons e l))
+        (t(cons(car l)(insert (cdr l) e)))))
+
+(defun interclasare(l1 l2)
+    (cond
+        ((null l1)l2)
+        (t(interclasare (cdr l1)(insert l2 (car l1))))))
+        
+
+(write (interclasare '(1 2 3 4 5 6 7 8 9 9 9) '(4 5 6)))
+b)
+(defun substituire(l e l1)
+    (cond
+        ((null l)nil)
+        ((and (atom (car l))(= (car l) e))(cons l1 (substituire(cdr l) e l1)))
+        ((listp (car l))(cons (substituire (car l) e l1) (substituire (cdr l) e l1)))
+        (t(cons (car l)(substituire (cdr l) e l1)))))
+
+(write (substituire '(1 2 (3) 3 4 5 6) 3 '(1 2)))
+c)
+
+d)

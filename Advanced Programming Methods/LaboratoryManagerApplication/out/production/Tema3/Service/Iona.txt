@@ -1,0 +1,12 @@
+Project ID:4
+Mark:9.0
+Finished in week number:2
+Deadline:5
+Feedback:NOTA A FOST DIMINUTATA CU 0.0 PUNCTE.
+
+Project ID:8
+Mark:9.0
+Finished in week number:2
+Deadline:9
+Feedback:NOTA A FOST DIMINUTATA CU 0.0 PUNCTE.
+

@@ -1,0 +1,46 @@
+;determina numarului de noduri de pe nivelul k
+(defun nr(k a)
+   (cond
+     ((null a) 0)
+     ((= k 0) 1)
+     (t (apply '+ (mapcar (lambda (l) (nr (- k 1) l)) (cdr a))))
+   )
+)
+
+;determina adancimea unui arbore
+(defun adancime(l)
+   (cond
+     ((null l) 0)
+     ((null (cdr l)) 1)
+     (t (+ 1 (apply 'max (mapcar 'adancime (cdr l)))))
+   )
+)
+
+;lista nodurilor de pe nivelul k
+(defun nod_nivel(k a)
+   (cond
+      ((null a) nil)
+      ((= k 1) (list (car a)))
+      (t (mapcan (lambda (l) (nod_nivel (- k 1) l)) (cdr a)))
+   )
+)
+
+;determinarea nivelului cu nr maxim de noduri
+(defun nivel_max(a n) ; arb a cu n nivele
+  (cond
+     ((= n -1) -666)
+     ((> (nr n a) (nr (nivel_max a (- n 1)) a)) n)
+     (t (nivel_max a (- n 1)))  
+  )
+)
+
+
+(defun nivel_maxim(a)
+  (nivel_max a (adancime a))
+)
+
+(defun get_noduri(a)
+  (print (nivel_maxim a))
+  (nod_nivel (+ 1 (nivel_maxim a)) a)
+)
+

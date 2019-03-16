@@ -1,0 +1,94 @@
+1.
+a) Sa se insereze intr-o lista liniara un atom a dat dupa al 2-lea, al 4-lea,
+al 6-lea,....element.
+b) Definiti o functie care obtine dintr-o lista data lista tuturor atomilor
+care apar, pe orice nivel, dar in ordine inversa. De exemplu: (((A B) C)
+(D E)) --> (E D C B A)
+c) Definiti o functie care intoarce cel mai mare divizor comun al numerelor
+dintr-o lista neliniara.
+d) Sa se scrie o functie care determina numarul de aparitii ale unui atom dat
+intr-o lista neliniara.
+
+a)
+insertPar(l p e)
+l-lista in care inseram
+p-pozitia actuala
+e-elementul pe care il inseram
+(defun insertPar(l p e)
+    
+	(cond
+        
+		((null l) nil)
+        
+		((= 0 (mod p 2))(cons (car l) (cons e (insertPar (cdr l) (+ p 1) e))))
+        
+		(t(cons (car l) (insertPar (cdr l) (+ p 1) e)))))
+    
+
+
+(write (insertPar '(1 2 3 4 5 6) 1 10))
+
+b)
+(defun get_list(l)
+  (cond
+    ((atom l) (list l))
+    (t (mapcan 'get_list l))
+  )
+)
+
+(defun get_list1(l)
+  (cond 
+     ((null l) nil)
+     ((atom l) (list l))
+     ((atom (car l)) (cons (car l) (get_list1 (cdr l))))
+     (t (append (get_list1 (car l)) (get_list1 (cdr l))))
+  )
+)
+
+(defun inversare(l)
+    (cond
+        ((null l) nil)
+        (t(append (inversare (cdr l)) (list (car l))))))
+
+(write (inversare(get_list1 '((A B)(C D (E))))))
+
+c)
+(defun cmmdc(a b)
+    
+	(cond
+    
+		((= 0 (mod a b))b)
+    
+		(t(cmmdc b (mod a b)))))
+    
+
+
+(defun cmmdcLista(l c)
+    
+	(cond
+        
+		((null l) c)
+        
+		(t(cmmdcLista (cdr l) (cmmdc c (car l))))))
+        
+
+
+(write (cmmdcLista '(256 32 64 128) 0))
+
+
+d)
+(defun aparitie(l e f)
+    
+	(cond
+        
+		((null l) f)
+        
+		((listp (car l))(aparitie (cdr l) e (+ f (aparitie (car l) e 0))))
+        
+		((and (atom (car l)) (= (car l) e))(aparitie (cdr l) e (+ f 1)))
+        
+		(t(aparitie (cdr l) e f))))
+        
+
+
+(write (aparitie '(1 2 ((1) 2 3) 4 5 1) 1 0))

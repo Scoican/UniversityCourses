@@ -1,0 +1,36 @@
+(defun next(a)
+    
+	(cond
+        
+		((null a)nil)
+        
+		((and(numberp (car a))(= (mod (car a) 2) 0))(cons (+ (car a) 1) (next (cdr a)))) 
+        
+		((listp (car a))(cons (next (car a)) (next(cdr a))))
+        
+		(t(cons (car a) (next (cdr a))))))
+        
+
+
+
+(defun next2(a)
+    
+	(cond
+        
+		((null a)nil)
+        
+		((and(numberp a)(= (mod a 2) 0))(+ a 1)) 
+        
+		((listp a)(mapcar 'next2 a))
+        
+		(t a)))
+        
+
+
+(defun apel(l)
+    
+	(mapcar 'next2 l ))
+        
+
+
+(write (apel '(1 s 4(2 f(6)))))

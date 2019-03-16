@@ -1,0 +1,70 @@
+/**
+a) Definiti un predicat care determina produsul unui numar reprezentat
+cifra cu cifra intr-o lista cu o anumita cifra.
+De ex: [1 9 3 5 9 9] * 2 => [3 8 7 1 9 8]
+b) Se da o lista eterogena, formata din numere intregi si maximum 9
+liste de numere intregi. Sa se inlocuiasca fiecare sublista cu
+rezultatul inmultirii sublistei cu numarul de ordine al sublistei (prima
+sublista cu 1, a 2-a cu 2, etc.).
+De ex: [1, [2, 3], [4, 1, 4], 3, 6, [7, 5, 1, 3, 9], 5, [1, 1, 1], 7] =>
+[1, [2, 3], [8, 2, 8], 3, 6, [2, 2, 5, 4, 1, 7], 5, [4, 4, 4], 7]
+*/
+
+%a)
+%produsAux(L,E,B,R)
+%L-numar reprezentat drept lista
+%E-numarul cu care inmultim
+%B-bonus
+%R-rezultat
+
+produsAux([],_,B,[]):-
+	B=:=0,
+	!.
+produsAux([],_,B,[B]):-
+	B>0.
+produsAux([H|T],E,B,[H1|R]):-
+	H*E+B<10,
+	!,
+	H1 is H*E+B,
+	produsAux(T,E,0,R).
+produsAux([H|T],E,B,[H1|R]):-
+	H*E+B>=10,
+	!,
+	H1 is mod(H*E+B,10),
+	B1 is div(H*E+B,10),
+	produsAux(T,E,B1,R).
+
+%produs(L,E,R)
+%L-numarul reprezentat drept lista
+%E-numarul cu care inmultim
+%R-Rezultat
+
+produs(L,E,R):-inversare(L,R1),produsAux(R1,E,0,R2),inversare(R2,R).
+
+
+
+%b)
+%produsListaAux(L,P,R)
+%L-lista in care inmultim
+%P-numarul de ordine al listei
+%R-rezultat
+%(i,i,o)
+
+produsListaAux([],_,[]).
+produsListaAux([H|T],P,[R1|R]):-
+	isList(H),
+	!,
+	produs(H,P,R1),
+	P1 is P+1,
+	produsListaAux(T,P1,R).
+produsListaAux([H|T],P,[H|R]):-
+	not(isList(H)),
+	produsListaAux(T,P,R).
+
+%produsLista(L,R)
+%L-lista i ncare inmultim
+%R-rezultat
+%(i,o)
+
+produsLista([],[]).
+produsLista(L,R):-produsListaAux(L,1,R).

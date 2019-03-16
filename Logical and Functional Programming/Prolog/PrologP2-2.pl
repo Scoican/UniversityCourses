@@ -1,0 +1,43 @@
+%a)Sa se sorteze o lista cu pastrarea dublurilor. De ex: [4 2 6 2 3 4]
+%=> %[2 2 3 4 4 6]
+%b) Se da o lista eterogena, formata din numere intregi si liste de
+%numere.
+%Sa se sorteze fiecare sublista cu pastrarea dublurilor. De ex:
+%[1, 2, [4, 1, 4], 3, 6, [7, 10, 1, 3, 9], 5, [1, 1, 1], 7] => [1, 2,
+%[1, 4, 4], 3, 6, [1, 3, 7, 9, 10], 5, [1, 1, 1], 7].
+
+
+
+%a)
+%inserare(L,E,R)
+%L-lista in care inseram
+%E-elementul inserat
+%R-raspuns
+%(i,i,o)
+
+inserare([],E,[E]).
+inserare([H|T],E,[E,H|T]):-E=<H,!.
+inserare([H|T],E,[H|R]):-E>H,inserare(T,E,R).
+
+%sortare(L,C,R)
+%L-lista de sortat
+%C-Variabila auxiliara
+%R-Raspuns
+%(i,i,o)
+
+sortare([],C,C).
+sortare([H|T],C,R):-inserare(C,H,R1),
+	sortare(T,R1,R).
+
+%b)
+%sortareLista(L,R)
+%L-lista pe care o sortam
+%R-raspuns
+%(i,o).
+
+sortareLista([],[]).
+sortareLista([H|T],[R1|R]):-isList(H),!,
+	sortare(H,[],R1),
+	sortareLista(T,R).
+sortareLista([H|T],[H|R]):-not(isList(H)),
+	sortareLista(T,R).

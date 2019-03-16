@@ -1,0 +1,58 @@
+a) Sa se elimine elementul de pe pozitia a n-a a unei liste liniare.
+
+(defun elim(n l)
+  (cond 
+     ((> n (length l)) 'nu_exista_pozitia)  	;pozitie inexistenta in lista
+     ((equal n 1) (cdr l))			;eliminare elem de pe prima poz =>returnez
+     (t (cons (car l) (elim (- n 1) (cdr l))))  ;restul listei
+  )			
+)
+
+
+b) Definiti o functie care determina succesorul unui numar reprezentat cifra cu cifra intr-o lista. De ex: (1 9 3 5 9 9) --> (1 9 3 6 0 0)
+
+(defun urm(l) ;functie care calculeza urmatorul numar al listei inversate
+   (cond
+     ((and (equal 9 (car l)) (not (equal nil (cdr l)))) (cons 0 (urm (cdr l))))    
+     ((equal 9 (car l)) (cons 0 (cons 1 nil)))
+     (t (cons (+ 1 (car l)) (cdr l)))
+   )
+)
+
+(defun urmator(l)
+   (setf l (reverse l)) ;obtinem lista inversata
+   (setf l (urm l)) ;calculam numarul urmator
+   (reverse l) ;reinversam lista
+)
+
+
+c) Sa se construiasca multimea atomilor unei liste.Exemplu: (1 (2 (1 3 (2 4) 3) 1) (1 4)) ==> (1 2 3 4)
+
+(defun atomi(l)	  ;obtine lista tuturor atomilor unei liste de la orice nivel
+  (cond 
+     ((null l) l)
+     ((atom (car l)) (cons (car l) (atomi (cdr l))))
+     (t (append (atomi(car l)) (atomi (cdr l))))  ;grupeaza in lista la niv sup
+  )
+)
+
+(defun elimina(l)	;elimina din lista elem. care apar de mai multe ori
+  (cond			;transforma lista in multime
+    ((null l) l)
+    (t (cons (car l) (elimina (delete (car l) l)))) 
+  )
+)
+
+(defun apel(l)       ;transforma lista atomi in multime eliminand elem. care se repeta
+  (elimina (atomi l))
+)
+
+d) Sa se scrie o functie care testeaza daca o lista liniara este o multime.
+
+(defun mul(l)
+ (cond
+   ((null l) 'true)
+   ((member (car l) (cdr l)) 'false)  ;daca primul element al listei apare in restul listei
+   (t (mul (cdr l)))               ;atunci lista data nu e multime
+ )
+)

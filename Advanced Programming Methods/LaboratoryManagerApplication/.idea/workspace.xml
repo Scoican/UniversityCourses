@@ -1,0 +1,1400 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d32b1cda-8130-407a-90dd-21711a8a690c" name="Default Changelist" comment="" />
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/Tema3$Main.ic" NAME="Main Coverage Results" MODIFIED="1542131672923" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Tema3$TestInMemoryRepository.ic" NAME="TestInMemoryRepository Coverage Results" MODIFIED="1541508590543" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>Tests.RepositoryTests.*</FILTER>
+    </SUITE>
+  </component>
+  <component name="CoverageViewManager">
+    <option name="myElementSize" value="209" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-1581850204">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="44" />
+          <entry key="project.open.time.1" value="5" />
+          <entry key="project.open.time.13" value="1" />
+          <entry key="project.open.time.2" value="2" />
+          <entry key="project.open.time.27" value="1" />
+          <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.30" value="1" />
+          <entry key="project.open.time.32" value="1" />
+          <entry key="project.open.time.33" value="1" />
+          <entry key="project.open.time.34" value="3" />
+          <entry key="project.open.time.35" value="6" />
+          <entry key="project.open.time.37" value="2" />
+          <entry key="project.open.time.38" value="4" />
+          <entry key="project.open.time.39" value="3" />
+          <entry key="project.open.time.40" value="1" />
+          <entry key="project.open.time.41" value="2" />
+          <entry key="project.open.time.44" value="1" />
+          <entry key="project.open.time.46" value="1" />
+          <entry key="project.open.time.47" value="1" />
+          <entry key="project.open.time.51" value="1" />
+          <entry key="project.open.time.69" value="1" />
+          <entry key="project.open.time.7" value="3" />
+          <entry key="project.open.time.8" value="1" />
+          <entry key="project.open.time.9" value="1" />
+          <entry key="project.opened" value="44" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="CrudRepository" value="1" />
+          <entry key="InMemoryRepository" value="1" />
+          <entry key="JAVA/" value="2" />
+          <entry key="JAVA/Domain" value="2" />
+          <entry key="JAVA/GUI" value="1" />
+          <entry key="JAVA/Service" value="1" />
+          <entry key="JavaScript-modules-diagram/C:/Users/Scoican/IdeaProjects/Tema3" value="2" />
+          <entry key="JavaScript-modules-diagram/C:/Users/Scoican/IdeaProjects/Tema3/src" value="2" />
+          <entry key="JavaScript-modules-diagram/C:/Users/Scoican/IdeaProjects/Tema3/src/Domain;C:/Users/Scoican/IdeaProjects/Tema3/src/Repository/Mark;C:/Users/Scoican/IdeaProjects/Tema3/src/Repository/Project;C:/Users/Scoican/IdeaProjects/Tema3/src/Repository/Student;" value="2" />
+          <entry key="JavaScript-modules-diagram/C:/Users/Scoican/IdeaProjects/Tema3/src/Service;C:/Users/Scoican/IdeaProjects/Tema3/src/Repository;" value="1" />
+          <entry key="Mark" value="1" />
+          <entry key="StudentService" value="1" />
+          <entry key="UI" value="1" />
+          <entry key="class" value="6" />
+          <entry key="fxml" value="15" />
+          <entry key="in" value="1" />
+          <entry key="java" value="467" />
+          <entry key="txt" value="57" />
+          <entry key="vmoptions" value="1" />
+          <entry key="xml" value="33" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CLASS" value="6" />
+          <entry key="JAVA" value="467" />
+          <entry key="PLAIN_TEXT" value="59" />
+          <entry key="UML" value="18" />
+          <entry key="XML" value="48" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="dummy" value="4" />
+          <entry key="fxml" value="217" />
+          <entry key="java" value="32460" />
+          <entry key="txt" value="139" />
+          <entry key="xml" value="314" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="32460" />
+          <entry key="PLAIN_TEXT" value="143" />
+          <entry key="XML" value="531" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.vcs.git.usages" />
+      <usages-collector id="statistics.spring.boot.run.usages" />
+      <usages-collector id="statistics.js.language.service.starts" />
+      <usages-collector id="statistics.spring.boot.mvc.usages" />
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../LaboratoryManagerApplication/src/Service/StudentService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1696">
+              <caret line="118" selection-start-line="118" selection-end-line="118" />
+              <folding>
+                <element signature="e#3861#3862#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../LaboratoryManagerApplication/src/UserInterface/UI.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="FxmlFile" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>for</find>
+      <find>for(</find>
+      <find>s2</find>
+    </findStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/Tests/RepositoryTests/TestXMLRepository.java" />
+        <option value="$PROJECT_DIR$/src/StudentView.java" />
+        <option value="$PROJECT_DIR$/src/GUI/AutoCompleteTextField.java" />
+        <option value="$PROJECT_DIR$/src/Data/Observer.java" />
+        <option value="$PROJECT_DIR$/src/ChangeEventType.java" />
+        <option value="$PROJECT_DIR$/src/StudentEventType.java" />
+        <option value="$PROJECT_DIR$/src/Observer.java" />
+        <option value="$PROJECT_DIR$/src/Event.java" />
+        <option value="$PROJECT_DIR$/src/Data/Students.xml" />
+        <option value="$PROJECT_DIR$/src/Repository/AbstractRepositories/XMLRepository.java" />
+        <option value="$PROJECT_DIR$/src/Utils/ChangeEventyType.java" />
+        <option value="$PROJECT_DIR$/src/Utils/Event.java" />
+        <option value="$PROJECT_DIR$/src/Utils/Observer.java" />
+        <option value="$PROJECT_DIR$/src/Utils/Observable.java" />
+        <option value="$PROJECT_DIR$/src/MainController.java" />
+        <option value="$PROJECT_DIR$/src/MainGUI.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/company/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/company/GUI/StudentView.java" />
+        <option value="$PROJECT_DIR$/src/GUI/StudentView.java" />
+        <option value="$PROJECT_DIR$/src/GUI/MainGUI.java" />
+        <option value="$PROJECT_DIR$/src/resources/main.fxml" />
+        <option value="$PROJECT_DIR$/src/Utils/MarkChangeEvenet.java" />
+        <option value="$PROJECT_DIR$/src/Utils/ChangeEvent.java" />
+        <option value="$PROJECT_DIR$/src/Utils/StudentChangeEvent.java" />
+        <option value="$PROJECT_DIR$/src/Service/Service.java" />
+        <option value="$PROJECT_DIR$/src/Utils/MarkChangeEvent.java" />
+        <option value="$PROJECT_DIR$/src/Utils/ProjectChangeEvent.java" />
+        <option value="$PROJECT_DIR$/src/Service/ProjectService.java" />
+        <option value="$PROJECT_DIR$/src/UserInterface/UI.java" />
+        <option value="$PROJECT_DIR$/src/GUI/StudentController.java" />
+        <option value="$PROJECT_DIR$/src/GUI/FXMLGradeController.java" />
+        <option value="$PROJECT_DIR$/src/Domain/GradeDTO.java" />
+        <option value="$PROJECT_DIR$/src/GUI/AutoCompleteComboBoxListener.java" />
+        <option value="$PROJECT_DIR$/src/MarkView.fxml" />
+        <option value="$PROJECT_DIR$/src/Service/StudentService.java" />
+        <option value="$PROJECT_DIR$/src/Service/MarkService.java" />
+        <option value="$PROJECT_DIR$/src/Data/Marks.xml" />
+        <option value="$PROJECT_DIR$/src/Test.fxml" />
+        <option value="$PROJECT_DIR$/src/ProjectView.fxml" />
+        <option value="$PROJECT_DIR$/src/main.fxml" />
+        <option value="$PROJECT_DIR$/src/GUI/MainController.java" />
+        <option value="$PROJECT_DIR$/src/GUI/MainView.java" />
+        <option value="$PROJECT_DIR$/src/GUI/FXMLProjectController.java" />
+        <option value="$PROJECT_DIR$/src/MarkManagment.fxml" />
+        <option value="$PROJECT_DIR$/src/GUI/FXMLStudentController.java" />
+        <option value="$PROJECT_DIR$/src/StudentView.fxml" />
+        <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/Domain/MarkDTO.java" />
+        <option value="$PROJECT_DIR$/src/GUI/FXMLMarkController.java" />
+        <option value="$PROJECT_DIR$/src/Domain/Mark.java" />
+        <option value="$PROJECT_DIR$/src/Repository/AbstractRepositories/FileRepository.java" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand />
+      <select />
+    </treeState>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="950" />
+    <option name="width" value="980" />
+    <option name="height" value="1040" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="Scope" currentSubView="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope" proportions="" version="1">
+      <flattenPackages ProjectPane="false" />
+      <compactDirectories Scope="true" />
+      <abbreviatePackageNames ProjectPane="true" />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Tema3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tema3" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope">
+        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
+          <expand>
+            <path>
+              <item name="Tema3" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="Tema3" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+            </path>
+            <path>
+              <item name="Tema3" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="Tema3" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552747108612" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/Tema 6-Flux de cost minim/.project" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.pathVariables" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="GUI" />
+      <recent name="Domain" />
+      <recent name="Utils" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Scoican\IdeaProjects\Tema3\src" />
+      <recent name="C:\Users\Scoican\IdeaProjects\Tema3\src\resources" />
+      <recent name="C:\Users\Scoican\IdeaProjects\Tema3\src\Data" />
+      <recent name="C:\Users\Scoican\IdeaProjects\Tema3\src\Tests\TestingData" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <envs>
+        <env name="" value="" />
+        <env name="set PATH_TO_FX" value="D:\JavaFX\javafx-sdk-11.0.1\lib" />
+      </envs>
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Tema3" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All Features in: src" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="3" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src" />
+      <option name="MAIN_CLASS_NAME" value="cucumber.api.cli.Main" />
+      <module name="Tema3" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm3SMFormatter" />
+      <option name="SUGGESTED_NAME" value="All Features in: src" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cucumber.api.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestXMLRepository" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Tema3" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Tests.RepositoryTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Tests.RepositoryTests" />
+      <option name="MAIN_CLASS_NAME" value="Tests.RepositoryTests.TestXMLRepository" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestXMLRepository.save" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Tema3" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Tests.RepositoryTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Tests.RepositoryTests" />
+      <option name="MAIN_CLASS_NAME" value="Tests.RepositoryTests.TestXMLRepository" />
+      <option name="METHOD_NAME" value="save" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tests in Tema3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Tema3" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Tests" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="JUnit.Tests in Tema3" />
+      <item itemvalue="JUnit.TestXMLRepository" />
+      <item itemvalue="JUnit.TestXMLRepository.save" />
+      <item itemvalue="Cucumber java.All Features in: src" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Cucumber java.All Features in: src" />
+        <item itemvalue="JUnit.Tests in Tema3" />
+        <item itemvalue="JUnit.TestXMLRepository.save" />
+        <item itemvalue="JUnit.TestXMLRepository" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d32b1cda-8130-407a-90dd-21711a8a690c" name="Default Changelist" comment="" />
+      <created>1540482375826</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1540482375826</updated>
+      <workItem from="1540482379306" duration="1415000" />
+      <workItem from="1540999485885" duration="7149000" />
+      <workItem from="1541011514656" duration="1188000" />
+      <workItem from="1541052964745" duration="6264000" />
+      <workItem from="1541107743143" duration="483000" />
+      <workItem from="1541167270015" duration="598000" />
+      <workItem from="1541432350279" duration="10984000" />
+      <workItem from="1541504664590" duration="15119000" />
+      <workItem from="1541940368409" duration="12491000" />
+      <workItem from="1542036618502" duration="11337000" />
+      <workItem from="1542109367317" duration="51000" />
+      <workItem from="1542124032601" duration="7070000" />
+      <workItem from="1542176852702" duration="8317000" />
+      <workItem from="1542220217594" duration="3025000" />
+      <workItem from="1542223356210" duration="1379000" />
+      <workItem from="1542298644668" duration="3911000" />
+      <workItem from="1542354213147" duration="120000" />
+      <workItem from="1542374676320" duration="971000" />
+      <workItem from="1542377421057" duration="1900000" />
+      <workItem from="1542564053617" duration="4686000" />
+      <workItem from="1542634219389" duration="3095000" />
+      <workItem from="1542639217767" duration="237000" />
+      <workItem from="1542644739198" duration="738000" />
+      <workItem from="1542804427678" duration="484000" />
+      <workItem from="1542981753063" duration="851000" />
+      <workItem from="1543844114360" duration="2112000" />
+      <workItem from="1543909240955" duration="13677000" />
+      <workItem from="1544442296152" duration="13951000" />
+      <workItem from="1544509006350" duration="4523000" />
+      <workItem from="1544526804819" duration="876000" />
+      <workItem from="1544549013328" duration="10395000" />
+      <workItem from="1544595970827" duration="18397000" />
+      <workItem from="1544786182348" duration="8000" />
+      <workItem from="1544791951586" duration="679000" />
+      <workItem from="1546444243488" duration="1299000" />
+      <workItem from="1546516627521" duration="2647000" />
+      <workItem from="1548535528176" duration="540000" />
+      <workItem from="1551250093162" duration="29000" />
+      <workItem from="1551632598993" duration="3382000" />
+      <workItem from="1551721353717" duration="6100000" />
+      <workItem from="1551853625675" duration="220000" />
+      <workItem from="1551907638809" duration="46000" />
+      <workItem from="1551971461111" duration="169000" />
+      <workItem from="1552747054137" duration="186000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="Tests_in_Tema3 - 2018.11.19 at 15h 52m 41s.xml">
+      <configuration name="Tests in Tema3" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestXMLRepository - 2018.11.19 at 15h 55m 08s.xml">
+      <configuration name="TestXMLRepository" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestXMLRepository_save - 2018.11.19 at 15h 57m 28s.xml">
+      <configuration name="TestXMLRepository.save" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Tests_in_Tema3 - 2018.11.19 at 15h 57m 36s.xml">
+      <configuration name="Tests in Tema3" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Tests_in_Tema3 - 2018.11.19 at 15h 58m 13s.xml">
+      <configuration name="Tests in Tema3" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Tests_in_Tema3 - 2018.11.23 at 16h 03m 59s.xml">
+      <configuration name="Tests in Tema3" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Tests_in_Tema3 - 2018.11.23 at 16h 05m 07s.xml">
+      <configuration name="Tests in Tema3" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Tests_in_Tema3 - 2018.11.23 at 16h 20m 37s.xml">
+      <configuration name="Tests in Tema3" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_Features_in__src - 2018.12.11 at 13h 15m 32s.xml">
+      <configuration name="All Features in: src" configurationId="CucumberJavaRunConfigurationType" />
+    </history-entry>
+    <history-entry file="All_Features_in__src - 2018.12.11 at 19h 14m 19s.xml">
+      <configuration name="All Features in: src" configurationId="CucumberJavaRunConfigurationType" />
+    </history-entry>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="183099000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" x="270" y="262" width="228" height="508" id="Project" order="0" visible="true" weight="0.20872483" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32907802" />
+      <window_info anchor="bottom" x="281" y="271" width="881" height="521" id="Run" order="2" sideWeight="0.49932885" type="FLOATING" weight="0.27943262" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.40425533" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32907802" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32907802" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50067115" side_tool="true" weight="0.32624114" />
+      <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32907802" />
+      <window_info anchor="bottom" id="Dependency Viewer" order="12" weight="0.32867134" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Database" order="7" />
+      <window_info active="true" anchor="right" id="Coverage" order="8" side_tool="true" visible="true" weight="0.3295302" />
+      <window_info anchor="right" id="Maven Projects" order="9" weight="0.3295302" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../LaboratoryManagerApplication/src/Service/Service.java</url>
+          <line>90</line>
+          <properties />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_152/javafx-src.zip!/javafx/scene/Scene.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="3383" selection-start-line="3383" selection-end-line="3383" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_152/javafx-src.zip!/javafx/event/Event.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="97" selection-start-line="97" selection-end-line="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_152/javafx-src.zip!/javafx/animation/Timeline.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="176" selection-start-line="176" selection-end-line="176" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_152/javafx-src.zip!/javafx/animation/KeyFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="103" selection-start-line="103" selection-end-line="103" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_152/javafx-src.zip!/javafx/beans/property/DoublePropertyBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="148" selection-start-line="148" selection-end-line="148" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../LaboratoryManagerApplication/src/Service/Service.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="348" column="4" lean-forward="true" selection-start-line="348" selection-start-column="4" selection-end-line="361" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../LaboratoryManagerApplication/src/Service/Elisa.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../LaboratoryManagerApplication/src/Data/Marks.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="76" selection-start-column="76" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../LaboratoryManagerApplication/src/Data/Students.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="24" lean-forward="true" selection-start-column="24" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MarkView.fxml" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_152/javafx-src.zip!/javafx/beans/property/ObjectPropertyBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="131" selection-start-line="131" selection-end-line="131" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_152/javafx-src.zip!/javafx/scene/control/ComboBoxBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="150" column="31" selection-start-line="150" selection-start-column="31" selection-end-line="150" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../LaboratoryManagerApplication/src/Service/MarkService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-884">
+          <caret line="50" selection-start-line="50" selection-end-line="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Test.fxml" />
+    <entry file="file://$PROJECT_DIR$/../LaboratoryManagerApplication/src/Service/ProjectService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="541">
+          <caret line="97" column="21" lean-forward="true" selection-start-line="97" selection-start-column="21" selection-end-line="97" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../LaboratoryManagerApplication/src/ProjectView.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-440">
+          <caret line="17" column="251" selection-start-line="17" selection-start-column="251" selection-end-line="17" selection-end-column="251" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../LaboratoryManagerApplication/src/main.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="25" column="68" selection-start-line="25" selection-start-column="68" selection-end-line="25" selection-end-column="68" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/MainView.java" />
+    <entry file="file://$PROJECT_DIR$/../LaboratoryManagerApplication/src/StudentView.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="70" column="164" selection-start-line="70" selection-start-column="164" selection-end-line="70" selection-end-column="164" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../LaboratoryManagerApplication/src/GUI/FXMLStudentController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="57" column="31" selection-start-line="57" selection-start-column="31" selection-end-line="57" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../LaboratoryManagerApplication/src/GUI/FXMLProjectController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="521">
+          <caret line="110" column="77" selection-start-line="110" selection-start-column="77" selection-end-line="110" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../LaboratoryManagerApplication/src/GUI/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="59" column="36" selection-start-line="59" selection-start-column="36" selection-end-line="59" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../LaboratoryManagerApplication/src/MarkManagment.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="108" column="104" selection-start-line="108" selection-start-column="104" selection-end-line="108" selection-end-column="104" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../LaboratoryManagerApplication/src/Domain/MarkDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="55" column="25" selection-start-line="55" selection-start-column="25" selection-end-line="55" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../LaboratoryManagerApplication/src/GUI/FXMLMarkController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="151" column="52" selection-start-line="151" selection-start-column="52" selection-end-line="151" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../LaboratoryManagerApplication/src/Domain/HasID.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="6" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../LaboratoryManagerApplication/src/Domain/Mark.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="42" column="25" selection-start-line="42" selection-start-column="25" selection-end-line="42" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../LaboratoryManagerApplication/src/Validator/MarkException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../LaboratoryManagerApplication/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="21" column="6" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../LaboratoryManagerApplication/src/Domain/Student.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../LaboratoryManagerApplication/src/Domain/Project.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JavaScript-modules-diagram/C:/Users/Scoican/IdeaProjects/Tema3">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JavaScript-modules-diagram</ID>
+          <OriginalElement>$PROJECT_DIR$</OriginalElement>
+          <nodes />
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="240.0" y="240.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>All</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>Details</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JavaScript-modules-diagram/C:/Users/Scoican/IdeaProjects/Tema3/src">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JavaScript-modules-diagram</ID>
+          <OriginalElement>$PROJECT_DIR$/src</OriginalElement>
+          <nodes />
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="598.0" y="332.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>All</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>Details</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../LaboratoryManagerApplication/src/Repository/Mark/MarkFileRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="28" column="81" selection-start-line="28" selection-start-column="81" selection-end-line="28" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../LaboratoryManagerApplication/src/Repository/Project/ProjectFileRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../LaboratoryManagerApplication/src/Repository/AbstractRepositories/FileRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-963">
+          <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/Repository.AbstractRepositories.InMemoryRepository">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>Repository.AbstractRepositories.InMemoryRepository</OriginalElement>
+          <nodes>
+            <node x="" y="">Domain.HasID</node>
+            <node x="" y="">Repository.AbstractRepositories.CrudRepository</node>
+            <node x="" y="">Repository.AbstractRepositories.InMemoryRepository</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="115.0" y="54.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement />
+          <nodes>
+            <node x="450.0" y="622.0">com</node>
+            <node x="0.0" y="548.0">netscape</node>
+            <node x="109.27976190476193" y="247.0">Repository.Student.StudentFileRepository</node>
+            <node x="285.0" y="696.0">sun</node>
+            <node x="151.0" y="622.0">Tests</node>
+            <node x="440.0357142857143" y="168.0">Repository.AbstractRepositories.XMLRepository</node>
+            <node x="0.0" y="474.0">groovyjarjarasm</node>
+            <node x="597.0" y="622.0">java</node>
+            <node x="0.0" y="622.0">javax</node>
+            <node x="0.0" y="696.0">Domain.MarkDTO</node>
+            <node x="0.0" y="400.0">GUI</node>
+            <node x="488.0" y="548.0">javafx</node>
+            <node x="429.2797619047619" y="247.0">Repository.Mark</node>
+            <node x="331.0" y="548.0">oracle</node>
+            <node x="259.1190476190476" y="168.0">Repository.AbstractRepositories.FileRepository</node>
+            <node x="0.0" y="89.0">Domain.Project</node>
+            <node x="143.0" y="696.0">org</node>
+            <node x="198.0" y="89.0">Domain.Student</node>
+            <node x="118.0" y="400.0">Service</node>
+            <node x="330.6190476190476" y="89.0">Repository.AbstractRepositories.InMemoryRepository</node>
+            <node x="301.0" y="622.0">Data</node>
+            <node x="209.0" y="474.0">UserInterface</node>
+            <node x="104.0" y="89.0">Domain.Mark</node>
+            <node x="402.0" y="474.0">META-INF</node>
+            <node x="426.0" y="696.0">jdk</node>
+            <node x="230.0297619047619" y="0.0">Domain.HasID</node>
+            <node x="293.2797619047619" y="247.0">Repository.Project</node>
+            <node x="171.0" y="548.0">groovy</node>
+            <node x="61.5" y="321.0">Utils</node>
+            <node x="407.5" y="0.0">Repository.AbstractRepositories.CrudRepository</node>
+            <node x="279.0" y="321.0">groovyjarjarcommonscli</node>
+            <node x="531.0" y="321.0">groovyjarjarantlr</node>
+            <node x="566.0" y="696.0">Main</node>
+            <node x="579.0" y="474.0">Validator</node>
+            <node x="554.2797619047619" y="247.0">Repository.Student.StudentXMLRepository</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="Repository.Mark" target="Repository.AbstractRepositories.FileRepository">
+              <point x="-26.25" y="-14.5" />
+              <point x="455.5297619047619" y="217.0" />
+              <point x="361.6190476190476" y="217.0" />
+              <point x="41.0" y="14.5" />
+            </edge>
+            <edge source="Repository.Project" target="Repository.AbstractRepositories.FileRepository">
+              <point x="-29.0" y="-14.5" />
+              <point x="322.2797619047619" y="227.0" />
+              <point x="320.6190476190476" y="227.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="Domain.Student" target="Domain.HasID">
+              <point x="-2.8421709430404007E-14" y="-14.5" />
+              <point x="241.99999999999997" y="69.0" />
+              <point x="263.3630952380952" y="69.0" />
+              <point x="-6.666666666666686" y="14.5" />
+            </edge>
+            <edge source="Repository.AbstractRepositories.FileRepository" target="Domain.HasID">
+              <point x="-30.75" y="-14.5" />
+              <point x="289.8690476190476" y="143.0" />
+              <point x="296.5" y="143.0" />
+              <point x="296.5" y="69.0" />
+              <point x="276.69642857142856" y="69.0" />
+              <point x="6.666666666666686" y="14.5" />
+            </edge>
+            <edge source="Repository.AbstractRepositories.InMemoryRepository" target="Repository.AbstractRepositories.CrudRepository">
+              <point x="39.5" y="-14.5" />
+              <point x="449.1190476190476" y="69.0" />
+              <point x="472.0" y="69.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="Domain.Mark" target="Domain.HasID">
+              <point x="0.0" y="-14.5" />
+              <point x="141.0" y="59.0" />
+              <point x="250.0297619047619" y="59.0" />
+              <point x="-20.0" y="14.5" />
+            </edge>
+            <edge source="Repository.Student.StudentXMLRepository" target="Repository.AbstractRepositories.XMLRepository">
+              <point x="0.0" y="-14.5" />
+              <point x="638.2797619047619" y="227.0" />
+              <point x="546.702380952381" y="227.0" />
+              <point x="42.66666666666663" y="14.5" />
+            </edge>
+            <edge source="Service" target="Utils">
+              <point x="0.0" y="-14.5" />
+              <point x="176.0" y="375.0" />
+              <point x="138.0" y="375.0" />
+              <point x="25.5" y="14.5" />
+            </edge>
+            <edge source="Repository.Mark" target="Repository.AbstractRepositories.XMLRepository">
+              <point x="26.25" y="-14.5" />
+              <point x="508.0297619047619" y="227.0" />
+              <point x="504.0357142857143" y="227.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="GUI" target="Utils">
+              <point x="0.0" y="-14.5" />
+              <point x="49.0" y="375.0" />
+              <point x="87.0" y="375.0" />
+              <point x="-25.5" y="14.5" />
+            </edge>
+            <edge source="Repository.AbstractRepositories.InMemoryRepository" target="Domain.HasID">
+              <point x="-39.5" y="-14.5" />
+              <point x="370.1190476190476" y="59.0" />
+              <point x="290.0297619047619" y="59.0" />
+              <point x="20.0" y="14.5" />
+            </edge>
+            <edge source="Repository.AbstractRepositories.XMLRepository" target="Repository.AbstractRepositories.InMemoryRepository">
+              <point x="-32.0" y="-14.5" />
+              <point x="472.0357142857143" y="143.0" />
+              <point x="449.1190476190476" y="143.0" />
+              <point x="39.5" y="14.5" />
+            </edge>
+            <edge source="Repository.Project" target="Repository.AbstractRepositories.XMLRepository">
+              <point x="29.0" y="-14.5" />
+              <point x="380.2797619047619" y="227.0" />
+              <point x="461.3690476190476" y="227.0" />
+              <point x="-42.666666666666686" y="14.5" />
+            </edge>
+            <edge source="Repository.AbstractRepositories.FileRepository" target="Repository.AbstractRepositories.InMemoryRepository">
+              <point x="30.75" y="-14.5" />
+              <point x="351.3690476190476" y="143.0" />
+              <point x="370.1190476190476" y="143.0" />
+              <point x="-39.5" y="14.5" />
+            </edge>
+            <edge source="Repository.Student.StudentFileRepository" target="Repository.AbstractRepositories.FileRepository">
+              <point x="0.0" y="-14.5" />
+              <point x="191.27976190476193" y="227.0" />
+              <point x="279.6190476190476" y="227.0" />
+              <point x="-41.0" y="14.5" />
+            </edge>
+            <edge source="Domain.Project" target="Domain.HasID">
+              <point x="0.0" y="-14.5" />
+              <point x="42.0" y="49.0" />
+              <point x="236.69642857142856" y="49.0" />
+              <point x="-33.33333333333334" y="14.5" />
+            </edge>
+            <edge source="Repository.AbstractRepositories.XMLRepository" target="Domain.HasID">
+              <point x="32.0" y="-14.5" />
+              <point x="536.0357142857142" y="143.0" />
+              <point x="529.9166666666667" y="143.0" />
+              <point x="529.9166666666667" y="49.0" />
+              <point x="303.3630952380952" y="49.0" />
+              <point x="33.333333333333314" y="14.5" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.0" x="-35.0" y="184.0" />
+          <SelectedNodes>
+            <node>com</node>
+          </SelectedNodes>
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../LaboratoryManagerApplication/src/Repository/AbstractRepositories/InMemoryRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1190">
+          <caret line="77" column="7" lean-forward="true" selection-start-line="77" selection-start-column="7" selection-end-line="77" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JavaScript-modules-diagram/C:/Users/Scoican/IdeaProjects/Tema3/src/Domain;C:/Users/Scoican/IdeaProjects/Tema3/src/Repository/Mark;C:/Users/Scoican/IdeaProjects/Tema3/src/Repository/Project;C:/Users/Scoican/IdeaProjects/Tema3/src/Repository/Student;">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JavaScript-modules-diagram</ID>
+          <OriginalElement>$PROJECT_DIR$/src/Domain;C:/Users/Scoican/IdeaProjects/Tema3/src/Repository/Mark;C:/Users/Scoican/IdeaProjects/Tema3/src/Repository/Project;C:/Users/Scoican/IdeaProjects/Tema3/src/Repository/Student;</OriginalElement>
+          <nodes />
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="240.0" y="240.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>All</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>Details</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/Domain">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>Domain</OriginalElement>
+          <nodes>
+            <node x="" y="">Domain.HasID</node>
+            <node x="" y="">Domain.Project</node>
+            <node x="" y="">Domain.MarkDTO</node>
+            <node x="" y="">Domain.Student</node>
+            <node x="" y="">Domain.Mark</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="143.0" y="91.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/Repository.Mark">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>Repository.Mark</OriginalElement>
+          <nodes>
+            <node x="" y="">Repository.Mark.MarkFileRepository</node>
+            <node x="" y="">Repository.AbstractRepositories.FileRepository</node>
+            <node x="" y="">Repository.Mark.MarkXMLRepository</node>
+            <node x="" y="">Repository.AbstractRepositories.CrudRepository</node>
+            <node x="" y="">Repository.Student.StudentFileRepository</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="272.0" y="266.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Methods</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../LaboratoryManagerApplication/src/Repository/AbstractRepositories/CrudRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-238">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JavaScript-modules-diagram/C:/Users/Scoican/IdeaProjects/Tema3/src/Service;C:/Users/Scoican/IdeaProjects/Tema3/src/Repository;">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JavaScript-modules-diagram</ID>
+          <OriginalElement>$PROJECT_DIR$/src/Service;C:/Users/Scoican/IdeaProjects/Tema3/src/Repository;</OriginalElement>
+          <nodes />
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="598.0" y="332.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>All</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>Details</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/Service">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>Service</OriginalElement>
+          <nodes>
+            <node x="425.0" y="0.0">Service.MarkService</node>
+            <node x="425.0" y="647.0">Service.ProjectService</node>
+            <node x="-422.0" y="407.0">Service.StudentService</node>
+            <node x="0.0" y="0.0">Service.Service</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="-236.0" y="59.0" />
+          <SelectedNodes>
+            <node>Service.StudentService</node>
+          </SelectedNodes>
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Methods</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/Repository.AbstractRepositories.CrudRepository">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>Repository.AbstractRepositories.CrudRepository</OriginalElement>
+          <nodes>
+            <node x="70.75" y="158.0">Service.StudentService</node>
+            <node x="0.0" y="79.0">Repository.AbstractRepositories.CrudRepository</node>
+            <node x="165.0" y="0.0">Utils.Event</node>
+            <node x="149.0" y="79.0">Utils.Observable</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="Utils.Observable" target="Utils.Event">
+              <point x="0.0" y="-14.5" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="Service.StudentService" target="Utils.Observable">
+              <point x="31.5" y="-14.5" />
+              <point x="165.25" y="133.0" />
+              <point x="203.0" y="133.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="Service.StudentService" target="Repository.AbstractRepositories.CrudRepository">
+              <point x="-31.5" y="-14.5" />
+              <point x="102.25" y="133.0" />
+              <point x="64.5" y="133.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.0" x="-207.0" y="2.0" />
+          <SelectedNodes>
+            <node>Repository.AbstractRepositories.CrudRepository</node>
+          </SelectedNodes>
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/Service.StudentService">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>Service.StudentService</OriginalElement>
+          <nodes>
+            <node x="8.675000000000068" y="349.0">Service.StudentService</node>
+            <node x="427.1291666666667" y="0.0">Domain.HasID</node>
+            <node x="380.3083333333334" y="290.0">Repository.AbstractRepositories.FileRepository</node>
+            <node x="112.00000000000003" y="0.0">Repository.AbstractRepositories.CrudRepository</node>
+            <node x="154.75000000000003" y="79.0">Domain.Student</node>
+            <node x="331.8083333333334" y="112.0">Repository.AbstractRepositories.InMemoryRepository</node>
+            <node x="16.00000000000003" y="0.0">Utils.Event</node>
+            <node x="0.0" y="134.0">Utils.Observable</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="Domain.Student" target="Domain.HasID">
+              <point x="0.0" y="-69.5" />
+              <point x="225.75000000000003" y="59.0" />
+              <point x="440.46250000000003" y="59.0" />
+              <point x="-26.66666666666667" y="14.5" />
+            </edge>
+            <edge source="Utils.Observable" target="Utils.Event">
+              <point x="0.0" y="-14.5" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="Repository.AbstractRepositories.InMemoryRepository" target="Domain.HasID">
+              <point x="47.5" y="-36.5" />
+              <point x="474.3083333333334" y="59.0" />
+              <point x="467.1291666666667" y="59.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="Service.StudentService" target="Utils.Observable">
+              <point x="-131.20000000000005" y="-47.5" />
+              <point x="41.47500000000002" y="243.0" />
+              <point x="54.0" y="243.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="Repository.AbstractRepositories.FileRepository" target="Repository.AbstractRepositories.InMemoryRepository">
+              <point x="-50.33333333333334" y="-25.5" />
+              <point x="405.475" y="243.0" />
+              <point x="379.3083333333334" y="243.0" />
+              <point x="-47.5" y="36.5" />
+            </edge>
+            <edge source="Repository.AbstractRepositories.FileRepository" target="Domain.HasID">
+              <point x="50.33333333333334" y="-25.5" />
+              <point x="506.14166666666677" y="243.0" />
+              <point x="532.3083333333334" y="243.0" />
+              <point x="532.3083333333334" y="59.0" />
+              <point x="493.79583333333335" y="59.0" />
+              <point x="26.666666666666657" y="14.5" />
+            </edge>
+            <edge source="Repository.AbstractRepositories.InMemoryRepository" target="Repository.AbstractRepositories.CrudRepository">
+              <point x="-47.5" y="-36.5" />
+              <point x="379.3083333333334" y="49.0" />
+              <point x="208.75000000000003" y="49.0" />
+              <point x="32.25" y="14.5" />
+            </edge>
+            <edge source="Service.StudentService" target="Repository.AbstractRepositories.CrudRepository">
+              <point x="-65.60000000000008" y="-47.5" />
+              <point x="107.07499999999999" y="243.0" />
+              <point x="139.48666666666668" y="243.0" />
+              <point x="139.48666666666668" y="59.0" />
+              <point x="144.25000000000003" y="59.0" />
+              <point x="-32.25" y="14.5" />
+            </edge>
+            <edge source="Service.StudentService" target="Domain.Student">
+              <point x="65.59999999999997" y="-47.5" />
+              <point x="238.27500000000003" y="243.0" />
+              <point x="225.75000000000003" y="243.0" />
+              <point x="0.0" y="69.5" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.0" x="-206.0" y="118.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Fields</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/UserInterface.UI">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>UserInterface.UI</OriginalElement>
+          <nodes>
+            <node x="0.0" y="0.0">UserInterface.UI</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="-328.0" y="-77.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Methods</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/GUI">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>GUI</OriginalElement>
+          <nodes>
+            <node x="34.49999999999997" y="79.0">GUI.FXMLMarkController</node>
+            <node x="400.5" y="79.0">GUI.FXMLProjectController</node>
+            <node x="210.49999999999997" y="79.0">GUI.FXMLStudentController</node>
+            <node x="0.0" y="232.0">GUI.StudentController</node>
+            <node x="0.0" y="0.0">GUI.AutoCompleteComboBoxListener</node>
+            <node x="231.99999999999997" y="158.0">GUI.MainController</node>
+            <node x="13.5" y="311.0">GUI.StudentView</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="GUI.MainController" target="GUI.FXMLMarkController">
+              <point x="-42.33333333333334" y="-14.5" />
+              <point x="253.16666666666663" y="133.0" />
+              <point x="112.49999999999997" y="133.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="GUI.StudentView" target="GUI.StudentController">
+              <point x="-14.25" y="-14.5" />
+              <point x="56.25" y="286.0" />
+              <point x="52.875" y="286.0" />
+              <point x="-17.625" y="14.5" />
+            </edge>
+            <edge source="GUI.MainController" target="GUI.FXMLProjectController">
+              <point x="42.333333333333314" y="-14.5" />
+              <point x="337.83333333333326" y="133.0" />
+              <point x="483.5" y="133.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="GUI.MainController" target="GUI.FXMLStudentController">
+              <point x="0.0" y="-14.5" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="GUI.StudentController" target="GUI.StudentView">
+              <point x="17.625" y="14.5" />
+              <point x="88.125" y="286.0" />
+              <point x="84.75" y="286.0" />
+              <point x="14.25" y="-14.5" />
+            </edge>
+            <edge source="GUI.FXMLMarkController" target="GUI.AutoCompleteComboBoxListener">
+              <point x="0.0" y="-14.5" />
+              <point x="0.0" y="14.5" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.0" x="171.0" y="163.0" />
+          <SelectedNodes>
+            <node>GUI.FXMLMarkController</node>
+          </SelectedNodes>
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../LaboratoryManagerApplication/src/Service/StudentService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1696">
+          <caret line="118" selection-start-line="118" selection-end-line="118" />
+          <folding>
+            <element signature="e#3861#3862#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../LaboratoryManagerApplication/src/UserInterface/UI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>Tema3</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>lib</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

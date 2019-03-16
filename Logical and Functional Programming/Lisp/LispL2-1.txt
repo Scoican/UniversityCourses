@@ -1,0 +1,9 @@
+1. Se da un arbore de tipul (1). Sa se afiseze calea de la radacina pana la un
+ nod x dat.
+(defun adancimeNod(a k n)
+    (cond
+        ((null a)nil)
+        ((eq (car a) n)k)
+        (t (mapcan #'(lambda (l) (adancimeNod l (+ k 1) n)) (cdr a)))))
+        
+(write (adancimeNod '(A (B) (C (D) (E))) 0 'D))

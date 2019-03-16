@@ -1,0 +1,45 @@
+%a.Sa se scrie un predicat care intoarce reuniunea a doua multimi.
+%b.Sa se scrie un predicat care, primind o lista, intoarce multimea
+%tuturor perechilor din lista. De ex, cu [a, b, c, d] va produce
+%[[a, b], [a, c], [a, d], [b, c], [b, d], [c, d]].
+
+
+%elimina(L,E,R)
+%L-lista din care se elimina
+%E-elementul de eleminat
+%R-Rezultatul
+%(i,i,o)
+
+elimina([],_,[]).
+elimina([E|T],E,R):-!,elimina(T,E,R).
+elimina([H|T],E,[H|R1]):-elimina(T,E,R1).
+
+%reuniune(L1,L2,R)
+%L1,L2- multimi
+%R-reuniunea
+%(i,i,o)
+
+reuniune([],L2,L2).
+reuniune([H|T],L2,[H|R]):-elimina(L2,H,R1),reuniune(T,R1,R).
+
+
+%perechi(L,E,R)
+%L-lista de elemente
+%E-elementul pentru pereche
+%R-rezultat
+%(i,i,o)
+
+perechi([],_,[]).
+perechi([H|T],E,[[E,H]|R]):-perechi(T,E,R).
+
+%multimePerechi(L,R)
+%L-lista de lemente
+%R-Rezultat
+%(i,o).
+
+multimePerechi([],[]).
+multimePerechi([H|T],[R1|R]):-perechi(T,H,R1),multimePerechi(T,R).
+
+
+
+

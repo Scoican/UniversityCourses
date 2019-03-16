@@ -1,0 +1,37 @@
+4.
+a) Definiti o functie care intoarce suma a doi vectori.
+b) Definiti o functie care obtine dintr-o lista data lista tuturor atomilor
+care apar, pe orice nivel, dar in aceeasi ordine. De exemplu:
+(((A B) C) (D E)) --> (A B C D E)
+c) Sa se scrie o functie care plecand de la o lista data ca argument,
+inverseaza numai secventele continue de atomi. Exemplu:
+(a b c (d (e f) g h i)) ==> (c b a (d (f e) i h g))
+d) Sa se construiasca o functie care intoarce maximul atomilor numerici
+dintr-o lista, de la nivelul superficial.
+
+a)
+(defun sumaVectori (l1 l2)
+    (cond
+        ((or (null l1)(null l2))nil)
+        ((null (cdr l1))(cons (+ (car l1)(car l2))(cdr l2)))
+        ((null (cdr l2))(cons (+ (car l1)(car l2))(cdr l1)))
+        (t(cons (+ (car l1)(car l2))(sumaVectori(cdr l1)(cdr l2))))))
+
+(write (sumaVectori '(1 2 3) '(1)))
+b)
+(defun get_list(l)
+    (cond
+        ((atom l)(list l))
+        (t(mapcan 'get_list l ))))
+
+(write (get_list '(((A B) C) (D E))))
+c)
+
+d)
+(defun maximSuperior(l m)
+    (cond
+        ((null l)m)
+        ((atom (car l))(maximSuperior(cdr l)(max (car l) m)))
+        (t(maximSuperior(cdr l) m))))
+
+(write (maximSuperior '(1 2 (3 4) (5 6)) 0))

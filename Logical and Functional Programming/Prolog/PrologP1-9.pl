@@ -1,0 +1,29 @@
+%a.Sa se scrie un predicat care intoarce intersectia a doua multimi.
+%b.Sa se construiasca lista (m, ..., n), adica multimea numerelor
+%intregi din intervalul [m, n].
+
+
+%intersectie(L1,L2,R)
+%L1,L2-multimile intersectate
+%R-intersectia
+
+intersectie([],_,[]).
+intersectie([H|T],L2,[H|R]):-
+	cautareElement(L2,H,N),
+	N>0,
+	intersectie(T,L2,R),
+        !.
+intersectie([H|T],L2,R):-
+	cautareElement(L2,H,N),
+	N=0,
+	intersectie(T,L2,R).
+
+
+%interval(M,N,P,R)
+%M,N-capetele intervalului
+%P-elementul curent
+%R-lista rezultata
+%(i,i,i,o)
+
+interval(_,N,N,[N]):-!.
+interval(M,N,P,[P|R]):-P\=N,P1 is P+1,interval(M,N,P1,R).
