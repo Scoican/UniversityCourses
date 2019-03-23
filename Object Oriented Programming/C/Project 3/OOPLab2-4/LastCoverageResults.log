@@ -1,0 +1,21 @@
+[2019-03-23 22:48:12] [info] Start Program:
+Path:"C:\Users\Scoican\Desktop\OOPLab2-4\Debug\OOPLab2-4.exe"
+Arguments:
+Working directory: "C:\Users\Scoican\Desktop\OOPLab2-4\"
+Modules: Selected: C:\Users\Scoican\Desktop\OOPLab2-4\Debug\OOPLab2-4.exe Excluded: 
+Sources: Selected: C:\Users\Scoican\Desktop\OOPLab2-4 Excluded: 
+Log Level: Normal
+Cover Children: 0
+Aggregate by file: 1
+Continue after C++ exception: 0
+Optimized build support: 0
+Export: Binary C:\Users\Scoican\AppData\Local\Temp\ge1sgbhu.equ 
+Input coverage: 
+Unified diff: 
+Excluded line regular expressions: 
+Substitute pdb source paths: 
+
+[2019-03-23 22:48:12] [info] Module: C:\Users\Scoican\Desktop\OOPLab2-4\Debug\OOPLab2-4.exe is selected because it matches selected pattern: C:\Users\Scoican\Desktop\OOPLab2-4\Debug\OOPLab2-4.exe
+[2019-03-23 22:48:13] [info] ----------------------------------------------------
+[2019-03-23 22:48:13] [info] Coverage binary generated in file: C:\Users\Scoican\AppData\Local\Temp\ge1sgbhu.equ
+[2019-03-23 22:48:13] [info] ----------------------------------------------------
