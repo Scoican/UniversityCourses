@@ -1,0 +1,17 @@
+.container {
+            display: flex;
+            align-items: center;
+            outline-style: solid;
+            overflow: hidden;
+            width: 400px;
+            height: auto;
+        }
+
+#pizza{
+    max-width: 200px;
+}
+
+#paragraph{
+    text-align: center;
+    width:200px;
+}

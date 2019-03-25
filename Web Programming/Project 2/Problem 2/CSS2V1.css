@@ -1,0 +1,55 @@
+html, body { height: 100%; width: 100%; margin: 0; }
+
+.header {
+    background-color: red;
+    height: 15%;
+    display: table;
+    width: 100%;
+    overflow: hidden;
+}
+
+.menuBody {
+    background-color: darkred;
+    display: table;
+    overflow: hidden;
+    height: 70%;
+    width: 100%;
+}
+
+.textView {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.footer {
+    background-color: orangered;
+    height: 15%;
+    display: table;
+    width: 100%;
+    overflow: hidden;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: goldenrod;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 110.5px;
+    text-decoration: none;
+    border-left: 1px solid black
+}
+
+li a:hover {
+    background-color: orangered;
+}

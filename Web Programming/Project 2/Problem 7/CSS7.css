@@ -1,0 +1,38 @@
+
+ul.dialog {
+    list-style-type: none;
+    padding: 100px;
+}
+
+li {
+    display: flex;
+    min-height: 50px;
+    max-width: 200px;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    border-top: 1px solid black;
+    border-left: 1px solid black ;
+    border-radius: 25px;
+    box-shadow: 10px 10px 5px grey;
+    margin-bottom: 20px;
+    margin-left: 35px;
+    padding: 10px;
+}
+
+li:before {
+    background-image: url("css-pr7.png");
+    position: absolute;
+    left: 20px;
+    content: '';
+    height: 56px;
+    width: 100px;
+}
+
+li.bob:before
+{
+    width: 112px;
+    background-position: 127px 0;
+}
+li.bob {
+    margin-left: 23px;
+}

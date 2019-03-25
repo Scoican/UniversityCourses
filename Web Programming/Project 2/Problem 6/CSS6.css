@@ -1,0 +1,47 @@
+body{
+	margin:0;
+	padding:0;
+}
+
+form{
+	display: flex;
+}
+
+.stanga{
+	text-align: right;	
+	margin: 0px;
+	font-size: 20px;
+	font-weight:bold;
+}
+p{
+	margin:15px 0px;
+	padding: 10px 0px;
+}
+
+.dreapta{
+	text-align:left;
+}
+
+input{	
+	height:30px;
+	border:1px solid black;
+	font-size: 20px;
+	font-family:monospace;
+	letter-spacing:22px;
+	background-image: url('square.png');
+	background-repeat: repeat-x;
+	display: block;
+	margin: 20px;
+}
+
+.nume{
+	width: 660px;
+}
+
+.prenume{
+	width: 660px;
+}
+
+.cnp{
+	width: 429px;
+}
