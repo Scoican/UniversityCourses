@@ -1,0 +1,14 @@
+C:\Users\Scoican\Desktop\Facultate\Medii de proiectare si programare\Laborator\TicketManagerCSharp\TicketManagerCSharp\bin\Debug\TicketManagerCSharp.exe
+C:\Users\Scoican\Desktop\Facultate\Medii de proiectare si programare\Laborator\TicketManagerCSharp\TicketManagerCSharp\bin\Debug\TicketManagerCSharp.pdb
+C:\Users\Scoican\Desktop\Facultate\Medii de proiectare si programare\Laborator\TicketManagerCSharp\TicketManagerCSharp\obj\Debug\TicketManagerCSharp.csprojAssemblyReference.cache
+C:\Users\Scoican\Desktop\Facultate\Medii de proiectare si programare\Laborator\TicketManagerCSharp\TicketManagerCSharp\obj\Debug\TicketManagerCSharp.csproj.CoreCompileInputs.cache
+C:\Users\Scoican\Desktop\Facultate\Medii de proiectare si programare\Laborator\TicketManagerCSharp\TicketManagerCSharp\obj\Debug\TicketManagerCSharp.exe
+C:\Users\Scoican\Desktop\Facultate\Medii de proiectare si programare\Laborator\TicketManagerCSharp\TicketManagerCSharp\obj\Debug\TicketManagerCSharp.pdb
+C:\Users\Scoican\Desktop\Facultate\Medii de proiectare si programare\Laborator\TicketManagerCSharp\TicketManagerCSharp\bin\Debug\TicketManagerCSharp.exe.config
+C:\Users\Scoican\Desktop\Facultate\Medii de proiectare si programare\Laborator\TicketManagerCSharp\TicketManagerCSharp\bin\Debug\log4net.dll
+C:\Users\Scoican\Desktop\Facultate\Medii de proiectare si programare\Laborator\TicketManagerCSharp\TicketManagerCSharp\obj\Debug\TicketManagerCSharp.csproj.CopyComplete
+C:\Users\Scoican\Desktop\Facultate\Medii de proiectare si programare\Laborator\TicketManagerCSharp\TicketManagerCSharp\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Scoican\Desktop\Facultate\Medii de proiectare si programare\Laborator\TicketManagerCSharp\TicketManagerCSharp\obj\Debug\TicketManagerCSharp.GUIcs.resources
+C:\Users\Scoican\Desktop\Facultate\Medii de proiectare si programare\Laborator\TicketManagerCSharp\TicketManagerCSharp\obj\Debug\TicketManagerCSharp.LoginInterface.resources
+C:\Users\Scoican\Desktop\Facultate\Medii de proiectare si programare\Laborator\TicketManagerCSharp\TicketManagerCSharp\obj\Debug\TicketManagerCSharp.TicketInterface.resources
+C:\Users\Scoican\Desktop\Facultate\Medii de proiectare si programare\Laborator\TicketManagerCSharp\TicketManagerCSharp\obj\Debug\TicketManagerCSharp.csproj.GenerateResource.cache
