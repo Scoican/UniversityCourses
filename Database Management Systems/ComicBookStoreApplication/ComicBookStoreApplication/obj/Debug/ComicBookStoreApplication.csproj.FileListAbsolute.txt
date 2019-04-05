@@ -1,0 +1,9 @@
+C:\Users\Scoican\Desktop\Facultate\Sisteme de gestiune a bazelor de date\ComicBookStoreApplication\ComicBookStoreApplication\bin\Debug\ComicBookStoreApplication.exe
+C:\Users\Scoican\Desktop\Facultate\Sisteme de gestiune a bazelor de date\ComicBookStoreApplication\ComicBookStoreApplication\bin\Debug\ComicBookStoreApplication.pdb
+C:\Users\Scoican\Desktop\Facultate\Sisteme de gestiune a bazelor de date\ComicBookStoreApplication\ComicBookStoreApplication\obj\Debug\ComicBookStoreApplication.csprojAssemblyReference.cache
+C:\Users\Scoican\Desktop\Facultate\Sisteme de gestiune a bazelor de date\ComicBookStoreApplication\ComicBookStoreApplication\obj\Debug\ComicBookStoreApplication.Form1.resources
+C:\Users\Scoican\Desktop\Facultate\Sisteme de gestiune a bazelor de date\ComicBookStoreApplication\ComicBookStoreApplication\obj\Debug\ComicBookStoreApplication.Properties.Resources.resources
+C:\Users\Scoican\Desktop\Facultate\Sisteme de gestiune a bazelor de date\ComicBookStoreApplication\ComicBookStoreApplication\obj\Debug\ComicBookStoreApplication.csproj.GenerateResource.cache
+C:\Users\Scoican\Desktop\Facultate\Sisteme de gestiune a bazelor de date\ComicBookStoreApplication\ComicBookStoreApplication\obj\Debug\ComicBookStoreApplication.csproj.CoreCompileInputs.cache
+C:\Users\Scoican\Desktop\Facultate\Sisteme de gestiune a bazelor de date\ComicBookStoreApplication\ComicBookStoreApplication\obj\Debug\ComicBookStoreApplication.exe
+C:\Users\Scoican\Desktop\Facultate\Sisteme de gestiune a bazelor de date\ComicBookStoreApplication\ComicBookStoreApplication\obj\Debug\ComicBookStoreApplication.pdb
