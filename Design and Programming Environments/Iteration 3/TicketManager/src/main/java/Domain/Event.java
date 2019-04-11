@@ -2,44 +2,82 @@ package Domain;
 
 import java.util.Objects;
 
-public class Event {
+public class Event implements IHasID<Integer>{
+
     private Integer id;
-    private String name;
-    private Integer seats;
+    private String gameName;
+    private Double gamePrice;
+    private Integer freeSeats;
+    private GameState gameState;
 
-    public Event(Integer id, String name, Integer seats) {
-        this.id = id;
-        this.name = name;
-        this.seats = seats;
+    public Event(String gameName,Double gamePrice, Integer freeSeats) {
+        this.gameName=gameName;
+        this.gamePrice = gamePrice;
+        this.freeSeats = freeSeats;
+        if(this.freeSeats>0){
+            gameState=GameState.AVAILABLE;
+        }else{
+            gameState=GameState.SOLD_OUT;
+        }
     }
 
-    public Event(String name, Integer seats) {
-        this.name = name;
-        this.seats = seats;
+    public Event(Integer id,String gameName,Double gamePrice, Integer freeSeats) {
+        this.id=id;
+        this.gameName=gameName;
+        this.gamePrice = gamePrice;
+        this.freeSeats = freeSeats;
+        if(this.freeSeats>0){
+            gameState=GameState.AVAILABLE;
+        }else{
+            gameState=GameState.SOLD_OUT;
+        }
     }
 
+    public String getGameName() {
+        return gameName;
+    }
+
+    public void setGameName(String gameName) {
+        this.gameName = gameName;
+    }
+
+    public Double getGamePrice() {
+        return gamePrice;
+    }
+
+    public void setGamePrice(Double gamePrice) {
+        this.gamePrice = gamePrice;
+    }
+
+    public Integer getFreeSeats() {
+        return freeSeats;
+    }
+
+    public void setFreeSeats(Integer freeSeats) {
+        this.freeSeats = freeSeats;
+        if(this.freeSeats>0){
+            this.setGameState(GameState.AVAILABLE);
+        }else{
+            this.setGameState(GameState.SOLD_OUT);
+        }
+    }
+
+    public GameState getGameState() {
+        return gameState;
+    }
+
+    public void setGameState(GameState gameState) {
+        this.gameState = gameState;
+    }
+
+    @Override
     public Integer getId() {
-        return id;
+        return this.id;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Integer getSeats() {
-        return seats;
-    }
-
-    public void setSeats(Integer seats) {
-        this.seats = seats;
+    @Override
+    public void setId(Integer integer) {
+        this.id=integer;
     }
 
     @Override
@@ -52,15 +90,17 @@ public class Event {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id);
+        return Objects.hash(id,gameName, gamePrice, freeSeats, gameState);
     }
 
     @Override
     public String toString() {
         return "Event{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
-                ", seats=" + seats +
+                ", gameName='" + gameName + '\'' +
+                ", gamePrice=" + gamePrice +
+                ", freeSeats=" + freeSeats +
+                ", gameState=" + gameState +
                 '}';
     }
 }

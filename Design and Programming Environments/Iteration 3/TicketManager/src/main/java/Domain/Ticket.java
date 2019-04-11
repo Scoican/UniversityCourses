@@ -2,47 +2,50 @@ package Domain;
 
 import java.util.Objects;
 
-public class Ticket {
+public class Ticket implements IHasID<Integer>{
     private Integer id;
-    private Integer event;
-    private String buyer;
+    private Integer id_game;
+    private Integer reservedSeats;
+    private String clientName;
     private Double price;
 
-    public Ticket(Integer id, Integer event, String buyer, Double price) {
+    public Ticket(Integer id, Integer id_game, Integer reservedSeats,Double price, String clientName) {
         this.id = id;
-        this.event = event;
-        this.buyer = buyer;
+        this.id_game = id_game;
+        this.reservedSeats = reservedSeats;
+        this.clientName = clientName;
         this.price = price;
     }
 
-    public Ticket(Integer event, String buyer, Double price) {
-        this.event = event;
-        this.buyer = buyer;
+    public Ticket(Integer id_game, Integer reservedSeats, String clientName, Double price) {
+        this.id_game = id_game;
+        this.reservedSeats = reservedSeats;
+        this.clientName = clientName;
         this.price = price;
     }
 
-    public Integer getId() {
-        return id;
+    public Integer getId_game() {
+        return id_game;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setId_game(Integer id_game) {
+        this.id_game = id_game;
     }
 
-    public Integer getEvent() {
-        return event;
+    public Integer getReservedSeats() {
+        return reservedSeats;
     }
 
-    public void setEvent(Integer event) {
-        this.event = event;
+    public void setReservedSeats(Integer reservedSeats) {
+        this.reservedSeats = reservedSeats;
     }
 
-    public String getBuyer() {
-        return buyer;
+    public String getClientName() {
+        return clientName;
     }
 
-    public void setBuyer(String buyer) {
-        this.buyer = buyer;
+    public void setClientName(String clientName) {
+        this.clientName = clientName;
     }
 
     public Double getPrice() {
@@ -54,27 +57,30 @@ public class Ticket {
     }
 
     @Override
+    public Integer getId() {
+        return id;
+    }
+
+    @Override
+    public void setId(Integer integer) {
+        id=integer;
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Ticket ticket = (Ticket) o;
-        return Objects.equals(id, ticket.id) &&
-                Objects.equals(event, ticket.event) &&
-                Objects.equals(buyer, ticket.buyer) &&
-                Objects.equals(price, ticket.price);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
+        return Objects.equals(id, ticket.id);
     }
 
     @Override
     public String toString() {
         return "Ticket{" +
                 "id=" + id +
-                ", event=" + event +
-                ", buyer='" + buyer + '\'' +
+                ", id_game=" + id_game +
+                ", reservedSeats=" + reservedSeats +
+                ", clientName='" + clientName + '\'' +
                 ", price=" + price +
                 '}';
     }

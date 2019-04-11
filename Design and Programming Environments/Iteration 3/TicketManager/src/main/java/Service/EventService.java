@@ -2,55 +2,60 @@ package Service;
 
 import Domain.Event;
 import Repository.EventRepository;
-import Utils.DataChanged;
-import Utils.Observable;
-import Utils.Observer;
+import Utils.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class EventService implements Observable<DataChanged> {
+public class EventService implements Observable<EventChangeEvent> {
 
-    private List<Observer<DataChanged>> observers=new ArrayList<>();
+    private List<Observer<EventChangeEvent>> observers=new ArrayList<>();
     private EventRepository eventRepository;
 
     public EventService(EventRepository eventRepository){
         this.eventRepository=eventRepository;
     }
 
-    public void save(String name,Integer seats){
-        Event event=new Event(name,seats);
+    public void save(String gameName,Double gamePrice,Integer freeSeats){
+        Event event=new Event(gameName,gamePrice,freeSeats);
         eventRepository.save(event);
+        notifyObservers(new EventChangeEvent(EventType.ADD,event));
     }
 
     public void delete(Integer integer){
         eventRepository.delete(integer);
+        notifyObservers(new EventChangeEvent(EventType.DELETE,null));
     }
 
-    public void update(Integer integer,String name,Integer seats){
-        Event event=new Event(name,seats);
+    public void update(Integer integer,String gameName,Double gamePrice,Integer freeSeats){
+        Event event=new Event(gameName,gamePrice,freeSeats);
         eventRepository.update(integer,event);
+        notifyObservers(new EventChangeEvent(EventType.UPDATE,event));
     }
 
     public Event findOne(Integer integer){
         return eventRepository.findOne(integer);
     }
 
+    public Integer sizeRepo(){
+        return eventRepository.size();
+    }
+
     public Iterable<Event> findAll(){
         return eventRepository.findAll();
     }
     @Override
-    public void addObserver(Observer<DataChanged> e) {
+    public void addObserver(Observer<EventChangeEvent> e) {
         observers.add(e);
     }
 
     @Override
-    public void removeObserver(Observer<DataChanged> e) {
+    public void removeObserver(Observer<EventChangeEvent> e) {
         observers.remove(e);
     }
 
     @Override
-    public void notifyObservers(DataChanged t) {
+    public void notifyObservers(EventChangeEvent t) {
         observers.forEach(o->o.update(t));
     }
 }

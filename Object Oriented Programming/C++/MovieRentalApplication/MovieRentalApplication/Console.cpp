@@ -21,6 +21,9 @@ void Console::addUi()
 	catch (MovieRepositoryException& msg) {
 		cout << msg << endl;
 	}
+	catch (ValidateException& msg) {
+		cout << msg << endl;
+	}
 }
 
 void Console::removeUi()
@@ -37,6 +40,9 @@ void Console::removeUi()
 
 	}
 	catch (MovieRepositoryException& msg) {
+		cout << msg << endl;
+	}
+	catch (ValidateException& msg) {
 		cout << msg << endl;
 	}
 }
@@ -63,6 +69,9 @@ void Console::updateUi()
 	catch (MovieRepositoryException& msg) {
 		cout << msg << endl;
 	}
+	catch (ValidateException& msg) {
+		cout << msg << endl;
+	}
 }
 
 void Console::findUi()
@@ -77,6 +86,9 @@ void Console::findUi()
 		cout<<service.findMovie(name, launchYear);
 	}
 	catch (MovieRepositoryException& msg) {
+		cout << msg << endl;
+	}
+	catch (ValidateException& msg) {
 		cout << msg << endl;
 	}
 }
@@ -165,14 +177,14 @@ void Console::printMenu()
 
 void Console::testingData()
 {
-	service.addMovie("The Avengers", "Action", 2010, "Iron-Man");
-	service.addMovie("The Avengers:Age of Ultron", "Action", 2015, "Ultron");
-	service.addMovie("Infinity War", "Action", 2018, "Thanos");
+	service.addMovie("TheAvengers", "Action", 2010, "Iron-Man");
+	service.addMovie("TheAvengers:AgeOfUltron", "Action", 2015, "Ultron");
+	service.addMovie("InfinityWar", "Action", 2018, "Thanos");
 	service.addMovie("Thor:Ragnarok", "Comedy", 2017, "Thor");
-	service.addMovie("La La Land", "Musical", 2017, "Some talented actress");
+	service.addMovie("LaLaLand", "Musical", 2017, "Some talented actress");
 	service.addMovie("Mr.Nobody", "Sci-fi", 2005, "Nobody");
-	service.addMovie("Some sci-fi movie", "Sci-fi", 2017, "Some talented actor");
-	service.addMovie("The comedy movie", "Comedy", 2009, "A very funny actor");
+	service.addMovie("SomeSci-fiMovie", "Sci-fi", 2017, "Some talented actor");
+	service.addMovie("TheComedyMovie", "Comedy", 2009, "A very funny actor");
 }
 
 void Console::run()

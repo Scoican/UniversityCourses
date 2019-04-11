@@ -1,6 +1,8 @@
 package Service;
 
+import Domain.Event;
 import Domain.Ticket;
+import Repository.EventRepository;
 import Repository.TicketRepository;
 import Utils.DataChanged;
 import Utils.Observable;
@@ -13,22 +15,32 @@ public class TicketService implements Observable<DataChanged> {
 
     private List<Observer<DataChanged>> observers=new ArrayList<>();
     private TicketRepository ticketRepository;
+    private EventRepository eventRepository;
 
-    public TicketService(TicketRepository ticketRepository){
+    public TicketService(TicketRepository ticketRepository,EventRepository eventRepository){
         this.ticketRepository=ticketRepository;
+        this.eventRepository=eventRepository;
     }
 
-    public void save(Integer event,String buyer,Double price){
-        Ticket ticket=new Ticket(event,buyer,price);
+    public void save(Integer idGame,Integer reservedSeats,Double price,String clientName){
+        Ticket ticket=new Ticket(idGame,reservedSeats, clientName, price);
+        Event game=eventRepository.findOne(idGame);
+        game.setFreeSeats(game.getFreeSeats()-reservedSeats);
+        eventRepository.update(idGame,game);
         ticketRepository.save(ticket);
+
     }
 
     public void delete(Integer integer){
+        Ticket ticket=ticketRepository.findOne(integer);
+        Event game=eventRepository.findOne(ticket.getId_game());
+        game.setFreeSeats(game.getFreeSeats()+ticket.getReservedSeats());
+        eventRepository.update(game.getId(),game);
         ticketRepository.delete(integer);
     }
 
-    public void update(Integer integer,Integer event,String buyer,Double price){
-        Ticket ticket=new Ticket(event,buyer,price);
+    public void update(Integer integer,Integer idGame,Integer reservedSeats,Double price,String clientName){
+        Ticket ticket=new Ticket(idGame,reservedSeats, clientName, price);
         ticketRepository.update(integer,ticket);
     }
 
@@ -36,13 +48,8 @@ public class TicketService implements Observable<DataChanged> {
         return ticketRepository.findOne(integer);
     }
 
-    public Ticket findTicketWithEvent(Integer integer){
-        for(Ticket t:ticketRepository.findAll()){
-            if(t.getEvent()==integer){
-                return t;
-            }
-        }
-        return null;
+    public int sizeRepo(){
+        return ticketRepository.size();
     }
 
     public Iterable<Ticket> findAll(){

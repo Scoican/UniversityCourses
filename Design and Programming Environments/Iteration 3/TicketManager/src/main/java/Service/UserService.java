@@ -5,12 +5,12 @@ import Utils.DataChanged;
 import Utils.Observable;
 import Utils.Observer;
 
+import javax.xml.bind.ValidationException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserService implements Observable<DataChanged> {
+public class UserService {
 
-    private List<Observer<DataChanged>> observers=new ArrayList<>();
     private UserRepository userRepository;
 
 
@@ -23,13 +23,13 @@ public class UserService implements Observable<DataChanged> {
         userRepository.save(user);
     }
 
-    public void delete(Integer integer){
-        userRepository.delete(integer);
+    public void delete(String username){
+        userRepository.delete(username);
     }
 
-    public void update(Integer integer,String username,String password){
+    public void update(String username,String password){
         User user=new User(username,password);
-        userRepository.update(integer,user);
+        userRepository.update(username,user);
     }
 
     public User findOne(String username){
@@ -38,20 +38,6 @@ public class UserService implements Observable<DataChanged> {
 
     public Iterable<User> findAll(){
         return userRepository.findAll();
-    }
-    @Override
-    public void addObserver(Observer<DataChanged> e) {
-        observers.add(e);
-    }
-
-    @Override
-    public void removeObserver(Observer<DataChanged> e) {
-        observers.remove(e);
-    }
-
-    @Override
-    public void notifyObservers(DataChanged t) {
-        observers.forEach(o->o.update(t));
     }
 
     public boolean checkPassword(String username, String password) {
@@ -62,5 +48,14 @@ public class UserService implements Observable<DataChanged> {
             return userPassword.equals(password);
         }
         return false;
+    }
+
+    public User login(String username,String password) throws ValidationException {
+        User user = userRepository.findOne(username);
+        if(user==null){
+            throw new ValidationException("Username or password incorrect!");
+        }else{
+            return user;
+        }
     }
 }

@@ -56,21 +56,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="domain\Event.cs" />
+    <Compile Include="domain\EventDTO.cs" />
     <Compile Include="domain\HasID.cs" />
     <Compile Include="domain\Ticket.cs" />
     <Compile Include="domain\User.cs" />
-    <Compile Include="interfaces\EventsListInterface.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="interfaces\.Designer.cs">
-      <DependentUpon>EventsListInterface.cs</DependentUpon>
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="interfaces\LoginInterface.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="interfaces\LoginInterface.Designer.cs">
       <DependentUpon>LoginInterface.cs</DependentUpon>
+    </Compile>
+    <Compile Include="interfaces\TicketInterface.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="interfaces\TicketInterface.Designer.cs">
+      <DependentUpon>TicketInterface.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -79,14 +79,14 @@
     <Compile Include="repository\RepositoryException.cs" />
     <Compile Include="repository\TicketRepository.cs" />
     <Compile Include="repository\UserRepository.cs" />
-    <Compile Include="service\AdminService.cs" />
-    <Compile Include="service\OperatorService.cs" />
-    <Compile Include="interfaces\TicketInterface.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="interfaces\TicketInterface.Designer.cs">
-      <DependentUpon>TicketInterface.cs</DependentUpon>
-    </Compile>
+    <Compile Include="service\EventService.cs" />
+    <Compile Include="service\TicketService.cs" />
+    <Compile Include="service\UserService.cs" />
+    <Compile Include="service\ValidationException.cs" />
+    <Compile Include="utils\EventChangeEvent.cs" />
+    <Compile Include="utils\IEvent.cs" />
+    <Compile Include="utils\IObservable.cs" />
+    <Compile Include="utils\IObserver.cs" />
     <Compile Include="utils\SQLiteConnectionFactory.cs" />
     <Compile Include="utils\ConnectionFactory.cs" />
     <Compile Include="utils\DBUtils.cs" />
@@ -101,9 +101,6 @@
     <Content Include="Properties\SQLite.Interop.dll" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="interfaces\EventsListInterface.resx">
-      <DependentUpon>EventsListInterface.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="interfaces\LoginInterface.resx">
       <DependentUpon>LoginInterface.cs</DependentUpon>
     </EmbeddedResource>

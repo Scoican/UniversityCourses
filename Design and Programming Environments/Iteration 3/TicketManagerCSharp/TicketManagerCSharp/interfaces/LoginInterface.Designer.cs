@@ -40,18 +40,18 @@ namespace TicketManagerCSharp
             // loginButton
             // 
             this.loginButton.Location = new System.Drawing.Point(68, 192);
-            this.loginButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.loginButton.Margin = new System.Windows.Forms.Padding(4);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(209, 55);
             this.loginButton.TabIndex = 0;
             this.loginButton.Text = "Login";
             this.loginButton.UseVisualStyleBackColor = true;
-            this.loginButton.Click += new System.EventHandler(this.LoginButton_Click);
+            this.loginButton.Click += new System.EventHandler(this.button1_Click);
             // 
             // usernameTextBox
             // 
             this.usernameTextBox.Location = new System.Drawing.Point(132, 53);
-            this.usernameTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.usernameTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.usernameTextBox.Name = "usernameTextBox";
             this.usernameTextBox.Size = new System.Drawing.Size(195, 22);
             this.usernameTextBox.TabIndex = 1;
@@ -59,7 +59,7 @@ namespace TicketManagerCSharp
             // passwordTextBox
             // 
             this.passwordTextBox.Location = new System.Drawing.Point(132, 100);
-            this.passwordTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.passwordTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.PasswordChar = '*';
             this.passwordTextBox.Size = new System.Drawing.Size(195, 22);
@@ -97,7 +97,7 @@ namespace TicketManagerCSharp
             this.Controls.Add(this.passwordTextBox);
             this.Controls.Add(this.usernameTextBox);
             this.Controls.Add(this.loginButton);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "LoginInterface";
             this.Text = "LoginInterface";
             this.Load += new System.EventHandler(this.LoginInterface_Load);

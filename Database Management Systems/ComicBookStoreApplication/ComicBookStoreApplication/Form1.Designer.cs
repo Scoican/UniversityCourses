@@ -30,6 +30,7 @@
         {
             this.dataGridViewParent = new System.Windows.Forms.DataGridView();
             this.dataGridViewChild = new System.Windows.Forms.DataGridView();
+            this.updateButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewParent)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewChild)).BeginInit();
             this.SuspendLayout();
@@ -40,23 +41,34 @@
             this.dataGridViewParent.Location = new System.Drawing.Point(12, 12);
             this.dataGridViewParent.Name = "dataGridViewParent";
             this.dataGridViewParent.RowTemplate.Height = 24;
-            this.dataGridViewParent.Size = new System.Drawing.Size(398, 348);
+            this.dataGridViewParent.Size = new System.Drawing.Size(554, 554);
             this.dataGridViewParent.TabIndex = 0;
             // 
             // dataGridViewChild
             // 
             this.dataGridViewChild.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewChild.Location = new System.Drawing.Point(416, 12);
+            this.dataGridViewChild.Location = new System.Drawing.Point(572, 12);
             this.dataGridViewChild.Name = "dataGridViewChild";
             this.dataGridViewChild.RowTemplate.Height = 24;
-            this.dataGridViewChild.Size = new System.Drawing.Size(372, 348);
+            this.dataGridViewChild.Size = new System.Drawing.Size(588, 554);
             this.dataGridViewChild.TabIndex = 1;
+            // 
+            // updateButton
+            // 
+            this.updateButton.Location = new System.Drawing.Point(1166, 12);
+            this.updateButton.Name = "updateButton";
+            this.updateButton.Size = new System.Drawing.Size(187, 82);
+            this.updateButton.TabIndex = 2;
+            this.updateButton.Text = "Update";
+            this.updateButton.UseVisualStyleBackColor = true;
+            this.updateButton.Click += new System.EventHandler(this.updateButton_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1365, 578);
+            this.Controls.Add(this.updateButton);
             this.Controls.Add(this.dataGridViewChild);
             this.Controls.Add(this.dataGridViewParent);
             this.Name = "Form1";
@@ -72,6 +84,7 @@
 
         private System.Windows.Forms.DataGridView dataGridViewParent;
         private System.Windows.Forms.DataGridView dataGridViewChild;
+        private System.Windows.Forms.Button updateButton;
     }
 }
 

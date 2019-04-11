@@ -78,6 +78,15 @@
     <ClInclude Include="Validator.h">
       <Filter>Header Files\Validator</Filter>
     </ClInclude>
+    <ClInclude Include="TestValidator.h">
+      <Filter>Header Files\Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="MyList.h">
+      <Filter>Header Files\Domain</Filter>
+    </ClInclude>
+    <ClInclude Include="TestMyList.h">
+      <Filter>Header Files\Tests</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Movie.cpp">
@@ -107,6 +116,15 @@
     </ClCompile>
     <ClCompile Include="Validator.cpp">
       <Filter>Source Files\Validator</Filter>
+    </ClCompile>
+    <ClCompile Include="TestValidator.cpp">
+      <Filter>Source Files\Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="MyList.cpp">
+      <Filter>Source Files\Domain</Filter>
+    </ClCompile>
+    <ClCompile Include="TestMyList.cpp">
+      <Filter>Source Files\Tests</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

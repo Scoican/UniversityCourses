@@ -60,7 +60,7 @@ void testFind(){
 	movies.store(movie1);
 	assert(movies.find("The Avengers", 2010) == movie1);
 	try {
-		movies.find("The Avenger", 2011);
+		Movie foundMovie = movies.find("The Avenger", 2011);
 	}catch (MovieRepositoryException& ) {
 		assert(true);
 	}

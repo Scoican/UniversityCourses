@@ -1,6 +1,8 @@
 package Repository;
 
-public interface IRepository<ID,T> {
+import Domain.IHasID;
+
+public interface IRepository<ID,T extends IHasID<ID>> {
     int size();
     void save(T entity);
     void delete(ID id);

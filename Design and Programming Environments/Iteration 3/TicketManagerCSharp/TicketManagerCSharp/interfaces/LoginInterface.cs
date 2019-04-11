@@ -6,44 +6,81 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using TicketManagerCSharp.interfaces;
 using TicketManagerCSharp.service;
 
 namespace TicketManagerCSharp
 {
     public partial class LoginInterface : Form
-    {
-        private AdminService service;
-        IDictionary<String, string> props;
-        public LoginInterface(IDictionary<String, string> props)
+    
         {
+        UserService userService;
+        EventService eventService;
+        TicketService ticketService;
+        TicketInterface ticketInterface;
+
+
+        public LoginInterface(UserService userService,EventService eventService, TicketService ticketService)
+        {
+            this.userService = userService;
+            this.eventService = eventService;
+            this.ticketService = ticketService;
             InitializeComponent();
-            this.service = new AdminService(props);
-            this.props = props;
         }
 
-
-        private void LoginButton_Click(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string username, password;
+            username = usernameTextBox.Text;
+            password = passwordTextBox.Text;
             try
             {
-                String username = usernameTextBox.Text;
-                String password = passwordTextBox.Text;
-                if (service.checkPassword(username, password))
+                if (userService.LogIn(username, password) != null)
                 {
-                    GUIcs eventInterface = new GUIcs(this.props);
-                    eventInterface.Show();
-                    this.Hide();
-                    
+                    ticketInterface = new TicketInterface(userService, eventService, ticketService);
+                    Hide();
+                    ticketInterface.ShowDialog();
+                    Close();
                 }
-                else throw new Exception("Wrong password or username");
+
+
             }
-            catch (Exception ex)
+            catch (ValidationException msg)
             {
-                MessageBox.Show(ex.Message);
+                usernameTextBox.Text = "";
+                passwordTextBox.Text = "";
+                MessageBox.Show(msg.Message);
             }
         }
 
         private void LoginInterface_Load(object sender, EventArgs e)
+        {
+            passwordTextBox.Text = "";
+            passwordTextBox.PasswordChar = '*';
+            passwordTextBox.MaxLength = 20;
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
         {
 
         }

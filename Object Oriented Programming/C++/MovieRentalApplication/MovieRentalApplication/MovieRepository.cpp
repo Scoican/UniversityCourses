@@ -3,7 +3,7 @@
 bool MovieRepository::exist(const Movie & movie)
 {
 	try {
-		find(movie.getName(), movie.getLaunchYear());
+		Movie foundMovie = find(movie.getName(), movie.getLaunchYear());
 		return true;
 	}
 	catch (MovieRepositoryException&) {
@@ -15,7 +15,7 @@ void MovieRepository::store(const Movie & movie)
 	if (exist(movie)) {
 		throw MovieRepositoryException("This movie already exists in the data base");
 	}
-	movies.push_back(movie);
+	movies.add(movie);
 }
 
 void MovieRepository::remove(const Movie & movie)
@@ -23,8 +23,8 @@ void MovieRepository::remove(const Movie & movie)
 	if (!exist(movie)) {
 		throw MovieRepositoryException("This movie doesn't exist in the data base");
 	}
-	auto it = find_if(movies.begin(), movies.end(), [&movie](const Movie& el) {return movie == el; });
-	movies.erase(it);
+	//auto it = find_if(movies.begin(), movies.end(), [&movie](const Movie& el) {return movie == el; });
+	movies.erase(movies.find(movie));
 
 }
 
@@ -48,7 +48,7 @@ Movie MovieRepository::find(const string & name, const int launchYear) const
 	
 }
 
-const vector<Movie>& MovieRepository::getAll() const noexcept
+const Vector<Movie>& MovieRepository::getAll() const noexcept
 {
 	return this->movies;
 }

@@ -1,24 +1,19 @@
 
 import Interface.LoginController;
 import Repository.EventRepository;
-
 import Repository.TicketRepository;
 import Repository.UserRepository;
 import Service.EventService;
 import Service.TicketService;
 import Service.UserService;
-import Utils.RepositoryConfig;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
+import javafx.scene.paint.CycleMethod;
 import javafx.stage.Stage;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -44,17 +39,39 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        try {
-            logger.traceEntry();
-            primaryStage.setTitle("Ticket Manager");
-            init(primaryStage);
-            logger.traceExit();
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(ClassLoader.getSystemResource("LoginView.fxml"));
+        AnchorPane root = new AnchorPane();
+        root = loader.load();
+        root.setId("pane");
+        LoginController loginController = loader.getController();
+        Properties prop = new Properties();
 
-        }catch (IOException e){
+        try {
+            prop.load(new FileReader("C:\\Users\\Scoican\\Desktop\\Facultate\\Medii de proiectare si programare\\Laborator\\TicketManager\\src\\main\\resources\\bd.properties"));
+        } catch (IOException e) {
             e.printStackTrace();
         }
+
+        EventRepository eventRepository= new EventRepository(prop);
+        TicketRepository ticketRepository=new TicketRepository(prop);
+        UserRepository userRepository=new UserRepository(prop);
+
+        UserService userService=new UserService(userRepository);
+        TicketService ticketService=new TicketService(ticketRepository,eventRepository);
+        EventService eventService=new EventService(eventRepository);
+
+        loginController.setService(userService,ticketService,eventService);
+
+
+        Scene scene = new Scene(root);
+        scene.getStylesheets().addAll(this.getClass().getResource("style.css").toExternalForm());
+        primaryStage.setScene(scene);
+        primaryStage.setTitle("Login");
+        primaryStage.show();
     }
 
+    /*
     private void init(Stage primaryStage) throws IOException {
 
         Properties prop=new Properties();
@@ -71,7 +88,7 @@ public class Main extends Application {
         UserRepository userRepository=new UserRepository(prop);
 
         UserService userService=new UserService(userRepository);
-        TicketService ticketService=new TicketService(ticketRepository);
+        TicketService ticketService=new TicketService(ticketRepository,eventRepository);
         EventService eventService=new EventService(eventRepository);
 
         FXMLLoader loader = new FXMLLoader();
@@ -80,11 +97,9 @@ public class Main extends Application {
         Scene mainMenuScene = new Scene(rootLayout);
 
         LoginController loginController=loader.getController();
-        loginController.init(userService,ticketService,eventService,mainMenuScene);
-
-        loginController.setPrimaryStage(primaryStage);
+        loginController.setService(userService,ticketService,eventService);
 
         primaryStage.setScene(mainMenuScene);
         primaryStage.show();
-    }
+    }*/
 }

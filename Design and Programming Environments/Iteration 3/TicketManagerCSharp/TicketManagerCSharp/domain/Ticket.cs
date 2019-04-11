@@ -5,26 +5,29 @@ using System.Text;
 
 namespace TicketManagerCSharp.domain
 {
-    class Ticket:HasId<int>
+    public class Ticket:HasId<int>
     {
         private int id;
-        private int idEvent;
-        private string buyer;
+        private int idGame;
+        private int reservedSeats;
         private double price;
+        private string clientName;
 
-        public Ticket(int id, int idEvent, string buyer, double price)
+        public Ticket(int id, int idGame, int reservedSeats,double price,string clientName)
         {
             this.id = id;
-            this.idEvent = idEvent;
-            this.buyer = buyer;
+            this.idGame = idGame;
+            this.reservedSeats = reservedSeats;
             this.price = price;
+            this.clientName = clientName;
         }
 
-        public Ticket(int idEvent, string buyer, double price)
+        public Ticket(int idGame, int reservedSeats, double price, string clientName)
         {
-            this.idEvent = idEvent;
-            this.buyer = buyer;
+            this.idGame = idGame;
+            this.reservedSeats = reservedSeats;
             this.price = price;
+            this.clientName = clientName;
         }
 
         public int Id
@@ -33,16 +36,22 @@ namespace TicketManagerCSharp.domain
             set { id = value; }
         }
 
-        public int IdEvent
+        public int IdGame
         {
-            get { return idEvent; }
-            set { idEvent = value; }
+            get { return idGame; }
+            set { idGame = value; }
         }
 
-        public string Buyer
+        public int ReservedSeats
         {
-            get { return buyer; }
-            set { buyer = value; }
+            get { return reservedSeats; }
+            set { reservedSeats = value; }
+        }
+
+        public string ClientName
+        {
+            get { return clientName; }
+            set { clientName = value; }
         }
 
         public double Price
@@ -55,30 +64,35 @@ namespace TicketManagerCSharp.domain
         {
             var ticket = obj as Ticket;
             return ticket != null &&
-                   id == ticket.id &&
-                   idEvent == ticket.idEvent &&
-                   buyer == ticket.buyer &&
-                   price == ticket.price;
+                   id == ticket.id;
         }
 
-        public override int GetHashCode()
-        {
-            var hashCode = 791292794;
-            hashCode = hashCode * -1521134295 + id.GetHashCode();
-            hashCode = hashCode * -1521134295 + idEvent.GetHashCode();
-            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(buyer);
-            hashCode = hashCode * -1521134295 + price.GetHashCode();
-            return hashCode;
-        }
 
         public override string ToString()
         {
             return "Ticket{" +
                 "id=" + id +
-                ", event=" + idEvent +
-                ", buyer='" + buyer + '\'' +
+                ", event=" + idGame +
+                ", reserved seats=" + reservedSeats +
                 ", price=" + price +
+                ", client name="+clientName +
                 '}';
+        }
+
+        public override int GetHashCode()
+        {
+            var hashCode = -756315988;
+            hashCode = hashCode * -1521134295 + id.GetHashCode();
+            hashCode = hashCode * -1521134295 + idGame.GetHashCode();
+            hashCode = hashCode * -1521134295 + reservedSeats.GetHashCode();
+            hashCode = hashCode * -1521134295 + price.GetHashCode();
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(clientName);
+            hashCode = hashCode * -1521134295 + Id.GetHashCode();
+            hashCode = hashCode * -1521134295 + IdGame.GetHashCode();
+            hashCode = hashCode * -1521134295 + ReservedSeats.GetHashCode();
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(ClientName);
+            hashCode = hashCode * -1521134295 + Price.GetHashCode();
+            return hashCode;
         }
     }
 }

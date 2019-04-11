@@ -3,18 +3,23 @@
 
 void MovieService::addMovie(const string & name, const string & genre, const int launchYear, const string & leadingActor)
 {
-	movieRepository.store(Movie(name, genre, launchYear, leadingActor));
+	Movie movie = Movie(name, genre, launchYear, leadingActor);
+	validator.validate(movie);
+	movieRepository.store(movie);
 }
 
 void MovieService::removeMovie(const string & name, const int launchYear)
 {
 	Movie movie = findMovie(name, launchYear);
+	validator.validate(movie);
 	movieRepository.remove(movie);
 }
 
 void MovieService::updateMovie(const string & name, const string & genre, const int launchYear, const string & leadingActor)
 {
-	movieRepository.update(Movie(name,genre,launchYear,leadingActor));
+	Movie movie = Movie(name, genre, launchYear, leadingActor);
+	validator.validate(movie);
+	movieRepository.update(movie);
 }
 
 Movie MovieService::findMovie(const string & name, const int launchYear) const
@@ -22,56 +27,66 @@ Movie MovieService::findMovie(const string & name, const int launchYear) const
 	return movieRepository.find(name, launchYear);
 }
 
-const vector<Movie> MovieService::getAll() const noexcept
+const Vector<Movie> MovieService::getAll() const noexcept
 {
 	return movieRepository.getAll();
 }
 
-vector<Movie> MovieService::generalSort(ComparingFunction comparingFunction) const
+Vector<Movie> MovieService::generalSort(ComparingFunction comparingFunction) const
 {
-	vector<Movie> vector{ movieRepository.getAll() };	
-	sort(vector.begin(), vector.end(), comparingFunction);
+	Vector<Movie> vector{ movieRepository.getAll() };	
+	for (int i = 0; i < vector.size()-1; i++)
+	{
+		for (int j = i+1; j < vector.size(); j++)
+		{
+			if (comparingFunction(vector[i], vector[j])==false) {
+				Movie aux = vector[i];
+				vector[i] = vector[j];
+				vector[j] = aux;
+			}
+		}
+	}
 	return vector;
 }
 
-vector<Movie> MovieService::sortByName() const
+Vector<Movie> MovieService::sortByName() const
 {
 	return generalSort(compareByName);
 }
 
-vector<Movie> MovieService::sortByGenre() const
+Vector<Movie> MovieService::sortByGenre() const
 {
 	return generalSort(compareByGenre);
 }
 
-vector<Movie> MovieService::sortByLaunchYear() const
+Vector<Movie> MovieService::sortByLaunchYear() const
 {
 	return generalSort(compareByLaunchYear);
 }
 
-vector<Movie> MovieService::sortByLeadingActor() const
+Vector<Movie> MovieService::sortByLeadingActor() const
 {
 	return generalSort(compareByLeadingActor);
 }
 
-vector<Movie> MovieService::generalfilter(function<bool(const Movie&)> fct) const
+Vector<Movie> MovieService::generalfilter(function<bool(const Movie&)> fct) const
 {
-	vector<Movie> filtered;
+	Vector<Movie> filtered;
 	for (const auto& movie : movieRepository.getAll()) {
 		if (fct(movie)) {
-			filtered.push_back(movie);
+			filtered.add(movie);
 		}
 	}
 	return filtered;
 }
 
-vector<Movie> MovieService::filterByYear(int year) const
+Vector<Movie> MovieService::filterByYear(int year) const
 {
 	return generalfilter([year](const Movie& movie)noexcept {
 		return movie.getLaunchYear() >= year; });
 }
 
-vector<Movie> MovieService::filterByName(string& name) const
+Vector<Movie> MovieService::filterByName(string& name) const
 {
 	return generalfilter([name](const Movie& movie)noexcept {
 		if (movie.getName().find(name) != string::npos) {

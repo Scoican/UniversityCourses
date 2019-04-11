@@ -14,8 +14,7 @@ private:
 public:
 	Movie(string name, string genre, int launchYear, string leadingActor);
 	//Movie(string name, string genre, int launchYear, string leadingActor):this.name{name},this.genre{genre},this.launchYear{launchYear},this.leadingActor{leadingActor}{}
-
-
+	Movie(const Movie& other);
 	//getters
 	string getName() const;
 	string getGenre() const;

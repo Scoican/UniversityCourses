@@ -7,8 +7,8 @@ using TicketManagerCSharp.utils;
 
 namespace TicketManagerCSharp.repository
 {
-   class UserRepository : IRepository<int, User>
-    {
+   public class UserRepository : IRepository<string, User>
+   {
         private static readonly ILog log = LogManager.GetLogger("EventRepository");
 
         IDictionary<String, string> props;
@@ -19,14 +19,14 @@ namespace TicketManagerCSharp.repository
             this.props = props;
         }
 
-        public void Delete(int id)
+        public void Delete(string id)
         {
             log.InfoFormat("Entering Delete with new value {0}...", id);
             IDbConnection con = DBUtils.getConnection(props);
 
             using (var comm = con.CreateCommand())
             {
-                comm.CommandText = "delete from Users where id=@id";
+                comm.CommandText = "delete from Users where username=@id";
                 IDbDataParameter idParam = comm.CreateParameter();
                 idParam.ParameterName = "@id";
                 idParam.Value = id;
@@ -47,15 +47,14 @@ namespace TicketManagerCSharp.repository
             IList<User> users = new List<User>();
             using (var comm = con.CreateCommand())
             {
-                comm.CommandText = "select id,username,password from Users";
+                comm.CommandText = "select username,password from Users";
                 using (var dataR = comm.ExecuteReader())
                 {
                     while (dataR.Read())
                     {
-                        int idU = dataR.GetInt32(0);
-                        string username = dataR.GetString(1);
-                        string password = dataR.GetString(2);
-                        User user = new User(idU, username, password);
+                        string username = dataR.GetString(0);
+                        string password = dataR.GetString(1);
+                        User user = new User(username, password);
                         users.Add(user);
                     }
                 }
@@ -64,63 +63,32 @@ namespace TicketManagerCSharp.repository
             return users;
         }
 
-        public User FindOne(int id)
+        public User FindOne(string username)
         {
-            log.InfoFormat("Entering findOne with value {0}", id);
+            log.InfoFormat("Entering findOne with value {0}", username);
             IDbConnection con = DBUtils.getConnection(props);
 
             using (var comm = con.CreateCommand())
             {
-                comm.CommandText = "select id,username,password from Users where id=@id";
+                comm.CommandText = "select username,password from Users where username=@username";
                 IDbDataParameter paramId = comm.CreateParameter();
-                paramId.ParameterName = "@id";
-                paramId.Value = id;
+                paramId.ParameterName = "@username";
+                paramId.Value = username;
                 comm.Parameters.Add(paramId);
 
                 using (var dataR = comm.ExecuteReader())
                 {
                     if (dataR.Read())
                     {
-                        int idU = dataR.GetInt32(0);
-                        string username = dataR.GetString(1);
-                        string password = dataR.GetString(2);
-                        User user = new User(idU, username, password);
+                        string newUsername = dataR.GetString(0);
+                        string password = dataR.GetString(1);
+                        User user = new User(newUsername, password);
                         log.InfoFormat("Exiting findOne with value{0}", user);
                         return user;
                     }
                 }
             }
             log.InfoFormat("Exiting findOne with value {0}", null);
-            return null;
-        }
-
-        public User FindOne(string username)
-        {
-            log.InfoFormat("Entering findUserByUsername with value {0}", username);
-            IDbConnection con = DBUtils.getConnection(props);
-
-            using (var comm = con.CreateCommand())
-            {
-                comm.CommandText = "select id,username,password from Users where username=@username";
-                IDbDataParameter paramUsername = comm.CreateParameter();
-                paramUsername.ParameterName = "@username";
-                paramUsername.Value = username;
-                comm.Parameters.Add(paramUsername);
-
-                using (var dataR = comm.ExecuteReader())
-                {
-                    if (dataR.Read())
-                    {
-                        int idU = dataR.GetInt32(0);
-                        string name = dataR.GetString(1);
-                        string password = dataR.GetString(2);
-                        User user = new User(idU, name, password);
-                        log.InfoFormat("Exiting findUserByUsername with value{0}", user);
-                        return user;
-                    }
-                }
-            }
-            log.InfoFormat("Exiting findUserByUsername with value {0}", null);
             return null;
         }
 
@@ -133,7 +101,7 @@ namespace TicketManagerCSharp.repository
                 comm.CommandText = "insert into Users(username,password) values (@username,@password)";
                 var usernameParam = comm.CreateParameter();
                 usernameParam.ParameterName = "@username";
-                usernameParam.Value = entity.Username;
+                usernameParam.Value = entity.Id;
                 comm.Parameters.Add(usernameParam);
 
                 var passwordParam = comm.CreateParameter();
@@ -177,23 +145,18 @@ namespace TicketManagerCSharp.repository
             return size;
         }
 
-        public void Update(int id, User entity)
+        public void Update(string id, User entity)
         {
             log.InfoFormat("Entering Update with value {0}", id);
             var con = DBUtils.getConnection(props);
 
             using (var comm = con.CreateCommand())
             {
-                comm.CommandText = "update Userss set username=@username,password=@password where id=@id";
+                comm.CommandText = "update Userss set password=@password where username=@id";
                 var idParam = comm.CreateParameter();
                 idParam.ParameterName = "@id";
                 idParam.Value = entity.Id;
                 comm.Parameters.Add(idParam);
-
-                var usernameParam = comm.CreateParameter();
-                usernameParam.ParameterName = "@username";
-                usernameParam.Value = entity.Username;
-                comm.Parameters.Add(usernameParam);
 
                 var passwordParam = comm.CreateParameter();
                 passwordParam.ParameterName = "@password";

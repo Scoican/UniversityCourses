@@ -6,24 +6,49 @@ using System.Xml.Serialization;
 
 namespace TicketManagerCSharp.domain
 {
-    class Event:HasId<int>
+    public enum GameState
+    {
+        AVAILABLE, SOLD_OUT
+    }
+    public class Event:HasId<int>
     {
         private int id;
-        private string name;
-        private int seats;
+        private string gameName;
+        private double gamePrice;
+        private int freeSeats;
+        private GameState gameState;
 
 
-        public Event(int id, string name, int seats)
+
+        public Event(int id, string gameName, double gamePrice, int freeSeats)
         {
             this.id = id;
-            this.name = name;
-            this.seats = seats;
+            this.gameName = gameName;
+            this.gamePrice = gamePrice;
+            this.freeSeats = freeSeats;
+            if (this.freeSeats > 0)
+            {
+                this.gameState = GameState.AVAILABLE;
+            }
+            else
+            {
+                this.gameState = GameState.SOLD_OUT;
+            }
         }
 
-        public Event(string name, int seats)
+        public Event(string gameName, double gamePrice, int freeSeats)
         {
-            this.name = name;
-            this.seats = seats;
+            this.gameName = gameName;
+            this.gamePrice = gamePrice;
+            this.freeSeats = freeSeats;
+            if (this.freeSeats > 0)
+            {
+                this.gameState = GameState.AVAILABLE;
+            }
+            else
+            {
+                this.gameState = GameState.SOLD_OUT;
+            }
         }
 
         public int Id
@@ -32,43 +57,28 @@ namespace TicketManagerCSharp.domain
             set { id = value; }
         }
 
-        public string Name
+        public string GameName { get => gameName; set => gameName = value; }
+        public double GamePrice { get => gamePrice; set => gamePrice = value; }
+        public int FreeSeats
         {
-            get { return name; }
-            set { name = value; }
+            get
+            {
+                return freeSeats;
+            }
+            set
+            {
+                this.freeSeats = value;
+                if (this.freeSeats > 0)
+                {
+                this.gameState = GameState.AVAILABLE;
+                }
+                else
+                {
+                    this.gameState = GameState.SOLD_OUT;
+                }
+            }
         }
 
-        public int Seats
-        {
-            get { return seats; }
-            set { seats = value; }
-        }
-
-        public override bool Equals(object obj)
-        {
-            var @event = obj as Event;
-            return @event != null &&
-                   id == @event.Id &&
-                   name == @event.Name &&
-                   seats == @event.Seats;
-        }
-
-        public override int GetHashCode()
-        {
-            var hashCode = 2031959382;
-            hashCode = hashCode * -1521134295 + id.GetHashCode();
-            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(name);
-            hashCode = hashCode * -1521134295 + seats.GetHashCode();
-            return hashCode;
-        }
-
-        public override string ToString()
-        {
-            return "Event{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", seats=" + seats +
-                '}';
-        }
+        public GameState GameState { get => gameState; }
     }
 }

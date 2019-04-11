@@ -5,18 +5,10 @@ using System.Text;
 
 namespace TicketManagerCSharp.domain
 {
-    class User:HasId<int>
-    {
-        private int id;
+    public class User : HasId<string> { 
+    
         private string username;
         private string password;
-
-        public User(int id, string username, string password)
-        {
-            this.id = id;
-            this.username = username;
-            this.password = password;
-        }
 
         public User(string username, string password)
         {
@@ -24,13 +16,7 @@ namespace TicketManagerCSharp.domain
             this.password = password;
         }
 
-        public int Id
-        {
-            get { return id; }
-            set { id = value; }
-        }
-
-        public string Username
+        public string Id
         {
             get { return username; }
             set { username = value; }
@@ -46,7 +32,6 @@ namespace TicketManagerCSharp.domain
         {
             var user = obj as User;
             return user != null &&
-                   id == user.id &&
                    username == user.username &&
                    password == user.password;
         }
@@ -54,7 +39,6 @@ namespace TicketManagerCSharp.domain
         public override int GetHashCode()
         {
             var hashCode = -1343893607;
-            hashCode = hashCode * -1521134295 + id.GetHashCode();
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(username);
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(password);
             return hashCode;
@@ -63,8 +47,7 @@ namespace TicketManagerCSharp.domain
         public override string ToString()
         {
             return "User{" +
-                            "id=" + id +
-                            ", username='" + username + '\'' +
+                            "username='" + username + '\'' +
                             ", password='" + password + '\'' +
                             '}';
         }

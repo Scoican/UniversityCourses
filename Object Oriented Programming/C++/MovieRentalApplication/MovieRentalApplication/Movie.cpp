@@ -10,6 +10,13 @@ Movie::Movie(string name, string genre, int launchYear, string leadingActor)
 	this->leadingActor = leadingActor;
 }
 
+Movie::Movie(const Movie& other) {
+	this->name = other.getName();
+	this->genre = other.getGenre();
+	this->launchYear = other.getLaunchYear();
+	this->leadingActor = other.getLeadingActor();
+}
+
 string Movie::getName() const
 {
 	return this->name;
@@ -30,24 +37,24 @@ string Movie::getLeadingActor() const
 	return this->leadingActor;
 }
 
-void Movie::setName(string name)
+void Movie::setName(string newName)
 {
-	this->name = name;
+	this->name = newName;
 }
 
-void Movie::setGenre(string genre)
+	void Movie::setGenre(string newGenre)
 {
-	this->genre = genre;
+	this->genre = newGenre;
 }
 
-void Movie::setLaunchYear(int launchYear)
+void Movie::setLaunchYear(int newLaunchYear)
 {
-	this->launchYear = launchYear;
+	this->launchYear = newLaunchYear;
 }
 
-void Movie::setLeadingActor(string leadingActor)
+void Movie::setLeadingActor(string newLeadingActor)
 {
-	this->leadingActor = leadingActor;
+	this->leadingActor = newLeadingActor;
 }
 
 bool Movie::operator==(const Movie & other) const

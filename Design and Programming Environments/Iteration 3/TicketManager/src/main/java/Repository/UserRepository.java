@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-public class UserRepository implements IRepository<Integer, User> {
+public class UserRepository implements IRepository<String, User> {
 
     private JdbcUtils dbUtils;
 
@@ -50,10 +50,9 @@ public class UserRepository implements IRepository<Integer, User> {
     public void save(User entity) {
         logger.traceEntry("saving user{}",entity);
         Connection con=dbUtils.getConnection();
-        try(PreparedStatement preStmt=con.prepareStatement("insert into Users values (?,?,?)")) {
-            preStmt.setInt(1,entity.getId());
-            preStmt.setString(2,entity.getUsername());
-            preStmt.setString(3,entity.getPassword());
+        try(PreparedStatement preStmt=con.prepareStatement("insert into Users values (?,?)")) {
+            preStmt.setString(1,entity.getId());
+            preStmt.setString(2,entity.getPassword());
             int result = preStmt.executeUpdate();
         }
         catch (SQLException e) {
@@ -64,11 +63,11 @@ public class UserRepository implements IRepository<Integer, User> {
     }
 
     @Override
-    public void delete(Integer integer) {
-        logger.traceEntry("deleting user with {}",integer);
+    public void delete(String s) {
+        logger.traceEntry("deleting user with {}",s);
         Connection con = dbUtils.getConnection();
-        try(PreparedStatement preStmt=con.prepareStatement("delete from Users where id=?")){
-            preStmt.setInt(1,integer);
+        try(PreparedStatement preStmt=con.prepareStatement("delete from Users where username=?")){
+            preStmt.setString(1,s);
             int result = preStmt.executeUpdate();
         }catch(SQLException e){
             logger.error(e);
@@ -78,43 +77,32 @@ public class UserRepository implements IRepository<Integer, User> {
     }
 
     @Override
-    public void update(Integer integer, User entity) {
-        logger.traceEntry("updating user with {}",integer);
-        Connection con = dbUtils.getConnection();
-        User user=findOne(integer);
-        if(user==null){
-            return;
-        }
-        Integer newId=entity.getId();
-        String newUsername=entity.getUsername();
-        String newPassword=entity.getPassword();
-
-        try(PreparedStatement preStmt=con.prepareStatement("update Users set id = ?,username = ?,password = ? where id = ? ")){
-            preStmt.setInt(4,integer);
-            preStmt.setInt(1,newId);
-            preStmt.setString(2,newUsername);
-            preStmt.setString(3,newPassword);
+    public void update(String s, User entity) {
+        logger.traceEntry("updating User entity with {}", s);
+        Connection con=dbUtils.getConnection();
+        try(PreparedStatement preStmt=con.prepareStatement("update Users set password=? where username=?")){
+            preStmt.setString(1,entity.getPassword());
+            preStmt.setString(2,entity.getId());
             int result=preStmt.executeUpdate();
-        }catch(SQLException e) {
-            logger.error(e);
-            System.out.println("Error DB User Update " + e);
+        }catch (SQLException ex){
+            logger.error(ex);
+            System.out.println("Error DB "+ ex);
         }
         logger.traceExit();
     }
 
     @Override
-    public User findOne(Integer integer) {
-        logger.traceEntry("finding user with id {}",integer);
+    public User findOne(String s) {
+        logger.traceEntry("finding user with username{}",s);
         Connection con=dbUtils.getConnection();
 
-        try(PreparedStatement preStmt=con.prepareStatement("select * from Users where id=?")){
-            preStmt.setInt(1,integer);
+        try(PreparedStatement preStmt=con.prepareStatement("select * from Users where username=?")){
+            preStmt.setString(1,s);
             try(ResultSet result = preStmt.executeQuery()){
                 if(result.next()){
-                    int id= result.getInt("id");
                     String username=result.getString("username");
                     String password=result.getString("password");
-                    User user = new User(id,username,password);
+                    User user = new User(username,password);
                     logger.traceExit(user);
                     return user;
                 }
@@ -123,33 +111,10 @@ public class UserRepository implements IRepository<Integer, User> {
             logger.error(e);
             System.out.println("Error DB User FindOne " + e);
         }
-        logger.traceExit("No user found with id{}",integer);
+        logger.traceExit("No user found with username{}",s);
         return null;
     }
 
-    public User findOne(String user) {
-        logger.traceEntry("finding user with username {}",user);
-        Connection con=dbUtils.getConnection();
-
-        try(PreparedStatement preStmt=con.prepareStatement("select * from Users where username=?")){
-            preStmt.setString(1,user);
-            try(ResultSet result = preStmt.executeQuery()){
-                if(result.next()){
-                    int id= result.getInt("id");
-                    String username=result.getString("username");
-                    String password=result.getString("password");
-                    User u = new User(id,username,password);
-                    logger.traceExit(u);
-                    return u;
-                }
-            }
-        }catch(SQLException e) {
-            logger.error(e);
-            System.out.println("Error DB User FindOne " + e);
-        }
-        logger.traceExit("No user found with username{}",user);
-        return null;
-    }
 
     @Override
     public Iterable<User> findAll() {
@@ -159,10 +124,9 @@ public class UserRepository implements IRepository<Integer, User> {
         try(PreparedStatement preStmt=con.prepareStatement("select * from Users")){
             try(ResultSet result=preStmt.executeQuery()){
                 while(result.next()){
-                    int id= result.getInt("id");
                     String username=result.getString("username");
                     String password=result.getString("password");
-                    User user = new User(id,username,password);
+                    User user = new User(username,password);
                     users.add(user);
                 }
             }

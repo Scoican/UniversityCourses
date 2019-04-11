@@ -48,9 +48,11 @@ public class EventRepository implements IRepository<Integer, Event> {
     public void save(Event entity) {
         logger.traceEntry("saving event{}",entity);
         Connection con=dbUtils.getConnection();
-        try(PreparedStatement preStmt=con.prepareStatement("insert into Events values (?,?)")) {
-            preStmt.setString(1,entity.getName());
-            preStmt.setInt(2,entity.getSeats());
+        try(PreparedStatement preStmt=con.prepareStatement("insert into Events values (?,?,?,?)")) {
+            preStmt.setString(1,entity.getGameName());
+            preStmt.setDouble(2,entity.getGamePrice());
+            preStmt.setInt(3,entity.getFreeSeats());
+            preStmt.setString(4,entity.getGameState().toString());
             int result = preStmt.executeUpdate();
         }
         catch (SQLException e) {
@@ -76,26 +78,19 @@ public class EventRepository implements IRepository<Integer, Event> {
 
     @Override
     public void update(Integer integer, Event entity) {
-        logger.traceEntry("updating event with {}",integer);
-        Connection con = dbUtils.getConnection();
-        Event event = findOne(integer);
-        if(event==null){
-            return;
-        }
-        Integer newId=entity.getId();
-        String newName=entity.getName();
-        Integer newSeats=entity.getSeats();
-
-        try(PreparedStatement preStmt=con.prepareStatement("update Events"+
-                " set name = ?,seats = ? "+
-                " where id = ? ")){
-            preStmt.setInt(3,integer);
-            preStmt.setString(1,newName);
-            preStmt.setInt(2,newSeats);
+        logger.traceEntry("updating Meci entity with {}", integer);
+        Connection con=dbUtils.getConnection();
+        try(PreparedStatement preStmt=con.prepareStatement("update Events set game_name=? ,game_price=?, free_seats=? ,game_state=? where id=?")){
+            preStmt.setString(1,entity.getGameName());
+            preStmt.setDouble(2,entity.getGamePrice());
+            preStmt.setInt(3,entity.getFreeSeats());
+            preStmt.setString(4,entity.getGameState().toString());
+            preStmt.setInt(5,integer);
             int result=preStmt.executeUpdate();
-        }catch(SQLException e) {
-            logger.error(e);
-            System.out.println("Error DB Event Update " + e);
+
+        }catch (SQLException ex){
+            logger.error(ex);
+            System.out.println("Error DB "+ ex);
         }
         logger.traceExit();
     }
@@ -110,9 +105,10 @@ public class EventRepository implements IRepository<Integer, Event> {
             try(ResultSet result = preStmt.executeQuery()){
                 if(result.next()){
                     int id= result.getInt("id");
-                    String name=result.getString("name");
-                    int seats=result.getInt("seats");
-                    Event event = new Event(id,name,seats);
+                    String gameName=result.getString("game_name");
+                    double price=result.getDouble("game_price");
+                    int seats=result.getInt("free_seats");
+                    Event event = new Event(id,gameName,price,seats);
                     logger.traceExit(event);
                     return event;
                 }
@@ -134,9 +130,10 @@ public class EventRepository implements IRepository<Integer, Event> {
             try(ResultSet result=preStmt.executeQuery()){
                 while(result.next()){
                     int id= result.getInt("id");
-                    String name=result.getString("name");
-                    int seats=result.getInt("seats");
-                    Event event = new Event(id,name,seats);
+                    String gameName=result.getString("game_name");
+                    double price=result.getDouble("game_price");
+                    int seats=result.getInt("free_seats");
+                    Event event = new Event(id,gameName,price,seats);
                     events.add(event);
                 }
             }

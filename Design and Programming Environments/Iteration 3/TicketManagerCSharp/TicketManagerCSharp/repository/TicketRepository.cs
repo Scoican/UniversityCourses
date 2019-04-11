@@ -9,7 +9,7 @@ using TicketManagerCSharp.utils;
 
 namespace TicketManagerCSharp.repository
 {
-    class TicketRepository : IRepository<int, Ticket>
+    public class TicketRepository : IRepository<int, Ticket>
     {
         private static readonly ILog log = LogManager.GetLogger("EventRepository");
 
@@ -49,16 +49,17 @@ namespace TicketManagerCSharp.repository
             IList<Ticket> tickets = new List<Ticket>();
             using (var comm = con.CreateCommand())
             {
-                comm.CommandText = "select id,buyer,price,event from Users";
+                comm.CommandText = "select id,id_game,reserved_seats,price,client_name from Tickets";
                 using (var dataR = comm.ExecuteReader())
                 {
                     while (dataR.Read())
                     {
                         int idTicket = dataR.GetInt32(0);
-                        int idEvent = dataR.GetInt32(3);
-                        string buyer = dataR.GetString(1);
-                        double price = dataR.GetDouble(2);
-                        Ticket ticket = new Ticket(idTicket, idEvent, buyer, price);
+                        int idGame = dataR.GetInt32(1);
+                        int reservedSeats = dataR.GetInt32(2);
+                        double price = dataR.GetDouble(3);
+                        string clientName = dataR.GetString(4);
+                        Ticket ticket = new Ticket(idTicket, idGame, reservedSeats,price,clientName);
                         tickets.Add(ticket);
                     }
                 }
@@ -74,7 +75,7 @@ namespace TicketManagerCSharp.repository
 
             using (var comm = con.CreateCommand())
             {
-                comm.CommandText = "select id,buyer,price,event, from Users where id=@id";
+                comm.CommandText = "select id_game,reserved_seats,price,client_name from Tickets where id=@id";
                 IDbDataParameter paramId = comm.CreateParameter();
                 paramId.ParameterName = "@id";
                 paramId.Value = id;
@@ -84,11 +85,11 @@ namespace TicketManagerCSharp.repository
                 {
                     if (dataR.Read())
                     {
-                        int idTicket = dataR.GetInt32(0);
-                        int idEvent = dataR.GetInt32(3);
-                        string buyer = dataR.GetString(1);
+                        int idGame = dataR.GetInt32(0);
+                        int reservedSeats = dataR.GetInt32(1);
                         double price = dataR.GetDouble(2);
-                        Ticket ticket = new Ticket(idTicket, idEvent, buyer, price);
+                        string clientName = dataR.GetString(3);
+                        Ticket ticket = new Ticket(idGame, reservedSeats, price, clientName);
                         log.InfoFormat("Exiting findOne with value{0}", ticket);
                         return ticket;
                     }
@@ -104,21 +105,27 @@ namespace TicketManagerCSharp.repository
             var con = DBUtils.getConnection(props);
             using (var comm = con.CreateCommand())
             {
-                comm.CommandText = "insert into Tickets(buyer,price,event) values (@buyer,@price,@event)";
-                var buyerParam = comm.CreateParameter();
-                buyerParam.ParameterName = "@buyer";
-                buyerParam.Value = entity.Buyer;
-                comm.Parameters.Add(buyerParam);
+                comm.CommandText = "insert into Tickets(id_game,reserved_seats,price,client_name) values (@id_game,@reserved_seats,@price,@client_name)";
+                
+                var idGameParam = comm.CreateParameter();
+                idGameParam.ParameterName = "@id_game";
+                idGameParam.Value = entity.IdGame;
+                comm.Parameters.Add(idGameParam);
+
+                var reservedSeatsParam = comm.CreateParameter();
+                reservedSeatsParam.ParameterName = "@reserved_seats";
+                reservedSeatsParam.Value = entity.ReservedSeats;
+                comm.Parameters.Add(reservedSeatsParam);
 
                 var priceParam = comm.CreateParameter();
                 priceParam.ParameterName = "@price";
                 priceParam.Value = entity.Price;
                 comm.Parameters.Add(priceParam);
 
-                var idEventParam = comm.CreateParameter();
-                idEventParam.ParameterName = "@event";
-                idEventParam.Value = entity.IdEvent;
-                comm.Parameters.Add(idEventParam);
+                var clientNameParam = comm.CreateParameter();
+                clientNameParam.ParameterName = "@client_name";
+                clientNameParam.Value = entity.ClientName;
+                comm.Parameters.Add(clientNameParam);
 
                 var result = comm.ExecuteNonQuery();
                 if (result == 0)
@@ -163,26 +170,31 @@ namespace TicketManagerCSharp.repository
 
             using (var comm = con.CreateCommand())
             {
-                comm.CommandText = "update Userss set buyer=@buyer,price=@price,event=@event where id=@id";
+                comm.CommandText = "update Userss set id_game=@id_game,reserved_seats=@reserved_seats,price=@price,client_name=@client_name where id=@id";
                 var idParam = comm.CreateParameter();
                 idParam.ParameterName = "@id";
                 idParam.Value = entity.Id;
                 comm.Parameters.Add(idParam);
 
-                var buyerParam = comm.CreateParameter();
-                buyerParam.ParameterName = "@buyer";
-                buyerParam.Value = entity.Buyer;
-                comm.Parameters.Add(buyerParam);
+                var idGameParam = comm.CreateParameter();
+                idGameParam.ParameterName = "@id_game";
+                idGameParam.Value = entity.IdGame;
+                comm.Parameters.Add(idGameParam);
+
+                var reservedSeatsParam = comm.CreateParameter();
+                reservedSeatsParam.ParameterName = "@reserved_seats";
+                reservedSeatsParam.Value = entity.ReservedSeats;
+                comm.Parameters.Add(reservedSeatsParam);
 
                 var priceParam = comm.CreateParameter();
                 priceParam.ParameterName = "@price";
                 priceParam.Value = entity.Price;
                 comm.Parameters.Add(priceParam);
 
-                var idEventParam = comm.CreateParameter();
-                idEventParam.ParameterName = "@event";
-                idEventParam.Value = entity.IdEvent;
-                comm.Parameters.Add(idEventParam);
+                var clientNameParam = comm.CreateParameter();
+                clientNameParam.ParameterName = "@client_name";
+                clientNameParam.Value = entity.ClientName;
+                comm.Parameters.Add(clientNameParam);
 
                 var result = comm.ExecuteNonQuery();
                 if (result == 0)

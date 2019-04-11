@@ -4,6 +4,7 @@ import Domain.User;
 import Service.EventService;
 import Service.TicketService;
 import Service.UserService;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -15,88 +16,68 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
+import javax.xml.bind.ValidationException;
 import java.io.IOException;
+
+import static Utils.GUIUtils.showErrorMessage;
 
 public class LoginController {
 
     @FXML
-    TextField usernameTextField;
-
+    TextField usernameText;
     @FXML
-    PasswordField passwordTextField;
-
+    PasswordField passwordText;
     @FXML
-    Button loginButton;
+    Button loginBtn;
 
     private UserService userService;
     private TicketService ticketService;
     private EventService eventService;
 
-
-    private Stage primaryStage;
-    private Scene userScene;
-    private Scene loginScene;
-
-    private UserController userController;
-
-
-    public void init(UserService userService,TicketService ticketService,EventService eventService, Scene loginScene){
-        this.userService=userService;
-        this.ticketService=ticketService;
-        this.eventService=eventService;
-        this.loginScene=loginScene;
-    }
-
-    public void setPrimaryStage(Stage primaryStage) {
-        this.primaryStage=primaryStage;
+    public void setService(UserService userService,TicketService ticketService,EventService eventService){
+        this.userService = userService;
+        this.ticketService = ticketService;
+        this.eventService = eventService;
     }
 
     @FXML
-    public void handleLogin() throws IOException {
-        String username = "";
-        String password = "";
+    public void handlerLoginButton(ActionEvent e){
 
-        if (usernameTextField.getText() != null) {
-            username = usernameTextField.getText().trim();
+        try{
+
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource("/MainPageView.fxml"));
+            AnchorPane root = (AnchorPane)fxmlLoader.load();
+            root.setId("pane");
+            MainPageController controller = fxmlLoader.getController();
+            controller.setService(userService,ticketService,eventService);
+
+            String username = usernameText.getText();
+            String password = passwordText.getText();
+            try {
+                User user = userService.login(username, password);
+                if (user != null) {
+                    Stage stage = new Stage();
+                    stage.setTitle(user.getId());
+                    Scene scene=new Scene(root);
+                    scene.getStylesheets().addAll(this.getClass().getResource("/style.css").toExternalForm());
+                    stage.setScene(scene);
+                    stage.show();
+                    Stage currentScene = (Stage) usernameText.getScene().getWindow();
+                    currentScene.close();
+
+                }
+            }
+            catch (ValidationException msg){
+                usernameText.setText("");
+                passwordText.setText("");
+                showErrorMessage(msg.getMessage());
+            }
+
         }
-        if(passwordTextField.getText()!=null){
-            password = passwordTextField.getText().trim();
+        catch (IOException e1){
+            showErrorMessage(e1.getMessage());
         }
-
-        boolean valid = userService.checkPassword(username,password);
-        if (valid) {
-            User user=userService.findOne(username);
-            initViewUser(user);
-            handleUserWindow();
-
-        }else{
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Error");
-            alert.setHeaderText("Wrong credentials");
-            alert.setContentText("Username or password incorrect");
-
-            alert.showAndWait();
-        }
-        usernameTextField.clear();
-        passwordTextField.clear();
-
     }
 
-    private void initViewUser(User user) throws IOException {
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/UserView.fxml"));
-        BorderPane userLayout = loader.load();
-        Scene userScene = new Scene(userLayout);
-
-        this.userController=loader.getController();
-
-        userController.setLoginScene(loginScene);
-        userController.setPrimaryStage(primaryStage);
-        userController.setData(userService,ticketService,eventService,user);
-        this.userScene = userScene;
-    }
-
-    private void handleUserWindow() {
-        this.primaryStage.setScene(this.userScene);
-    }
 }

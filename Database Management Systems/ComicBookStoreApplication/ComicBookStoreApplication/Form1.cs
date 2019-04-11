@@ -20,25 +20,25 @@ namespace ComicBookStoreApplication
         {
             InitializeComponent();
         }
-
+        SqlConnection conn;
         private void Form1_Load(object sender, EventArgs e)
         {
-            SqlConnection conn = new SqlConnection(connectionString);
+            conn = new SqlConnection(connectionString);
             try
             {
                 ds = new DataSet();
                 conn.Open();
-                SqlDataAdapter parentAdapter = new SqlDataAdapter("SELECT * FROM ComicBooks", conn);
-                childAdapter = new SqlDataAdapter("SELECT * FROM Artists", conn);
+                SqlDataAdapter parentAdapter = new SqlDataAdapter("SELECT * FROM Staff", conn);
+                childAdapter = new SqlDataAdapter("SELECT * FROM Tranzactions", conn);
                 cb = new SqlCommandBuilder(childAdapter);
-                parentAdapter.Fill(ds, "ComicBooks");
-                childAdapter.Fill(ds, "Artists");
+                parentAdapter.Fill(ds, "Staff");
+                childAdapter.Fill(ds, "Tranzactions");
                 BindingSource parentBS = new BindingSource();
                 childBS = new BindingSource();
-                parentBS.DataSource = ds.Tables["ComicBooks"];
+                parentBS.DataSource = ds.Tables["Staff"];
                 dataGridViewParent.DataSource = parentBS;
-                DataColumn pk = ds.Tables["ComicBooks"].Columns["id"];
-                DataColumn fk = ds.Tables["Artists"].Columns["id"];
+                DataColumn pk = ds.Tables["Staff"].Columns["id"];
+                DataColumn fk = ds.Tables["Tranzactions"].Columns["staffMember"];
                 DataRelation relation = new DataRelation("FK_ComicBooks_Artists", pk, fk);
                 ds.Relations.Add(relation);
                 childBS.DataSource = parentBS;
@@ -59,7 +59,7 @@ namespace ComicBookStoreApplication
         {
             try
             {
-                childAdapter.Update(ds, "Artists");
+                childAdapter.Update(ds, "Tranzactions");
             }
             catch (Exception ex)
             {
@@ -71,11 +71,29 @@ namespace ComicBookStoreApplication
         {
             try
             {
-                childAdapter.Update(ds, "Artists");
+                childAdapter.Update(ds, "Tranzactions");
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+
+        private void updateButton_Click(object sender, EventArgs e)
+        {
+            cb = new SqlCommandBuilder(childAdapter);
+            try
+            {
+                childAdapter.Update(ds, "Tranzactions");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
             }
         }
     }

@@ -12,7 +12,8 @@ void callTestsService() {
 }
 void testAddMovie() {
 	MovieRepository movies;
-	MovieService service{ movies };
+	MovieValidator validator;
+	MovieService service{ movies,validator };
 	assert(service.getAll().size() == 0);
 	Movie movie = Movie("The Avengers", "Action", 2010, "Groot");
 	service.addMovie("The Avengers", "Action", 2010, "Groot");
@@ -26,7 +27,8 @@ void testAddMovie() {
 }
 void testRemoveMovie() {
 	MovieRepository movies;	
-	MovieService service{ movies };
+	MovieValidator validator;
+	MovieService service{ movies,validator };
 	assert(service.getAll().size() == 0);
 	Movie movie = Movie("The Avengers", "Action", 2010, "Groot");
 	service.addMovie("The Avengers", "Action", 2010, "Groot");
@@ -41,7 +43,8 @@ void testRemoveMovie() {
 }
 void testUpdateMovie() {
 	MovieRepository movies;
-	MovieService service{ movies };
+	MovieValidator validator;
+	MovieService service{ movies,validator };
 	assert(service.getAll().size() == 0);
 	Movie movie1 = Movie("The Avengers", "Action", 2010, "Groot");
 	Movie movie2 = Movie("The Avengers", "Comedy", 2010, "Hulk");
@@ -60,20 +63,22 @@ void testUpdateMovie() {
 }
 void testFindMovie() {
 	MovieRepository movies;
-	MovieService service{ movies };
+	MovieValidator validator;
+	MovieService service{ movies,validator };
 	assert(service.getAll().size() == 0);
 	Movie movie1 = Movie("The Avengers", "Action", 2010, "Groot");
-	service.addMovie("The Avengers","Action",2010,"Groot");
+	service.addMovie("The Avengers", "Action", 2010, "Groot");
 	assert(service.findMovie("The Avengers", 2010) == movie1);
 	try {
-		service.findMovie("The Avenger", 2011);
+		Movie foundMovie = service.findMovie("The Avenger", 2011);
 	}catch (MovieRepositoryException&) {
 		assert(true);
 	}
 }
 void testGetAllService() {
 	MovieRepository movies;
-	MovieService service{ movies };
+	MovieValidator validator;
+	MovieService service{ movies,validator };
 	assert(service.getAll().size() == 0);
 	Movie movie1 = Movie("The Avengers", "Action", 2010, "Groot");
 	service.addMovie("The Avengers", "Action", 2010, "Groot");
@@ -84,14 +89,15 @@ void testGetAllService() {
 void testFilters()
 {
 	MovieRepository movies;
-	MovieService service{ movies };
+	MovieValidator validator;
+	MovieService service{ movies,validator };
 	service.addMovie("Movie1", "Action", 2011, "Groot");
 	service.addMovie("Movie2", "Action", 2012, "Groot");
 	service.addMovie("Movie3", "Action", 2003, "Groot");
 	service.addMovie("ASd4", "Action", 2004, "Groot");
 	string name = "Movie";
-	vector<Movie> vector1 = service.filterByYear(2010);
-	vector<Movie> vector2 = service.filterByName(name);
+	Vector<Movie> vector1 = service.filterByYear(2010);
+	Vector<Movie> vector2 = service.filterByName(name);
 	assert(vector1.size() == 2);
 	assert(vector2.size() == 3);
 }
@@ -99,15 +105,16 @@ void testFilters()
 void testSorting()
 {
 	MovieRepository movies;
-	MovieService service{ movies };
-	service.addMovie("Movie1", "Action4", 2011, "Groot4");
-	service.addMovie("Movie3", "Action3", 2012, "Groot3");
-	service.addMovie("Movie2", "Action2", 2003, "Groot1");
-	service.addMovie("Movie4", "Action1", 2004, "Groot2");
-	vector<Movie> vector1 = service.sortByLaunchYear();
-	vector<Movie> vector2 = service.sortByName();
-	vector<Movie> vector3 = service.sortByGenre();
-	vector<Movie> vector4 = service.sortByLeadingActor();
+	MovieValidator validator;
+	MovieService service{ movies,validator };
+	service.addMovie("Movie1", "ActionD", 2011, "GrootD");
+	service.addMovie("Movie3", "ActionC", 2012, "GrootC");
+	service.addMovie("Movie2", "ActionB", 2003, "GrootA");
+	service.addMovie("Movie4", "ActionA", 2004, "GrootB");
+	Vector<Movie> vector1 = service.sortByLaunchYear();
+	Vector<Movie> vector2 = service.sortByName();
+	Vector<Movie> vector3 = service.sortByGenre();
+	Vector<Movie> vector4 = service.sortByLeadingActor();
 	assert(vector1[0].getName() == "Movie2");
 	assert(vector2[0].getName() == "Movie1");
 	assert(vector3[0].getName() == "Movie4");

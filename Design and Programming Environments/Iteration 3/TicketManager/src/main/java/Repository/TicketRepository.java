@@ -50,11 +50,11 @@ public class TicketRepository implements IRepository<Integer, Ticket> {
     public void save(Ticket entity) {
         logger.traceEntry("saving ticket{}",entity);
         Connection con=dbUtils.getConnection();
-        try(PreparedStatement preStmt=con.prepareStatement("insert into Tickets values (?,?,?,?)")) {
-            preStmt.setInt(1,entity.getId());
-            preStmt.setString(2,entity.getBuyer());
+        try(PreparedStatement preStmt=con.prepareStatement("insert into Tickets(id_game,reserved_seats,price,client_name) values (?,?,?,?)")) {
+            preStmt.setInt(1,entity.getId_game());
+            preStmt.setInt(2,entity.getReservedSeats());
             preStmt.setDouble(3,entity.getPrice());
-            preStmt.setInt(4,entity.getEvent());
+            preStmt.setString(4,entity.getClientName());
             int result = preStmt.executeUpdate();
         }
         catch (SQLException e) {
@@ -80,29 +80,19 @@ public class TicketRepository implements IRepository<Integer, Ticket> {
 
     @Override
     public void update(Integer integer, Ticket entity) {
-        logger.traceEntry("updating ticket with {}",integer);
-        Connection con = dbUtils.getConnection();
-        Ticket ticket = findOne(integer);
-        if(ticket==null){
-            return;
-        }
-        Integer newId=entity.getId();
-        Integer newEvent=entity.getEvent();
-        String newBuyer=entity.getBuyer();
-        Double newPrice=entity.getPrice();
-
-        try(PreparedStatement preStmt=con.prepareStatement("update Tickets"+
-                " set id = ?,event = ?,buyer = ?,price = ? "+
-                " where id = ? ")){
+        logger.traceEntry("updating Ticket entity with {}", integer);
+        Connection con=dbUtils.getConnection();
+        try(PreparedStatement preStmt=con.prepareStatement("update Ticket set id_game=?,reserved_seats=?,price=?,client_name=?where id=?")){
+            //preStmt.setInt(1,entity.getId());
+            preStmt.setInt(1,entity.getId_game());
+            preStmt.setInt(2,entity.getReservedSeats());
+            preStmt.setDouble(3,entity.getPrice());
+            preStmt.setString(4,entity.getClientName());
             preStmt.setInt(5,integer);
-            preStmt.setInt(1,newId);
-            preStmt.setInt(2,newEvent);
-            preStmt.setString(3,newBuyer);
-            preStmt.setDouble(4,newPrice);
             int result=preStmt.executeUpdate();
-        }catch(SQLException e) {
-            logger.error(e);
-            System.out.println("Error DB Ticket Update " + e);
+        }catch (SQLException ex){
+            logger.error(ex);
+            System.out.println("Error DB "+ ex);
         }
         logger.traceExit();
     }
@@ -117,10 +107,11 @@ public class TicketRepository implements IRepository<Integer, Ticket> {
             try(ResultSet result = preStmt.executeQuery()){
                 if(result.next()){
                     int id= result.getInt("id");
-                    int event = result.getInt("event");
-                    String buyer=result.getString("buyer");
-                    double price=result.getDouble("price");
-                    Ticket ticket = new Ticket(id,event,buyer,price);
+                    int game = result.getInt("id_game");
+                    Integer reservedSeats=result.getInt("reserved_seats");
+                    Double price=result.getDouble("price");
+                    String clientName=result.getString("client_name");
+                    Ticket ticket = new Ticket(id,game,reservedSeats,price,clientName);
                     logger.traceExit(ticket);
                     return ticket;
                 }
@@ -142,10 +133,11 @@ public class TicketRepository implements IRepository<Integer, Ticket> {
             try(ResultSet result=preStmt.executeQuery()){
                 while(result.next()){
                     int id= result.getInt("id");
-                    int event = result.getInt("event");
-                    String buyer=result.getString("buyer");
-                    double price=result.getDouble("price");
-                    Ticket ticket = new Ticket(id,event,buyer,price);
+                    int game = result.getInt("id_game");
+                    Integer reservedSeats=result.getInt("reserved_seats");
+                    Double price=result.getDouble("price");
+                    String clientName=result.getString("client_name");
+                    Ticket ticket = new Ticket(id,game,reservedSeats,price,clientName);
                     tickets.add(ticket);
                 }
             }
