@@ -4,14 +4,15 @@
 #include "Movie.h"
 using std::string;
 using std::ostream;
+#include <vector>
 
 class ValidateException {
-	Vector <string> mesaje;
+	vector <string> mesaje;
 public:
-	ValidateException(const Vector<string>& errors) :mesaje{ errors } {}
+	ValidateException(const vector<string>& errors) :mesaje{ errors } {}
 	string getMsg() {
 		string msg = "";
-		for (int i = 0; i < mesaje.size(); i++)
+		for (unsigned int i = 0; i < mesaje.size(); i++)
 			msg += mesaje[i];
 		return msg;
 	};

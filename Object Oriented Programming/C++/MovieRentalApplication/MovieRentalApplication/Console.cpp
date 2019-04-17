@@ -153,6 +153,63 @@ void Console::sortByLeadingActor()
 	}
 }
 
+void Console::addWishlistUi()
+{
+	cout << "Choose a movie to add to the wishlist from the following:" << endl;
+	getAllUi();
+	string name;
+	int launchYear=0;
+	cout << "Name: ";
+	cin >> name;
+	cout << "Launch year: ";
+	cin >> launchYear;
+	try {
+		wishlist.addWishlist(name, launchYear);
+		cout << "Movie added with succes!" << endl;
+	}
+	catch (MovieRepositoryException& msg) {
+		cout << msg << endl;
+	}
+	catch (ValidateException& msg) {
+		cout << msg << endl;
+	}
+	catch (WishlistException& msg) {
+		cout << msg << endl;
+	}
+
+}
+
+void Console::deleteWishlistUi()
+{
+	wishlist.deleteWishlist();
+	cout << "Wishlist emptied!" << endl;
+}
+
+void Console::populateWishlistUi()
+{
+	int nr;
+	cout << "Insert a number of movies you wish to add:";
+	cin >> nr;
+	try {
+		wishlist.populateWishlist(nr);
+		viewWishlistUi();
+	}
+	catch (WishlistException& msg) {
+		cout << msg << endl;
+	}
+}
+
+void Console::viewWishlistUi() {
+	if (wishlist.getWishlist().size() == 0) {
+		cout << "There are no movies available!" << endl;
+		return;
+	}
+	for (Movie m : wishlist.getWishlist()) {
+		cout << m;
+	}
+
+}
+
 void Console::printMenu()
 {
 	cout << "------------------------------------" << endl;
@@ -169,6 +226,10 @@ void Console::printMenu()
 	cout << "- 9. Sort by movie genre           -" << endl;
 	cout << "- 10. Sort by movie launch year    -" << endl;
 	cout << "- 11. Sort by movie leading actor  -" << endl;
+	cout << "- 12. Add movie to wish list       -" << endl;
+	cout << "- 13. Remove movie from wish list  -" << endl;
+	cout << "- 14. Populate wish list           -" << endl;
+	cout << "- 15. View wish list               -" << endl;
 	cout << "- 0. Exit application              -" << endl;
 	cout << "------------------------------------" << endl;
 
@@ -229,6 +290,18 @@ void Console::run()
 				break;
 			case 11:
 				sortByLeadingActor();
+				break;
+			case 12:
+				addWishlistUi();
+				break;
+			case 13:
+				deleteWishlistUi();
+				break;
+			case 14:
+				populateWishlistUi();
+				break;
+			case 15:
+				viewWishlistUi();
 				break;
 			case 0:
 				return;

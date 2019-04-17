@@ -1,15 +1,15 @@
 #include "Validator.h"
 
 void MovieValidator::validate(const Movie& m) {
-	Vector <string> msgs;
+	vector <string> msgs;
 	if (m.getGenre().find_first_of("0123456789") != std::string::npos) {
-		msgs.add("Invalid Genre!");
+		msgs.push_back("Invalid Genre!");
 	}
 	if (m.getLeadingActor().find_first_of("0123456789") != std::string::npos) {
-		msgs.add("Invalid name of Leading actor!");
+		msgs.push_back("Invalid name of Leading actor!");
 	}
 	if (m.getLaunchYear() < 1800 || m.getLaunchYear() > 2020) {
-		msgs.add("Invalid launch year!");
+		msgs.push_back("Invalid launch year!");
 	}
 	if (msgs.size() > 0) {
 		throw ValidateException(msgs);

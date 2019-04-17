@@ -1,0 +1,12 @@
+package ObjectProtocol;
+
+import Domain.Event;
+
+public class IncreaseNumberOfParticipantsResponse implements UpdateResponse {
+    private Event event;
+    public  IncreaseNumberOfParticipantsResponse(Event event){
+        this.event=event;
+    }
+    public Event getEvent(){return  event;
+    }
+}

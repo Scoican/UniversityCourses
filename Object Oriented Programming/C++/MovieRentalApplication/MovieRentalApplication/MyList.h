@@ -13,9 +13,9 @@ class  Vector {
 public:
 	//constructor
 	Vector() noexcept;
-	//size of vector
+	//size of Vector
 	int size() const noexcept;
-	//add an element at the end of the vector
+	//add an element at the end of the Vector
 	void add(const T &value);
 	//remove an element from a given position
 	void erase(int poz) noexcept;
@@ -24,7 +24,7 @@ public:
 	//override [] operator
 	T &operator[](int poz);
 	const T & operator[](int poz) const;
-	//copiaza vector
+	//copiaza Vector
 	Vector(const Vector & v);
 	//muta constuctor
 	Vector(Vector && v)noexcept;

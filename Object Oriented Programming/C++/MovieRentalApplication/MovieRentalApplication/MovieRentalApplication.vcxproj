@@ -149,7 +149,9 @@
     <ClInclude Include="TestRepository.h" />
     <ClInclude Include="TestService.h" />
     <ClInclude Include="TestValidator.h" />
+    <ClInclude Include="TestWishlist.h" />
     <ClInclude Include="Validator.h" />
+    <ClInclude Include="WishlistService.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Console.cpp" />
@@ -164,7 +166,9 @@
     <ClCompile Include="TestRepository.cpp" />
     <ClCompile Include="TestService.cpp" />
     <ClCompile Include="TestValidator.cpp" />
+    <ClCompile Include="TestWishlist.cpp" />
     <ClCompile Include="Validator.cpp" />
+    <ClCompile Include="WishlistService.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

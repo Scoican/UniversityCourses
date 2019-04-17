@@ -1,8 +1,9 @@
 package Domain;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Event implements IHasID<Integer>{
+public class Event implements IHasID<Integer>, Serializable {
 
     private Integer id;
     private String gameName;

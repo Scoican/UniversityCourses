@@ -31,19 +31,19 @@ public:
 	//Output:The found Movie
 	Movie findMovie(const string& name, const int launchYear) const;
 	//Function that returns all the movies
-	//Output:movies:Vector
-	const Vector<Movie> getAll() const noexcept;
+	//Output:movies:vector
+	const vector<Movie> getAll() const noexcept;
 
 	//Sorting methods
-	Vector<Movie> generalSort(ComparingFunction comparingFunction)const;
-	Vector<Movie> sortByName() const;
-	Vector<Movie> sortByGenre() const;
-	Vector<Movie> sortByLaunchYear() const;
-	Vector<Movie> sortByLeadingActor() const;
+	vector<Movie> generalSort(ComparingFunction comparingFunction)const;
+	vector<Movie> sortByName() const;
+	vector<Movie> sortByGenre() const;
+	vector<Movie> sortByLaunchYear() const;
+	vector<Movie> sortByLeadingActor() const;
 
 	//Filter methods
-	Vector<Movie> generalfilter(function<bool(const Movie&)> fct) const;
-	Vector<Movie> filterByYear(int year) const;
-	Vector<Movie> filterByName(string& name) const;
+	vector<Movie> generalfilter(function<bool(const Movie&)> fct) const;
+	vector<Movie> filterByYear(int year) const;
+	vector<Movie> filterByName(string& name) const;
 };
 

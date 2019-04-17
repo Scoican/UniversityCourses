@@ -3,7 +3,9 @@
 #include "TestService.h"
 #include "TestValidator.h"
 #include "TestMyList.h"
+#include "TestWishlist.h"
 #include "Console.h"
+#include "WishlistService.h"
 #include "MyList.h"
 #include <iostream>
 
@@ -15,9 +17,11 @@ int main() {
 	callTestsRepository();
 	callTestsService();
 	callTestsValidator();
+	callTestsWishlist();
 	MovieRepository repository;
 	MovieValidator validator;
 	MovieService service{ repository,validator };
-	Console console{ service };
+	WishlistService wishlist{ repository };
+	Console console{ service,wishlist };
 	console.run();
 }

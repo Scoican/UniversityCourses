@@ -27,66 +27,56 @@ Movie MovieService::findMovie(const string & name, const int launchYear) const
 	return movieRepository.find(name, launchYear);
 }
 
-const Vector<Movie> MovieService::getAll() const noexcept
+const vector<Movie> MovieService::getAll() const noexcept
 {
 	return movieRepository.getAll();
 }
 
-Vector<Movie> MovieService::generalSort(ComparingFunction comparingFunction) const
+vector<Movie> MovieService::generalSort(ComparingFunction comparingFunction) const
 {
-	Vector<Movie> vector{ movieRepository.getAll() };	
-	for (int i = 0; i < vector.size()-1; i++)
-	{
-		for (int j = i+1; j < vector.size(); j++)
-		{
-			if (comparingFunction(vector[i], vector[j])==false) {
-				Movie aux = vector[i];
-				vector[i] = vector[j];
-				vector[j] = aux;
-			}
-		}
-	}
+	vector<Movie> vector{ movieRepository.getAll() };	
+	sort(vector.begin(), vector.end(), comparingFunction);
 	return vector;
 }
 
-Vector<Movie> MovieService::sortByName() const
+vector<Movie> MovieService::sortByName() const
 {
 	return generalSort(compareByName);
 }
 
-Vector<Movie> MovieService::sortByGenre() const
+vector<Movie> MovieService::sortByGenre() const
 {
 	return generalSort(compareByGenre);
 }
 
-Vector<Movie> MovieService::sortByLaunchYear() const
+vector<Movie> MovieService::sortByLaunchYear() const
 {
 	return generalSort(compareByLaunchYear);
 }
 
-Vector<Movie> MovieService::sortByLeadingActor() const
+vector<Movie> MovieService::sortByLeadingActor() const
 {
 	return generalSort(compareByLeadingActor);
 }
 
-Vector<Movie> MovieService::generalfilter(function<bool(const Movie&)> fct) const
+vector<Movie> MovieService::generalfilter(function<bool(const Movie&)> fct) const
 {
-	Vector<Movie> filtered;
+	vector<Movie> filtered;
 	for (const auto& movie : movieRepository.getAll()) {
 		if (fct(movie)) {
-			filtered.add(movie);
+			filtered.push_back(movie);
 		}
 	}
 	return filtered;
 }
 
-Vector<Movie> MovieService::filterByYear(int year) const
+vector<Movie> MovieService::filterByYear(int year) const
 {
 	return generalfilter([year](const Movie& movie)noexcept {
 		return movie.getLaunchYear() >= year; });
 }
 
-Vector<Movie> MovieService::filterByName(string& name) const
+vector<Movie> MovieService::filterByName(string& name) const
 {
 	return generalfilter([name](const Movie& movie)noexcept {
 		if (movie.getName().find(name) != string::npos) {

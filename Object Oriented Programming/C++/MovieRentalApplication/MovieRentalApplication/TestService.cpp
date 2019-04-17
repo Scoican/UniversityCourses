@@ -96,8 +96,8 @@ void testFilters()
 	service.addMovie("Movie3", "Action", 2003, "Groot");
 	service.addMovie("ASd4", "Action", 2004, "Groot");
 	string name = "Movie";
-	Vector<Movie> vector1 = service.filterByYear(2010);
-	Vector<Movie> vector2 = service.filterByName(name);
+	vector<Movie> vector1 = service.filterByYear(2010);
+	vector<Movie> vector2 = service.filterByName(name);
 	assert(vector1.size() == 2);
 	assert(vector2.size() == 3);
 }
@@ -111,10 +111,10 @@ void testSorting()
 	service.addMovie("Movie3", "ActionC", 2012, "GrootC");
 	service.addMovie("Movie2", "ActionB", 2003, "GrootA");
 	service.addMovie("Movie4", "ActionA", 2004, "GrootB");
-	Vector<Movie> vector1 = service.sortByLaunchYear();
-	Vector<Movie> vector2 = service.sortByName();
-	Vector<Movie> vector3 = service.sortByGenre();
-	Vector<Movie> vector4 = service.sortByLeadingActor();
+	vector<Movie> vector1 = service.sortByLaunchYear();
+	vector<Movie> vector2 = service.sortByName();
+	vector<Movie> vector3 = service.sortByGenre();
+	vector<Movie> vector4 = service.sortByLeadingActor();
 	assert(vector1[0].getName() == "Movie2");
 	assert(vector2[0].getName() == "Movie1");
 	assert(vector3[0].getName() == "Movie4");

@@ -1,5 +1,6 @@
 #pragma once
 #include "MovieService.h"
+#include "WishlistService.h"
 #include <iostream>
 using namespace std;
 
@@ -7,6 +8,7 @@ class Console
 {
 private:
 	MovieService& service;
+	WishlistService& wishlist;
 	//Method for adding a Movie
 	void addUi();
 	//Method for removing a Movie
@@ -25,10 +27,14 @@ private:
 	void sortByGenre();
 	void sortByLaunchYear();
 	void sortByLeadingActor();
+	void addWishlistUi();
+	void deleteWishlistUi();
+	void populateWishlistUi();
+	void viewWishlistUi();
 	void printMenu();
 	void testingData();
 public:
-	Console(MovieService& service) noexcept :service{ service } {}
+	Console(MovieService& service, WishlistService& wishlist) noexcept :service{ service }, wishlist{ wishlist } {}
 	Console(const Console& ot) = delete;
 
 	void run();

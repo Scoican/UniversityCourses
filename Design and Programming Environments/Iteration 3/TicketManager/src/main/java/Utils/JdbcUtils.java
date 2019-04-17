@@ -17,8 +17,8 @@ public class JdbcUtils {
     private Connection instance=null;
     private Connection getNewConnection(){
         logger.traceEntry();
-        String driver=jdbcProps.getProperty("mtasks.jdbc.driver");
-        String url=jdbcProps.getProperty("mtasks.jdbc.url");
+        String driver=jdbcProps.getProperty("tasks.jdbc.driver");
+        String url=jdbcProps.getProperty("tasks.jdbc.url");
 
         logger.info("trying to connect to database ... {}",url);
 

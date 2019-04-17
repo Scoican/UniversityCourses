@@ -10,7 +10,7 @@ using namespace std;
 class MovieRepository
 {
 private:
-	Vector<Movie> movies;
+	vector<Movie> movies;
 	bool exist(const Movie& movie);
 public:
 	//Default construtor
@@ -33,7 +33,7 @@ public:
 	Movie find(const string& name, const int launchYear) const;
 	//Function that retruns all the movies in the vector
 	//Output:Movies-vector
-	const Vector<Movie>& getAll() const noexcept;
+	const vector<Movie>& getAll() const noexcept;
 };
 
 

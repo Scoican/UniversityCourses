@@ -87,6 +87,12 @@
     <ClInclude Include="TestMyList.h">
       <Filter>Header Files\Tests</Filter>
     </ClInclude>
+    <ClInclude Include="WishlistService.h">
+      <Filter>Header Files\Service</Filter>
+    </ClInclude>
+    <ClInclude Include="TestWishlist.h">
+      <Filter>Header Files\Tests</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Movie.cpp">
@@ -124,6 +130,12 @@
       <Filter>Source Files\Domain</Filter>
     </ClCompile>
     <ClCompile Include="TestMyList.cpp">
+      <Filter>Source Files\Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="WishlistService.cpp">
+      <Filter>Source Files\Service</Filter>
+    </ClCompile>
+    <ClCompile Include="TestWishlist.cpp">
       <Filter>Source Files\Tests</Filter>
     </ClCompile>
   </ItemGroup>
