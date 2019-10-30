@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Problema 1</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <select style="height: 200px;" id="list1" ondblclick="functionLeft()" multiple>
+        <option value="unu">Unu</option>
+        <option value="doi">Doi</option>
+        <option value="trei">Trei</option>
+        <option value="patru">Patru</option>
+        <option value="cinci">Cinci</option>
+        <option value="sase">Sase</option>
+    </select>
+    <select style="height: 200px;" id="list2" ondblclick="functionRight()" multiple>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+    </select>
+    <script>
+        $(function(){
+           $('#unu').on('click').hide(); 
+        });
+    </script>
+</body>
+</html>

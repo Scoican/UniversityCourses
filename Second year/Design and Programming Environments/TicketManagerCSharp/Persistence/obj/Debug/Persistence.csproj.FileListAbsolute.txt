@@ -1,0 +1,12 @@
+C:\Users\Scoican\Desktop\Facultate\Medii de proiectare si programare\Laborator\TicketManagerCSharp\Persistence\bin\Debug\Persistence.dll
+C:\Users\Scoican\Desktop\Facultate\Medii de proiectare si programare\Laborator\TicketManagerCSharp\Persistence\bin\Debug\Persistence.pdb
+C:\Users\Scoican\Desktop\Facultate\Medii de proiectare si programare\Laborator\TicketManagerCSharp\Persistence\bin\Debug\System.Data.SQLite.dll
+C:\Users\Scoican\Desktop\Facultate\Medii de proiectare si programare\Laborator\TicketManagerCSharp\Persistence\obj\Debug\Persistence.csprojAssemblyReference.cache
+C:\Users\Scoican\Desktop\Facultate\Medii de proiectare si programare\Laborator\TicketManagerCSharp\Persistence\obj\Debug\Persistence.csproj.CoreCompileInputs.cache
+C:\Users\Scoican\Desktop\Facultate\Medii de proiectare si programare\Laborator\TicketManagerCSharp\Persistence\obj\Debug\Persistence.csproj.CopyComplete
+C:\Users\Scoican\Desktop\Facultate\Medii de proiectare si programare\Laborator\TicketManagerCSharp\Persistence\obj\Debug\Persistence.dll
+C:\Users\Scoican\Desktop\Facultate\Medii de proiectare si programare\Laborator\TicketManagerCSharp\Persistence\obj\Debug\Persistence.pdb
+C:\Users\Scoican\Desktop\Facultate\Medii de proiectare si programare\Laborator\TicketManagerCSharp\Persistence\bin\Debug\TicketManagerCSharp.dll
+C:\Users\Scoican\Desktop\Facultate\Medii de proiectare si programare\Laborator\TicketManagerCSharp\Persistence\bin\Debug\log4net.dll
+C:\Users\Scoican\Desktop\Facultate\Medii de proiectare si programare\Laborator\TicketManagerCSharp\Persistence\bin\Debug\TicketManagerCSharp.pdb
+C:\Users\Scoican\Desktop\Facultate\Medii de proiectare si programare\Laborator\TicketManagerCSharp\Persistence\bin\Debug\TicketManagerCSharp.dll.config

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>editare</title>
+    <script src="jq.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="jscolor.js"></script>
+    <script>
+        function setTextColor(picker) {
+            document.getElementsByTagName('body')[0].style.color = '#' + picker.toString()
+        }
+        function setColor() {
+            console.log($('#color').attr('value'));
+            var str = 'color='.concat($('#color').attr('value'));
+            document.cookie = str;
+        }
+    </script>
+    <script>
+        $( function() {
+            $( "#datepicker" ).datepicker();
+        } );
+    </script>
+</head>
+<body>
+<form action="editare.php" method="post" enctype="multipart/form-data">
+    Username:<input type="text" id="username" name="user"><br/>
+    Password:<input type="password" id="pass" name="pass"><br/>
+    Description:<input type="text" id="desc" name="desc"><br/>
+    Photo: <input type="file" id="file" name="file"><br/>
+    Date: <input type="text" id="datepicker" name="date"><br/>
+    Color: <input class="jscolor" value="ab2567" onchange="setColor()" id="color">
+    <input type="submit" name="submit" value="Edit" id="button"><br/>
+</form>
+<a href="resetare.html">Resetare parola</a>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>inregistrare</title>
+    <script src="jq.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#button').click(function () {
+                if($('#pass1').val() === $('#pass2').val()){
+                    $.post("inregistrare.php",{
+                        user:$('#username').val(),
+                        pass1:$('#pass1').val(),
+                        pass2:$('#pass2').val()
+                    },function () {
+                        window.location.replace('http://localhost/lab/examen/autentificare.html');
+                    });
+                }
+                else {
+                    alert("Parola nu e identica!");
+                }
+
+            });
+        });
+    </script>
+</head>
+<body>
+<form method="post">
+    Username:<input type="text" id="username"><br/>
+    Password:<input type="password" id="pass1"><br/>
+    Password#2:<input type="password" id="pass2"><br/>
+    <input type="button" name="submit" value="Signup" id="button">
+</form>
+<a href="neautentificat.html">Neautentificat</a>
+</body>
+</html>

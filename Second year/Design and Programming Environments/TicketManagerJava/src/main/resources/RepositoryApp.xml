@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <util:properties id="jdbcProps">
+        <prop key="mtasks.jdbc.driver">org.sqlite.JDBC</prop>
+        <prop key="mtasks.jdbc.url">jdbc:sqlite:C:/Users/Scoican/Desktop/Facultate/Medii de proiectare si programare/Laborator/TicketManager/TicketManager.db</prop>
+    </util:properties>
+
+    <util:properties id="jdbcProps1" location="classpath:bd.properties"/>
+
+
+    <bean id="eventRepository" class="Repository.Repository.EventRepository">
+        <constructor-arg ref="jdbcProps"/>
+    </bean>
+
+    <bean id="ticketRepository" class="Repository.Repository.TicketRepository">
+        <constructor-arg ref="jdbcProps1"/>
+    </bean>
+
+    <bean id="userRepository" class="Repository.Repository.UserRepository">
+        <constructor-arg ref="jdbcProps1"/>
+    </bean>
+
+</beans>

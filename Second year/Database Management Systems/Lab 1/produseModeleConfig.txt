@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <connectionStrings>
+    <add name="conn" connectionString="Data Source=DESKTOP-O7DL3PI;Initial Catalog=ComicBookStore;Integrated Security=True"/>
+  </connectionStrings>
+
+  <appSettings>
+    
+    <add key ="campuriT2" value="PID,Nume,Cod_model,Grosime,UM,Pret"/>
+    <add key ="tipuriDateCampuriT2" value="int,string,int,float,string,float"/>
+    <add key ="parametriiSql" value="@pid,@nume,@mid,@grosime,@um,@pret"/>
+    
+    
+    <add key ="selectElemsT1" value="Select * from Modele"/>
+    
+    <add key="selectElTab2ByIdElTab1" value="Select * from Produse where Cod_model=@mid"/>
+    <add key="idTab1" value="@mid"/>
+
+    <add key="insertElTab2CommandString" value="Insert into Produse(PID,Nume,Cod_model,Grosime,UM,Pret) values (@pid, @nume, @mid, @grosime, @um, @pret)"/>
+
+    <add key="deleteCommandString" value="Delete from Produse where PID=@pid"/>
+
+    <add key="updateCommandString" value="Update Produse set Nume=@nume, Grosime=@grosime, UM=@um, Pret=@pret, Cod_model=@mid where PID=@pid "/>
+    
+  </appSettings>
+  <startup>
+    <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.6.1" />
+  </startup>
+</configuration>

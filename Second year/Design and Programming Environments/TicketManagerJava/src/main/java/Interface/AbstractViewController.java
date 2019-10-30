@@ -1,0 +1,20 @@
+package Interface;
+
+import javafx.scene.control.Alert;
+
+public class AbstractViewController {
+    void showErrorMessage(String msg){
+        Alert message = new Alert(Alert.AlertType.ERROR);
+        message.setTitle("Error");
+        message.setContentText(msg);
+        message.showAndWait();
+
+    }
+
+    static void showMessage(Alert.AlertType type, String header, String msg){
+        Alert message = new Alert(type);
+        message.setHeaderText(header);
+        message.setContentText(msg);
+        message.showAndWait();
+    }
+}

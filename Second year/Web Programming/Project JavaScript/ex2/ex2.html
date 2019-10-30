@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercitiul 2</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        th, td {
+            width: 150px;
+        }
+
+        div {
+            width: 450px;
+        }
+
+        button {
+            margin-left: 100px;
+        }
+    </style>
+</head>
+<body>
+<table id="table">
+
+</table>
+<div>
+    <button id="previous" onclick="previous()">Previous</button>
+    <button id="next" onclick="next()">Next</button>
+</div>
+</body>
+<script>
+    var globalIndex = 1;
+    var size;
+
+    dataBaseSize();
+    showNames(globalIndex);
+
+    function showNames(index) {
+        if (window.XMLHttpRequest) {
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function () {
+            if (this.readyState === 4 && this.status === 200) {
+                document.getElementById("table").innerHTML = this.responseText;
+                setGlobalIndex();
+                checkAvailability();
+            }
+        };
+        xmlhttp.open("GET", "ex2.php?index=" + index, true);
+        xmlhttp.send();
+    }
+
+
+    function setGlobalIndex() {
+        var allTrs = document.getElementsByTagName("table")[0].rows;
+        globalIndex = parseInt(allTrs[allTrs.length - 1].getAttribute('id'));
+    }
+
+    function dataBaseSize() {
+        if (window.XMLHttpRequest) {
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function () {
+            if (this.readyState === 4 && this.status === 200) {
+                size = parseInt(this.responseText);
+            }
+        };
+        xmlhttp.open("GET", "size.php?", true);
+        xmlhttp.send();
+    }
+
+    function checkAvailability() {
+        document.getElementById("previous").disabled = globalIndex <= 3;
+        document.getElementById("next").disabled = globalIndex >= size;
+    }
+
+    function previous() {
+        if (window.XMLHttpRequest) {
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function () {
+            if (this.readyState === 4 && this.status === 200) {
+                document.getElementById("table").innerHTML = this.responseText;
+                setGlobalIndex();
+                checkAvailability();
+            }
+        };
+        xmlhttp.open("GET", "previous.php?index=" + (globalIndex + 1)+"&size="+size, true);
+        xmlhttp.send();
+    }
+
+    function next() {
+        showNames(globalIndex + 1);
+    }
+
+
+</script>
+</html>

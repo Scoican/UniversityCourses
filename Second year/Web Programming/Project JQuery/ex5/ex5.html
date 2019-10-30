@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercitiul 5</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<style>
+        ul {
+            margin-left: 40px;
+        }
+
+        p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+<ul id="tree">
+    <li id="1" class="C:\xampp\htdocs">P-Web</li>
+</ul>
+<div>
+    <p id="selected">Selected file contains:</p>
+    <p id="content"></p>
+</div>
+</body>
+<script>
+$(document).ready(function(){
+	var globalId = 1;
+    var firstCall = 0;
+	$("#1").on("click",function(){
+		
+		showDirectories(this);
+		$(this).attr("id")
+		});
+	
+    function showDirectories(selectedLevel) {
+        firstCall = 0;
+        var id = selectedLevel.attr('id');
+        var path = "dir=" + selectedLevel.attr('class');
+        path += "\\" + selectedLevel.html();
+        var textToPost = "id=" + globalId + "&" + path;
+        loadDirectories(id, textToPost);
+    }
+
+    function loadDirectories(id, dir) {
+        if (firstCall === 0) {
+            firstCall = 1;
+            $.ajax({
+			type: 'POST',
+			url: 'treeView.php',
+			data: dir,
+			contentType:"application/x-www-form-urlencoded",
+			success: function(majuscule2){
+				var resultParsed = majuscule2.split("&");
+				var idd = "#".id;
+				$(idd).parent().html(positionFiles($(idd).parent().html(),resultParsed[0],$(idd)));
+			
+                if (resultParsed[1].split("=")[1] === "text") {
+                        $("#selected").html( "Selected file at path " + dir + " contains:");
+                        $("#content").html(resultParsed[2]);
+                    }
+                    else {
+                        globalId = parseInt(resultParsed[1].split("=")[1]);
+                    }
+                   
+            }
+			});        
+        }
+
+            
+    }
+
+    function positionFiles(innerHtml, files, whereToPosition) {
+        var innerHtmlToCompare = innerHtml.split("\n");
+        var parsedInner = innerHtml.split(whereToPosition.outerHTML);
+        console.log(innerHtml);
+        console.log(whereToPosition.outerHTML);
+        console.log("\n");
+
+        var whereToPositionForCompare = whereToPosition.outerHTML.replace(/\s/g, '');
+        if (innerHtmlToCompare.length === 1) {
+            innerHtmlToCompare = innerHtml;
+        } else {
+            innerHtmlToCompare = innerHtmlToCompare[1].replace(/\s/g, '');
+        }
+        if (whereToPositionForCompare === innerHtmlToCompare) {
+            return whereToPosition.outerHTML + files;
+        }
+        else if (parsedInner.length === 2) {
+            console.log("ParsedInner1" + parsedInner[0]);
+            console.log("ParsedInner1" + parsedInner[1]);
+            console.log("ParsedInner1" + parsedInner[2]);
+            return parsedInner[0] + whereToPosition.outerHTML + files + parsedInner[1];
+        }
+        else {
+            console.log("ParsedInner" + parsedInner[0]);
+            console.log("ParsedInner" + parsedInner[1]);
+            return parsedInner[0] + whereToPosition.outerHTML + files;
+        }
+    }
+	
+	
+	
+});
+    
+</script>
+</html>

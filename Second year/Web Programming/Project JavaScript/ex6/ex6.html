@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercitiul 6</title>
+    <style>
+        #main {
+            display: flex;
+        }
+
+        #filters{
+            display: inline;
+        }
+        input{
+            margin-right: 100%;
+        }
+
+        div {
+            margin-right: 20px;
+        }
+    </style>
+</head>
+<body>
+<div id="filters">
+    <h3 id="filtre">Filtre:</h3>
+    Producator:<input id="producator" disabled="true">
+    Procesor:<input id="procesor" disabled="true">
+    Placavideo:<input id="placavideo" disabled="true">
+    Memorie:<input id="memorie" disabled="true">
+    <button onclick="reseteazaFiltre()">Reseteaza filtre</button>
+</div>
+<div id="main">
+    <div>
+        <p>Producator:</p>
+        <select id="producatorS" onchange="addFilters(this)">
+            <option>ASUS</option>
+            <option>APPLE</option>
+            <option>HP</option>
+            <option>ACER</option>
+        </select>
+    </div>
+    <div>
+        <p>Procesor:</p>
+        <select id="procesorS" onchange="addFilters(this)">
+            <option>I7</option>
+            <option>I5</option>
+            <option>I3</option>
+            <option>Dual core</option>
+        </select>
+    </div>
+    <div>
+        <p>Placa video:</p>
+        <select id="placavideoS" onchange="addFilters(this)">
+            <option>Nvidia GeForce 1080</option>
+            <option>Nvidia GeForce 950M</option>
+            <option>Nvidia GeForce 1070Ti</option>
+            <option>Nvidia GeForce 840M</option>
+        </select>
+    </div>
+
+    <div>
+        <p>Memorie:</p>
+        <select id="memorieS" onchange="addFilters(this)">
+            <option>1 TB HDD 512 GB SSD</option>
+            <option>1 TB HDD</option>
+            <option>512 GB SSD</option>
+            <option>500 GB HDD 256 GB SSD</option>
+        </select>
+    </div>
+
+    <div>
+        <p>Produse:</p>
+        <ul id="produse">
+
+        </ul>
+    </div>
+</div>
+</body>
+<script>
+    reseteazaFiltre();
+
+    function loadList(filters) {
+        if (window.XMLHttpRequest) {
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function () {
+            if (this.readyState === 4 && this.status === 200) {
+                document.getElementById("produse").innerHTML = this.responseText;
+            }
+        };
+        xmlhttp.open("POST", "loadItems.php", true);
+        xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xmlhttp.send(filters);
+    }
+
+    function addFilters(filtru) {
+        var idParinte = filtru.getAttribute('id');
+        var idInput = idParinte.substring(0, idParinte.length - 1);
+        document.getElementById(idInput).value = filtru.options[filtru.selectedIndex].value;
+        var filterString = "producator=" + document.getElementById("producator").value+"&";
+        filterString += "procesor=" + document.getElementById("procesor").value+"&";
+        filterString += "placavideo=" + document.getElementById("placavideo").value+"&";
+        filterString += "memorie=" + document.getElementById("memorie").value;
+        loadList(filterString);
+    }
+
+    function reseteazaFiltre() {
+        document.getElementById("producator").value = "-";
+        document.getElementById("procesor").value = "-";
+        document.getElementById("placavideo").value = "-";
+        document.getElementById("memorie").value = "-";
+        loadList("producator=-&procesor=-&placavideo=-&memorie=-");
+    }
+</script>
+</html>

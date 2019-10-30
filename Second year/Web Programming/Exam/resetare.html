@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>resetare</title>
+    <script src="jq.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $( function() {
+            $( "#datepicker" ).datepicker();
+        } );
+    </script>
+</head>
+<body>
+<form action="resetare.php" method="post" enctype="multipart/form-data">
+    Username:<input type="text" id="username" name="user"><br/>
+    Date: <input type="text" id="datepicker" name="date"><br/>
+    New password:<input type="password" name="pass"><br/>
+    <input type="submit" name="submit" value="Reset" id="button"><br/>
+</form>
+</body>
+</html>

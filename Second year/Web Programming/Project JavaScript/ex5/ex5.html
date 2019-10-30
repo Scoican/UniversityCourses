@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercitiul 5</title>
+    <style>
+        ul {
+            margin-left: 40px;
+        }
+
+        p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+<ul id="tree">
+    <li id="1" class="C:\xampp\htdocs" onclick="showDirectories(this)">Laborator6</li>
+</ul>
+<div>
+    <p id="selected">Selected file contains:</p>
+    <p id="content"></p>
+</div>
+</body>
+<script>
+    var globalId = 1;
+    var firstCall = 0;
+
+    function showDirectories(selectedLevel) {
+        firstCall = 0;
+        var id = selectedLevel.getAttribute('id');
+        var path = "dir=" + selectedLevel.getAttribute('class');
+        path += "\\" + selectedLevel.innerText;
+        var textToPost = "id=" + globalId + "&" + path;
+        loadDirectories(id, textToPost);
+    }
+
+    function loadDirectories(id, dir) {
+        if (firstCall === 0) {
+            firstCall = 1;
+            if (window.XMLHttpRequest) {
+                xmlhttp = new XMLHttpRequest();
+            } else {
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xmlhttp.onreadystatechange = function () {
+                if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+                    var resultParsed = this.responseText.split("&");
+                    document.getElementById(id).parentElement.innerHTML =
+                        positionFiles(document.getElementById(id).parentElement.innerHTML,
+                            resultParsed[0], document.getElementById(id));
+                    if (resultParsed[1].split("=")[1] === "text") {
+                        document.getElementById("selected").innerHTML = "Selected file at path " + dir + " contains:";
+                        document.getElementById("content").innerHTML = resultParsed[2];
+                    }
+                    else {
+                        globalId = parseInt(resultParsed[1].split("=")[1]);
+                    }
+                }
+            };
+            xmlhttp.open("POST", "treeView.php?", true);
+            xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xmlhttp.send(dir);
+        }
+    }
+
+    function positionFiles(innerHtml, files, whereToPosition) {
+        var innerHtmlToCompare = innerHtml.split("\n");
+        var parsedInner = innerHtml.split(whereToPosition.outerHTML);
+        console.log(innerHtml);
+        console.log(whereToPosition.outerHTML);
+        console.log("\n");
+
+        var whereToPositionForCompare = whereToPosition.outerHTML.replace(/\s/g, '');
+        if (innerHtmlToCompare.length === 1) {
+            innerHtmlToCompare = innerHtml;
+        } else {
+            innerHtmlToCompare = innerHtmlToCompare[1].replace(/\s/g, '');
+        }
+        if (whereToPositionForCompare === innerHtmlToCompare) {
+            return whereToPosition.outerHTML + files;
+        }
+        else if (parsedInner.length === 2) {
+            console.log("ParsedInner1" + parsedInner[0]);
+            console.log("ParsedInner1" + parsedInner[1]);
+            console.log("ParsedInner1" + parsedInner[2]);
+            return parsedInner[0] + whereToPosition.outerHTML + files + parsedInner[1];
+        }
+        else {
+            console.log("ParsedInner" + parsedInner[0]);
+            console.log("ParsedInner" + parsedInner[1]);
+            return parsedInner[0] + whereToPosition.outerHTML + files;
+        }
+    }
+</script>
+</html>

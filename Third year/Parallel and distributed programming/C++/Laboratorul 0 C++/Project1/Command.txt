@@ -1,0 +1,1 @@
+.\script.ps1 -executableFile "C:\Users\Scoican\Desktop\Work\Facultate\Programare paralela si distribuita\Laboratorul 0 C++\Project1\Debug\Project1.exe" -noOfRuns 5

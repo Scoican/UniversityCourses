@@ -1,0 +1,12 @@
+C:\Users\Scoican\Desktop\Facultate\Medii de proiectare si programare\Laborator\TicketManagerCSharp\Services\bin\Debug\Services.dll
+C:\Users\Scoican\Desktop\Facultate\Medii de proiectare si programare\Laborator\TicketManagerCSharp\Services\bin\Debug\Services.pdb
+C:\Users\Scoican\Desktop\Facultate\Medii de proiectare si programare\Laborator\TicketManagerCSharp\Services\bin\Debug\log4net.dll
+C:\Users\Scoican\Desktop\Facultate\Medii de proiectare si programare\Laborator\TicketManagerCSharp\Services\bin\Debug\System.Data.SQLite.dll
+C:\Users\Scoican\Desktop\Facultate\Medii de proiectare si programare\Laborator\TicketManagerCSharp\Services\bin\Debug\TicketManagerCSharp.pdb
+C:\Users\Scoican\Desktop\Facultate\Medii de proiectare si programare\Laborator\TicketManagerCSharp\Services\obj\Debug\Services.csprojAssemblyReference.cache
+C:\Users\Scoican\Desktop\Facultate\Medii de proiectare si programare\Laborator\TicketManagerCSharp\Services\obj\Debug\Services.csproj.CoreCompileInputs.cache
+C:\Users\Scoican\Desktop\Facultate\Medii de proiectare si programare\Laborator\TicketManagerCSharp\Services\obj\Debug\Services.csproj.CopyComplete
+C:\Users\Scoican\Desktop\Facultate\Medii de proiectare si programare\Laborator\TicketManagerCSharp\Services\obj\Debug\Services.dll
+C:\Users\Scoican\Desktop\Facultate\Medii de proiectare si programare\Laborator\TicketManagerCSharp\Services\obj\Debug\Services.pdb
+C:\Users\Scoican\Desktop\Facultate\Medii de proiectare si programare\Laborator\TicketManagerCSharp\Services\bin\Debug\TicketManagerCSharp.dll
+C:\Users\Scoican\Desktop\Facultate\Medii de proiectare si programare\Laborator\TicketManagerCSharp\Services\bin\Debug\TicketManagerCSharp.dll.config

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercitiul 1</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+        #main {
+            display: flex;
+        }
+
+        ol {
+            width: 200px;
+        }
+
+        h3 {
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+<div id="main">
+    <div id="From">
+        <h3>Statii de plecare:</h3>
+        <ol id="Departures">
+        </ol>
+    </div>
+    <div id="To">
+        <h3>Statii de sosire:</h3>
+        <ol id="Arrivals">
+        </ol>
+    </div>
+</div>
+</body>
+<script>
+$(document).ready(function(){
+	$.ajax({
+        type: 'GET',
+        url: 'ex1.php',
+        data: '',
+        success: function(majuscule){
+			$("#Departures").html(majuscule);
+			$("li").on("click",function(){
+				departCity = $(this).html();
+				
+				if (departCity === "") {
+				
+					$("#Arrivals").html() = "";
+					return;
+				}
+				
+				
+				$.ajax({
+					type: 'GET',
+					url: 'ex1_2.php',
+					data: 'q='+departCity,
+					success: function(majuscule2){
+						
+						$("#Arrivals").html(majuscule2);
+					}
+				});
+			});
+   
+		}
+	});
+    
+});
+    
+    
+</script>
+</html>

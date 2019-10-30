@@ -1,0 +1,6 @@
+rootProject.name = 'tema4'
+include 'Server'
+findProject(':Server')?.name = 'tema2'
+include 'Client'
+findProject(':Client')?.name = 'tema2'
+rootProject.name = 'tema4'

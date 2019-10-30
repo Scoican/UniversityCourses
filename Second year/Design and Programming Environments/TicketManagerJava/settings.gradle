@@ -1,0 +1,10 @@
+rootProject.name = 'TicketManager'
+include 'Client'
+include 'Networking'
+include 'Server'
+include 'Services'
+include 'Module'
+include 'Test'
+include 'Persistance'
+include 'Model'
+

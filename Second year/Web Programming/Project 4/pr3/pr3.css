@@ -1,0 +1,21 @@
+
+div#memory_board{
+	background:	#98FB98;
+	border:#999 1px solid;
+	width:540px;
+	height:540px;
+	margin:0px auto;
+}
+div#memory_board > div{
+	background-image: url(siglaUBB.jpg);
+	background-size: cover;
+	border:#000 1px solid;
+	width:71px;
+	height:71px;
+	float:left;
+	margin:10px;
+	padding:20px;
+	font-size:64px;
+	cursor:pointer;
+	text-align:center;
+}

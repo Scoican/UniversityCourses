@@ -1,0 +1,70 @@
+Serial time for sum: 346500 nanoseconds
+Effective Parallel time for classification sum: 324100 nanoseconds
+Effective Parallel time for optimised sum: 300000 nanoseconds
+
+Serial time for multiplication: 28944800 nanoseconds
+Effective Parallel time for multiplication: 13635100 nanoseconds
+
+Serial time for sum: 358800 nanoseconds
+Effective Parallel time for classification sum: 180600 nanoseconds
+Effective Parallel time for optimised sum: 153400 nanoseconds
+
+Serial time for multiplication: 29126400 nanoseconds
+Effective Parallel time for multiplication: 12326900 nanoseconds
+
+Serial time for sum: 475300 nanoseconds
+Effective Parallel time for classification sum: 284100 nanoseconds
+Effective Parallel time for optimised sum: 191900 nanoseconds
+
+Serial time for multiplication: 29491600 nanoseconds
+Effective Parallel time for multiplication: 12422400 nanoseconds
+
+Serial time for sum: 388500 nanoseconds
+Effective Parallel time for classification sum: 231100 nanoseconds
+Effective Parallel time for optimised sum: 325800 nanoseconds
+
+Serial time for multiplication: 31971900 nanoseconds
+Effective Parallel time for multiplication: 13836800 nanoseconds
+
+Serial time for sum: 419900 nanoseconds
+Effective Parallel time for classification sum: 265000 nanoseconds
+Effective Parallel time for optimised sum: 121300 nanoseconds
+
+Serial time for multiplication: 31894900 nanoseconds
+Effective Parallel time for multiplication: 12487100 nanoseconds
+
+Serial time for sum: 455100 nanoseconds
+Effective Parallel time for classification sum: 209400 nanoseconds
+Effective Parallel time for optimised sum: 168300 nanoseconds
+
+Serial time for multiplication: 31365800 nanoseconds
+Effective Parallel time for multiplication: 11691300 nanoseconds
+
+Serial time for sum: 339100 nanoseconds
+Effective Parallel time for classification sum: 297500 nanoseconds
+Effective Parallel time for optimised sum: 212000 nanoseconds
+
+Serial time for multiplication: 27420500 nanoseconds
+Effective Parallel time for multiplication: 11650200 nanoseconds
+
+Serial time for sum: 347400 nanoseconds
+Effective Parallel time for classification sum: 326300 nanoseconds
+Effective Parallel time for optimised sum: 228000 nanoseconds
+
+Serial time for multiplication: 27427300 nanoseconds
+Effective Parallel time for multiplication: 12618000 nanoseconds
+
+Serial time for sum: 364100 nanoseconds
+Effective Parallel time for classification sum: 280100 nanoseconds
+Effective Parallel time for optimised sum: 273400 nanoseconds
+
+Serial time for multiplication: 30120400 nanoseconds
+Effective Parallel time for multiplication: 11732000 nanoseconds
+
+Serial time for sum: 361700 nanoseconds
+Effective Parallel time for classification sum: 440700 nanoseconds
+Effective Parallel time for optimised sum: 324900 nanoseconds
+
+Serial time for multiplication: 33129900 nanoseconds
+Effective Parallel time for multiplication: 12053700 nanoseconds
+

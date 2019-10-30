@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <connectionStrings>
+    <add name="conn" connectionString="Data Source=DESKTOP-O7DL3PI;Initial Catalog=ComicBookStore;Integrated Security=True"/>
+  </connectionStrings>
+
+  <appSettings>
+    
+    <add key ="campuriT2" value="Angajare_ID,ID_angajat,Pct_id,Salariu"/>
+    <add key ="tipuriDateCampuriT2" value="int,int,int,int"/>
+    <add key ="parametriiSql" value="@id_angajare,@id_angajat,@pct,@sal"/>
+    
+    
+    <add key ="selectElemsT1" value="Select * from Angajati"/>
+    
+    <add key="selectElTab2ByIdElTab1" value="Select * from Angajari where ID_angajat=@id_angajat"/>
+    <add key="idTab1" value="@id_angajat"/>
+
+    <add key="insertElTab2CommandString" value="Insert into Angajari(Angajare_ID,ID_angajat,Pct_id,Salariu) values (@id_angajare,@id_angajat,@pct,@sal)"/>
+
+    <add key="deleteCommandString" value="Delete from Angajari where Angajare_ID=@id_angajare"/>
+
+    <add key="updateCommandString" value="Update Angajari set ID_angajat=@id_angajat, Pct_id=@pct, Salariu=@sal where Angajare_ID=@id_angajare "/>
+    
+  </appSettings>
+  <startup>
+    <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.6.1" />
+  </startup>
+</configuration>

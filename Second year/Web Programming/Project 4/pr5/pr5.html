@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Problema 5</title>
+    <style>
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            font-family: Verdana, sans-serif;
+            margin: 0
+        }
+
+        .mySlides {
+            display: none
+        }
+
+        img {
+            vertical-align: middle;
+        }
+
+        /* Slideshow container */
+        .slideshow-container {
+            max-width: 1000px;
+            position: relative;
+            margin: auto;
+        }
+
+        /* Next & previous buttons */
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+        }
+
+        /* Position the "next button" to the right */
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* Caption text */
+        .text {
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+
+        }
+
+        a:link {
+            text-decoration: none;
+            color: #f2f2f2;
+            font-size: 25px;
+        }
+
+        a:visited {
+            text-decoration: none;
+            color: #f2f2f2;
+            font-size: 25px;
+        }
+
+        a:hover {
+            text-decoration: none;
+            color: yellow;
+        }
+
+
+
+        /* On smaller screens, decrease text size */
+        @media only screen and (max-width: 300px) {
+
+            .prev,
+            .next,
+            .text {
+                font-size: 11px
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <ol class="slideshow-container">
+
+        <li class="mySlides fade">
+            <img src="1.jpg" style="width:1000px; height:500px">
+            <div class="text"><a href="https://animalogic.ca/wp-content/uploads/2016/05/shutterstock_311479619-1000x500.jpg">Elefant</a></div>
+        </li>
+
+        <li class="mySlides fade">
+            <img src="2.jpg" style="width:1000px; height:500px">
+            <div class="text"><a href="https://s.ftcdn.net/v2013/pics/all/curated/zbtHtSM3SqutW5IEL9pfC28tJiUQYaRO_cover_1160.jpg?r=7841fb1f92b99194ca818d410cb09430731b6285">Caprioara</a></div>
+        </li>
+
+        <li class="mySlides fade">
+            <img src="3.jpg" style="width:1000px; height:500px">
+            <div class="text"><a href="https://wallpaperbrowse.com/media/images/beautiful-sunset-images-196063.jpg">Peisaj</a></div>
+        </li>
+
+        <li class="mySlides fade">
+            <img src="4.jpg" style="width:1000px; height:500px">
+            <div class="text"><a href="http://szzljy.com/images/image/image10.jpg">Pasari</a></div>
+        </li>
+
+
+        <a class="prev" onclick="plusSlides(-1)">Prev &#10094;</a>
+        <a class="next" onclick="plusSlides(1)">Next &#10095;</a>
+
+    </ol>
+    <br>
+
+    <script>
+        var slideIndex = 1;
+        var ok = 0;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            ok = 1;
+            showSlides(slideIndex += n);
+        }
+
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            if (n > slides.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            slides[slideIndex - 1].style.display = "block";
+
+
+            if (ok == 0) {
+                slideIndex++;
+                if (slideIndex > slides.length) {
+                    slideIndex = 1;
+                }
+                setTimeout(showSlides, 3000);
+            }
+            ok = 0;
+        }
+    </script>
+
+</body>
+</html> 
+

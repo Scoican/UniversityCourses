@@ -1,0 +1,20 @@
+﻿  Console.cpp
+  Export.cpp
+  main.cpp
+  Movie.cpp
+  MovieFileRepository.cpp
+  MovieRepository.cpp
+  MovieRepositoryException.cpp
+  MovieService.cpp
+  TestDomain.cpp
+  TestFileRepository.cpp
+  TestMyList.cpp
+  TestRepository.cpp
+  TestService.cpp
+  TestValidator.cpp
+  TestWishlist.cpp
+  Validator.cpp
+  WishlistService.cpp
+  Compiling...
+  Generating Code...
+  MovieRentalApplication.vcxproj -> C:\Users\Scoican\Desktop\Facultate\Programare orientata obiect\Laboratoare Anul 2\MovieRentalApplication\x64\Debug\MovieRentalApplication.exe

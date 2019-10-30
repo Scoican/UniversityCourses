@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercitiul 3</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+        #main {
+            display: flex;
+            
+        }
+
+        select {
+            margin: 60px;
+            width: 50px;
+            height: 30px;
+        }
+
+        form {
+            width: 200px;
+        }
+
+        .elems {
+            margin: 20px;
+        }
+
+        #save {
+            margin-top: 15px;
+            margin-left: 70px;
+        }
+
+    </style>
+</head>
+<body>
+<div id="main">
+    <div class="elems">
+        <h3>Select one id to fill data</h3>
+        <select id="ids" title="ids">
+
+        </select>
+    </div>
+    <div>
+        <form id="elems" class="elems" method="post">
+            <p>Name</p>
+            <input id="name" name="name" placeholder="Name">
+            <p>Surname</p>
+            <input id="surname" name="surname" placeholder="Surname">
+            <p>E-mail</p>
+            <input id="email" name="email" placeholder="E-mail">
+            <input type="submit" id="save" value="Save">
+        </form>
+    </div>
+</div>
+</body>
+<script>
+$(document).ready(function(){
+	var personGeneral;
+	$("#ids").on("change",function(){getById($(this));});
+	$("#elems").on("submit",function(){updateDB();})
+	
+	$.ajax({
+        type: 'GET',
+        url: 'loadIds.php',
+        data: '',
+        success: function(majuscule){
+			$("#ids").html(majuscule);
+			
+			$(document.body).on('change','input',function(){
+				enableButton();
+			}).change();
+			
+		}
+	});
+	
+	function loadForm(data) {
+        var person = data.split(',');
+        $("#name").val(person[0]);
+        $("#surname").val(person[1]);
+        $("#email").val(person[2]);
+		$("#save").prop( "disabled", true);
+    }
+
+	function enableButton() {
+		$("#save").prop( "disabled", false);
+    }
+	
+
+    function updateDB() {
+		var id = $("#ids").find('option:selected').attr('id');
+        var formText = "id=" +id + "&";
+		formText += $("#name").attr("name")+"="+$("#name").val()+"&";
+		formText += $("#surname").attr("name")+"="+$("#surname").val()+"&";
+		formText += $("#email").attr("name")+"="+$("#email").val();
+		var ok = 0;
+		var person = personGeneral.split(',');
+		if($("#name").val()!=person[0]){
+		ok=1;
+		}
+		if($("#surname").val()!=person[1]){
+		ok=1;
+		}
+		if($("#email").val()!=person[2]){
+		ok=1;
+		}
+		if(ok == 1){var answer = confirm("Save data?")
+		if (answer) {
+			$.ajax({
+					type: 'POST',
+					url: 'updateDB.php',
+					data: formText,
+					contentType:"application/x-www-form-urlencoded",
+					success: function(majuscule2){
+						alert(majuscule2);
+					}
+		});
+       
+			alert("S-au salvat");
+			}
+	else {
+		alert("Nu s-au salvat");
+	}}
+		
+    }
+
+    function getById(select) {
+		
+		
+		var selectedId =$('#ids option:selected').attr('id');
+        alert(selectedId);
+		$.ajax({
+					type: 'GET',
+					url: 'getById.php',
+					data: 'id='+selectedId,
+					success: function(majuscule3){
+						loadForm(majuscule3);
+						personGeneral = majuscule3;
+					}
+		});
+		  
+    }
+	
+
+    
+ 
+});
+
+</script>
+</html>

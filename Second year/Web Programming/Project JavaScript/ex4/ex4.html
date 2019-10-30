@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercitiul 4</title>
+    <style>
+        td{
+            border: 1px solid black;
+            width: 60px;
+            height: 60px;
+        }
+        p{
+            font-size: 55px;
+            text-align: center;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <table id="table">
+        <tr>
+            <td id="00" onclick="move(this)"></td>
+            <td id="01" onclick="move(this)"></td>
+            <td id="02" onclick="move(this)"></td>
+        </tr>
+        <tr>
+            <td id="10" onclick="move(this)"></td>
+            <td id="11" onclick="move(this)"></td>
+            <td id="12" onclick="move(this)"></td>
+        </tr>
+        <tr>
+            <td id="20" onclick="move(this)"></td>
+            <td id="21" onclick="move(this)"></td>
+            <td id="22" onclick="move(this)"></td>
+        </tr>
+    </table>
+    <h3>Your turn!</h3>
+</body>
+<script>
+    var table = new Array(3);
+    var computerFirst = false;
+    var winner =false;
+    init();
+    function init(){
+        winner = false;
+        //1 for X 0 for 0
+        for(i=0;i<3;i++){
+            table[i] = new Array(3);
+            for(j=0;j<3;j++){
+                table[i][j] = -1;
+                document.getElementById(i+""+j).innerHTML = "";
+            }
+        }
+        //1 for computer, 2 for human
+        var computerOrHuman = Math.floor((Math.random() * 2) + 1);
+        if(computerOrHuman === 1){
+            computerFirst = true;
+            computerMove();
+        }
+    }
+
+    function checkIfWinF() {
+        if (window.XMLHttpRequest) {
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function () {
+            if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+                if(anounceWinner(this.responseText)) {
+                    init();
+                }
+            }
+        };
+        var ser = serializableTable();
+        console.log(ser,"check");
+        xmlhttp.open("POST", "checkIfWin.php", true);
+        xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xmlhttp.send(ser);
+    }
+
+    function anounceWinner(s) {
+        console.log(s);
+        if(s === '0'){
+            if(computerFirst){
+                alert("Felicitari, ati castigat!");
+            }else{
+                alert("Computerul a castigat :(!");
+            }
+            winner = true;
+            return true;
+        }
+        if(s === 'X'){
+            if(!computerFirst){
+                alert("Felicitari, ati castigat!");
+            }else{
+                alert("Computerul a castigat :(!");
+            }
+            winner = true;
+            return true;
+        }
+        if(s === 'G'){
+            alert("Game over, nici un castigator..");
+            winner = true;
+            return true;
+        }
+        return false;
+    }
+
+    function serializableTable() {
+        var serializable = "serializabled=";
+        for(i=0;i<3;i++){
+            for(j=0;j<3;j++){
+                if(i===2 && j===2){
+                    if(computerFirst){
+                        serializable += table[i][j]+",X";
+                    }
+                    else{
+                        serializable += table[i][j]+",0";
+                    }
+                    break;
+                }
+                serializable += table[i][j] + ",";
+            }
+        }
+        return serializable;
+    }
+
+    function deserializeTable(serializable) {
+        serializable = serializable.split(",");
+        var index = 0;
+        for(i=0;i<3;i++){
+            for(j=0;j<3;j++){
+                var value = parseInt(serializable[index]);
+                table[i][j] = value;
+                console.log(value);
+                if(value === 1){
+                    document.getElementById(i+""+j).innerHTML = "<p>X</p>";
+                }
+                if(value === 0){
+                    document.getElementById(i+""+j).innerHTML = "<p>0</p>";
+                }
+                index++;
+            }
+        }
+    }
+
+    function move(clickedCell) {
+        var idText = clickedCell.getAttribute('id');
+        var id = idText.split("");
+        if (table[parseInt(id[0])][parseInt(id[1])] !== -1) {
+            return;
+        }
+        if(computerFirst){
+            table[parseInt(id[0])][parseInt(id[1])] = 0;
+            document.getElementById(idText).innerHTML = "<p>0</p>";
+        }else{
+            table[parseInt(id[0])][parseInt(id[1])] = 1;
+            document.getElementById(idText).innerHTML = "<p>X</p>";
+        }
+        if(!checkIfWinF()){
+            computerMove();
+        }
+    }
+    function computerMove(){
+        if (window.XMLHttpRequest) {
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function () {
+            if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+                deserializeTable(this.responseText);
+                console.log(winner);
+                if(!winner){
+                    checkIfWinF();
+                }
+            }
+        };
+        var ser = serializableTable();
+        console.log(ser,"move");
+        xmlhttp.open("POST", "doMove.php", true);
+        xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xmlhttp.send(ser);
+    }
+</script>
+</html>

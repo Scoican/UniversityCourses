@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="Client-tema2_main" target="1.8" />
+      <module name="Client-tema2_test" target="1.8" />
+      <module name="Server-tema2_main" target="1.8" />
+      <module name="Server-tema2_test" target="1.8" />
+      <module name="tema2_main" target="1.8" />
+      <module name="tema2_test" target="1.8" />
+      <module name="Test_main" target="1.8" />
+      <module name="Test_test" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

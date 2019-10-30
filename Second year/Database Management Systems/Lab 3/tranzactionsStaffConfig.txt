@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <connectionStrings>
+    <add name="conn" connectionString="Data Source=DESKTOP-O7DL3PI\SQLEXPRESS;Initial Catalog=ComicBookStore;Integrated Security=True"/>
+  </connectionStrings>
+
+  <appSettings>
+
+    <add key ="campuriT2" value="id,price,comic,client,staffMember"/>
+    <add key ="tipuriDateCampuriT2" value="int,int,int,int,int"/>
+    <add key ="parametriiSql" value="@id,@price,@comic,@client,@staffMember"/>
+    <add key ="selectElemsT1" value="Select * from Staff"/>
+
+    <add key="selectElTab2ByIdElTab1" value="Select * from Tranzactions where staffMember=@staffMember"/>
+    <add key="idTab1" value="@staffMember"/>
+
+    <add key="insertElTab2CommandString" value="Insert into Tranzactions(id,price,comic,client,staffMember) values (@id,@price,@comic,@client,@staffMember)"/>
+
+    <add key="deleteCommandString" value="Delete from Tranzactions where id=@id"/>
+
+    <add key="updateCommandString" value="Update Tranzactions set price=@price, comic=@comic,client=@client,staffMember=@staffMember where id=@id"/>
+
+  </appSettings>
+  <startup>
+    <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.6.1" />
+  </startup>
+</configuration>

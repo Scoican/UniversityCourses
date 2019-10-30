@@ -1,0 +1,19 @@
+li {
+    display: none;
+}
+
+img {
+    position: relative;
+    height: 700px;
+    width: 1200px;
+}
+
+a {
+    top: 200px;
+    left: 0;
+    width: 100%;
+}
+
+.btn {
+    display: inline;
+}

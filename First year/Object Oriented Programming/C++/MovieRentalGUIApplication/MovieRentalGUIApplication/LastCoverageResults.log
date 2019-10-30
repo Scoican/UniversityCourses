@@ -1,0 +1,21 @@
+[2019-05-09 18:07:22] [info] Start Program:
+Path:"C:\Users\Scoican\Desktop\Facultate\Programare orientata obiect\Laboratoare Anul 2\MovieRentalGUIApplication\x64\Debug\MovieRentalGUIApplication.exe"
+Arguments:
+Working directory: "C:\Users\Scoican\Desktop\Facultate\Programare orientata obiect\Laboratoare Anul 2\MovieRentalGUIApplication\MovieRentalGUIApplication\"
+Modules: Selected: C:\Users\Scoican\Desktop\Facultate\Programare orientata obiect\Laboratoare Anul 2\MovieRentalGUIApplication\x64\Debug\MovieRentalGUIApplication.exe Excluded: 
+Sources: Selected: C:\Users\Scoican\Desktop\Facultate\Programare orientata obiect\Laboratoare Anul 2\MovieRentalGUIApplication\MovieRentalGUIApplication Excluded: 
+Log Level: Normal
+Cover Children: 0
+Aggregate by file: 1
+Continue after C++ exception: 0
+Optimized build support: 0
+Export: Binary C:\Users\Scoican\AppData\Local\Temp\tbm0m04b.rhy 
+Input coverage: 
+Unified diff: 
+Excluded line regular expressions: 
+Substitute pdb source paths: 
+
+[2019-05-09 18:07:23] [info] Module: C:\Users\Scoican\Desktop\Facultate\Programare orientata obiect\Laboratoare Anul 2\MovieRentalGUIApplication\x64\Debug\MovieRentalGUIApplication.exe is selected because it matches selected pattern: C:\Users\Scoican\Desktop\Facultate\Programare orientata obiect\Laboratoare Anul 2\MovieRentalGUIApplication\x64\Debug\MovieRentalGUIApplication.exe
+[2019-05-09 18:08:10] [info] ----------------------------------------------------
+[2019-05-09 18:08:10] [info] Coverage binary generated in file: C:\Users\Scoican\AppData\Local\Temp\tbm0m04b.rhy
+[2019-05-09 18:08:10] [info] ----------------------------------------------------

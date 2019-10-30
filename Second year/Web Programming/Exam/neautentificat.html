@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>neautentificat</title>
+    <script src="jq.js"></script>
+    <script>
+        $.post("neaut.php",{},function (output) {
+            $('#show').html(output);
+        });
+    </script>
+</head>
+<body>
+<div id="show"></div>
+</body>
+</html>

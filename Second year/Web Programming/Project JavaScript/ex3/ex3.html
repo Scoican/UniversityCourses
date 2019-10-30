@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercitiul 3</title>
+    <style>
+        #main {
+            display: flex;
+            
+        }
+
+        select {
+            margin: 60px;
+            width: 50px;
+            height: 30px;
+        }
+
+        form {
+            width: 200px;
+        }
+
+        .elems {
+            margin: 20px;
+        }
+
+        #save {
+            margin-top: 15px;
+            margin-left: 70px;
+        }
+
+    </style>
+</head>
+<body>
+<div id="main">
+    <div class="elems">
+        <h3>Select one id to fill data</h3>
+        <select id="ids" onchange="getById(this)" title="ids">
+
+        </select>
+    </div>
+    <div>
+        <form class="elems" onsubmit="updateDB()" method="post">
+            <p>Name</p>
+            <input id="name" name="name" placeholder="Name">
+            <p>Surname</p>
+            <input id="surname" name="surname" placeholder="Surname">
+            <p>E-mail</p>
+            <input id="email" name="email" placeholder="E-mail">
+            <input type="submit" id="save" value="Save">
+        </form>
+    </div>
+	
+</div>
+</body>
+<script>
+
+    loadIds();
+    addEventListeners();
+	var personGeneral;
+    function loadIds() {
+        document.getElementById("save").disabled = true;
+        if (window.XMLHttpRequest) {
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function () {
+            if (this.readyState === 4 && this.status === 200) {
+                document.getElementById("ids").innerHTML = this.responseText;
+            }
+        };
+        xmlhttp.open("GET", "loadIds.php?", true);
+        xmlhttp.send();
+    }
+
+    function getById(select) {
+        var selectedId = select.options[select.selectedIndex].value;
+        if (window.XMLHttpRequest) {
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function () {
+            if (this.readyState === 4 && this.status === 200) {
+                loadForm(this.responseText);
+				personGeneral = this.responseText;
+            }
+        };
+        xmlhttp.open("GET", "getById.php?id=" + selectedId, true);
+        xmlhttp.send();
+    }
+
+    function loadForm(data) {
+        var person = data.split(',');
+        document.getElementById("name").value = person[0];
+        document.getElementById("surname").value = person[1];
+        document.getElementById("email").value = person[2];
+        document.getElementById("save").disabled = true;
+    }
+
+    function enableButton() {
+        document.getElementById("save").disabled = false;
+    }
+
+    function addEventListeners() {
+        var inputs = document.getElementsByTagName("input");
+        for (i = 0; i < inputs.length; i++) {
+            inputs[i].addEventListener('change', enableButton);
+        }
+    }
+
+    function updateDB() {
+        if (window.XMLHttpRequest) {
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function () {
+            if (this.readyState === 4 && this.status === 200) {
+                alert(this.responseText);
+            }
+        };
+        var select = document.getElementById("ids");
+        var formText = "id=" + select.options[select.selectedIndex].value + "&";
+        var inputs = document.getElementsByTagName("input");
+        var ok = 0;
+		var person = personGeneral.split(',');
+		for (i = 0; i < inputs.length - 2; i++) {
+            if (person[i]!=inputs[i].value){
+				ok = 1;
+			}
+			formText += inputs[i].name + "=" + inputs[i].value + "&";
+        }
+        formText += inputs[inputs.length - 2].name + "=" + inputs[inputs.length - 2].value;
+		if(ok == 1){var answer = confirm("Save data?")
+		if (answer) {
+			xmlhttp.open("POST", "updateDB.php", true);
+			xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+			xmlhttp.send(formText);
+			alert("S-au salvat");
+			}
+	else {
+		alert("Nu s-au salvat");
+	}}
+		
+    }
+	
+
+
+</script>
+</html>

@@ -1,0 +1,1 @@
+.\script.ps1 -executableFile "C:\Users\Scoican\Desktop\Facultate\Programare paralela si distribuita\Lab0\build\libs\Lab0-1.0-SNAPSHOT.jar" -noOfRuns 5

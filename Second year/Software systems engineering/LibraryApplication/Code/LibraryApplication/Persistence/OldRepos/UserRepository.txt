@@ -1,0 +1,171 @@
+﻿ public User Save(User user)
+        {
+            SQLiteConnection connection = DatabaseConnection.GetConnection();
+            connection.Open();
+
+            var query = "insert into Users(username,password,userType) values (@username,@password,@userType)";
+
+            using (var cmd = new SQLiteCommand(query, connection))
+            {
+                var usernameParam = cmd.CreateParameter();
+                usernameParam.ParameterName = "@username";
+                usernameParam.Value = user.Id;
+                cmd.Parameters.Add(usernameParam);
+
+                var passwordParam = cmd.CreateParameter();
+                passwordParam.ParameterName = "@password";
+                passwordParam.Value = user.Password;
+                cmd.Parameters.Add(passwordParam);
+
+                var typeParam = cmd.CreateParameter();
+                passwordParam.ParameterName = "@userType";
+                passwordParam.Value = user.UserType;
+                cmd.Parameters.Add(typeParam);
+
+                int affectedRows = cmd.ExecuteNonQuery();
+                if (affectedRows != 0)
+                {
+                    string sql = @"select last_insert_rowid()";
+                    string lastId;
+                    using (var command = new SQLiteCommand(sql, connection))
+                    {
+                        lastId = command.ToString();
+                    }
+                    User failedUser = new User(lastId, user.Password, user.UserType);
+                    connection.Close();
+                    return failedUser;
+                }
+                else
+                {
+                    connection.Close();
+                    return null;
+                }
+            }
+        }
+
+        public User Delete(string username)
+        {
+            User user = this.Find(username);
+            SQLiteConnection connection = DatabaseConnection.GetConnection();
+            connection.Open();
+
+            if (user == null)
+            {
+                connection.Close();
+                return null;
+            }
+
+            string query = "delete from Users where username=@username";
+            using (var cmd = new SQLiteCommand(query, connection))
+            {
+                var usernameParam = cmd.CreateParameter();
+                {
+                    usernameParam.ParameterName = "@username";
+                    usernameParam.Value = user.Id;
+                    cmd.Parameters.Add(usernameParam);
+                    cmd.ExecuteNonQuery();
+                    connection.Close();
+                    return user;
+                }
+            }
+        }
+
+        public User Find(string username)
+        {
+            if (username == null)
+            {
+                return null;
+            }
+            SQLiteConnection connection = DatabaseConnection.GetConnection();
+            connection.Open();
+
+            string query = "select username,password,userType from Users where username=@username";
+            using (var cmd = new SQLiteCommand(query, connection))
+            {
+                var usernameParam = cmd.CreateParameter();
+                usernameParam.ParameterName = "@username";
+                usernameParam.Value = username;
+                cmd.Parameters.Add(usernameParam);
+
+                using (var reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        User user = new User((string)reader["username"].ToString(), (string)reader["password"].ToString(), (UserType)Enum.Parse(typeof(UserType), (string)reader["userType"].ToString()));
+                        connection.Close();
+                        return user;
+                    }
+                    else
+                    {
+                        connection.Close();
+                        return null;
+                    }
+                }
+            }
+        }
+
+        public User Update(string username, User user)
+        {
+            User helper = user;
+            if (username == null || user == null)
+            {
+                return null;
+            }
+
+            SQLiteConnection connection = DatabaseConnection.GetConnection();
+            connection.Open();
+
+            string query = "update Users set password=@password,userType=@userType where username=@username";
+            using (var cmd = new SQLiteCommand(query, connection))
+            {
+                var usernameParam = cmd.CreateParameter();
+                usernameParam.ParameterName = "@username";
+                usernameParam.Value = user.Id;
+                cmd.Parameters.Add(usernameParam);
+
+                var passwordParam = cmd.CreateParameter();
+                passwordParam.ParameterName = "@password";
+                passwordParam.Value = user.Password;
+                cmd.Parameters.Add(passwordParam);
+
+                var typeParam = cmd.CreateParameter();
+                passwordParam.ParameterName = "@userType";
+                passwordParam.Value = user.UserType;
+                cmd.Parameters.Add(typeParam);
+
+                int affectedRows = cmd.ExecuteNonQuery();
+                if (affectedRows != 0)
+                {
+                    connection.Close();
+                    return helper;
+                }
+                else
+                {
+                    connection.Close();
+                    return null;
+                }
+            }
+        }
+
+        public List<User> GetAll()
+        {
+            List<User> users = new List<User>();
+            SQLiteConnection connection = DatabaseConnection.GetConnection();
+            connection.Open();
+
+            string query = "select * from Users";
+
+            using (var cmd = new SQLiteCommand(query, connection))
+            {
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        User user = new User((string)reader["username"].ToString(), (string)reader["password"].ToString(), (UserType)Enum.Parse(typeof(UserType), (string)reader["userType"].ToString()));
+                        users.Add(user);
+                    }
+                    connection.Close();
+                    return users;
+                }
+            }
+        }

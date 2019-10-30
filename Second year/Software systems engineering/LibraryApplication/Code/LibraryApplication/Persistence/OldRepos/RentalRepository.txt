@@ -1,0 +1,166 @@
+﻿ /*
+        public Rental Delete(int id)
+        {
+            Rental rental = this.Find(id);
+            SQLiteConnection connection = DatabaseConnection.GetConnection();
+            connection.Open();
+
+            if (rental == null)
+            {
+                connection.Close();
+                return null;
+            }
+
+            string query = "delete from Rentals where id=@id";
+            using (var cmd = new SQLiteCommand(query, connection))
+            {
+                var idParam = cmd.CreateParameter();
+                {
+                    idParam.ParameterName = "@id";
+                    idParam.Value = rental.Id;
+                    cmd.Parameters.Add(idParam);
+                    cmd.ExecuteNonQuery();
+                    connection.Close();
+                    return rental;
+                }
+            }
+        }
+
+        public Rental Find(int id)
+        {
+            if (id <= 0)
+            {
+                return null;
+            }
+            SQLiteConnection connection = DatabaseConnection.GetConnection();
+            connection.Open();
+
+            string query = "select id,owner,book from Rentals where id=@id";
+            using (var cmd = new SQLiteCommand(query, connection))
+            {
+                var idParam = cmd.CreateParameter();
+                idParam.ParameterName = "@id";
+                idParam.Value = id;
+                cmd.Parameters.Add(idParam);
+
+                using (var reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        Rental rental = new Rental((int)reader["id"], (string)reader["owner"], (int)reader["book"]);
+                        connection.Close();
+                        return rental;
+                    }
+                    else
+                    {
+                        connection.Close();
+                        return null;
+                    }
+                }
+            }
+        }
+
+        public IEnumerable<Rental> GetAll()
+        {
+            IEnumerable<Rental> rentals = new IEnumerable<Rental>();
+            SQLiteConnection connection = DatabaseConnection.GetConnection();
+            connection.Open();
+
+            string query = "select * from Rentals";
+
+            using (var cmd = new SQLiteCommand(query, connection))
+            {
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Rental rental = new Rental((int)reader["id"], (string)reader["owner"], (int)reader["book"]);
+                        rentals.Add(rental);
+                    }
+                    connection.Close();
+                    return rentals;
+                }
+            }
+        }
+
+        public Rental Save(Rental entity)
+        {
+            SQLiteConnection connection = DatabaseConnection.GetConnection();
+            connection.Open();
+
+            var query = "insert into Rentals(owner,book) values (@owner,@book)";
+
+            using (var cmd = new SQLiteCommand(query, connection))
+            {
+                var ownerParam = cmd.CreateParameter();
+                ownerParam.ParameterName = "@owner";
+                ownerParam.Value = entity.Owner;
+                cmd.Parameters.Add(ownerParam);
+
+                var bookParam = cmd.CreateParameter();
+                bookParam.ParameterName = "@book";
+                bookParam.Value = entity.Book;
+                cmd.Parameters.Add(bookParam);
+
+                int affectedRows = cmd.ExecuteNonQuery();
+                if (affectedRows != 0)
+                {
+                    string sql = @"select last_insert_rowid()";
+                    int lastId;
+                    using (var command = new SQLiteCommand(sql, connection))
+                    {
+                        lastId = (Int32)command.ExecuteScalar();
+                    }
+                    Rental failedRental = new Rental(lastId, entity.Owner, entity.Book);
+                    connection.Close();
+                    return failedRental;
+                }
+                else
+                {
+                    connection.Close();
+                    return null;
+                }
+            }
+        }
+
+        public Rental Update(int id, Rental entity)
+        {
+            Rental helper = entity;
+            if (id <= 0 || entity == null)
+            {
+                return null;
+            }
+            SQLiteConnection connection = DatabaseConnection.GetConnection();
+            connection.Open();
+
+            string query = "update Rentals set owner=@owner,book=@book where id=@id";
+            using (var cmd = new SQLiteCommand(query, connection))
+            {
+                var idParam = cmd.CreateParameter();
+                idParam.ParameterName = "@id";
+                idParam.Value = id;
+                cmd.Parameters.Add(idParam);
+
+                var ownerParam = cmd.CreateParameter();
+                ownerParam.ParameterName = "@owner";
+                ownerParam.Value = entity.Owner;
+                cmd.Parameters.Add(ownerParam);
+
+                var bookParam = cmd.CreateParameter();
+                bookParam.ParameterName = "@book";
+                bookParam.Value = entity.Book;
+                cmd.Parameters.Add(bookParam);
+
+                int affectedRows = cmd.ExecuteNonQuery();
+                if (affectedRows != 0)
+                {
+                    connection.Close();
+                    return helper;
+                }
+                else
+                {
+                    connection.Close();
+                    return null;
+                }
+            }
+        }*/

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercitiul 2</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+	<style>
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        th, td {
+            width: 150px;
+        }
+
+        div {
+            width: 450px;
+        }
+
+        button {
+            margin-left: 100px;
+        }
+    </style>
+</head>
+<body>
+<table id="table">
+</table>
+<div>
+    <button id="previous">Previous</button>
+    <button id="next">Next</button>
+</div>
+</body>
+<script>
+
+$(document).ready(function(){
+	var globalIndex = 1;
+    var size;
+	$("#previous").click(function(){previous();});
+	$("#next").click(function(){next();});
+	$.ajax({
+		type: 'GET',
+		url: 'size.php',
+		data: '',
+		success: function(rez){
+			size=rez;
+			showNames(globalIndex);
+		}
+	});
+
+	function checkAvailability() {
+		if(globalIndex<=3){
+			$("#previous").attr("disabled", true);
+        }
+		else{
+			$("#previous").removeAttr("disabled");
+		}
+		if(globalIndex >= size){
+			$("#next").attr("disabled", true);
+		}
+		else{
+			$("#next").removeAttr("disabled");
+		}
+    }
+	
+	function showNames(index) {
+        $.ajax({
+			type: 'GET',
+			url: 'ex2.php',
+			data: 'index='+index,
+			success: function(rez2){
+				
+				$("#table").html(rez2);
+				setGlobalIndex();
+                checkAvailability();
+			}
+		});
+		
+       }     
+    function setGlobalIndex() {
+        var allTrs = $('#table tr:last').attr('id');
+        globalIndex = parseInt(allTrs);
+    }
+
+    
+
+    
+
+    function previous() {
+        $.ajax({
+			type: 'GET',
+			url: 'previous.php',
+			data: 'index='+ (globalIndex + 1)+"&size="+size,
+			success: function(rez3){
+				$("#table").html(rez3);
+				setGlobalIndex();
+                checkAvailability();
+			}
+		});
+               
+    }
+
+    function next() {
+        showNames(globalIndex + 1);
+    }
+
+    
+});
+   
+
+  
+
+</script>
+</html>

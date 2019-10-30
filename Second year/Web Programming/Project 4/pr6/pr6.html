@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Problema 6</title>
+    <style type="text/css">
+        td {
+
+            margin: 1px;
+
+            padding: 0;
+
+            border-style: groove;
+
+            border-width: 1px;
+
+            width: 16px;
+
+        }
+
+        table {
+
+            border-collapse: separate;
+
+            border-spacing: 1px;
+
+        }
+    </style>
+
+    <script type="text/javascript">
+        var emptyCell = 16;
+
+
+
+        function loadPuzzle() {
+
+            pics = new Array(17);
+
+            for (i = 1; i < 17; i++) {
+
+                gasit = true;
+
+                while (gasit == true) {
+
+                    x = 1 + Math.floor(Math.random() * 1000) % 16;
+
+                    gasit = false;
+
+                    for (j = 1; j < i; j++)
+
+                        if (pics[j] == x) gasit = true;
+
+                }
+
+                pics[i] = x;
+
+                if (x == 16) emptyCell = i;
+
+            }
+
+
+
+            var cell;
+
+            for (i = 1; i < 17; i++) {
+
+                cell = document.getElementById(i);
+
+                if (cell) {
+
+                    if (i != emptyCell)
+
+                        document.getElementById(i).innerHTML = pics[i];
+
+                    else
+
+                        document.getElementById(i).innerHTML = " ";
+
+                }
+
+            }
+
+        }
+
+
+
+        function move(cellID, cell) {
+
+            cell1 = document.getElementById(emptyCell);
+
+            nr1 = cell1.innerHTML;
+
+            nr = cell.innerHTML;
+
+            cell.innerHTML = nr1;
+
+            cell1.innerHTML = nr;
+
+            emptyCell = cellID;
+
+        }
+
+
+
+        document.onkeydown = function(e) {
+
+            switch (e.keyCode) {
+
+                case 37:
+
+                    //left
+
+                    if (emptyCell % 4 == 0) {
+                        break;
+                    }
+                    tableCell = document.getElementById(emptyCell + 1);
+
+                    move(emptyCell + 1, tableCell);
+
+                    break;
+
+                case 38:
+
+                    //up
+
+                    tableCell = document.getElementById(emptyCell + 4);
+
+                    move(emptyCell + 4, tableCell);
+
+                    break;
+
+                case 39:
+
+                    //right
+
+                    if (emptyCell % 4 == 1) {
+                        break;
+                    }
+                    tableCell = document.getElementById(emptyCell - 1);
+
+                    move(emptyCell - 1, tableCell);
+
+                    break;
+
+                case 40:
+
+                    //down
+
+                    tableCell = document.getElementById(emptyCell - 4);
+
+                    move(emptyCell - 4, tableCell);
+
+                    break;
+
+            }
+
+            var ok = true;
+            var i;
+            for (i = 1; i < 16; i++) {
+                if (document.getElementById(i).innerHTML != i) {
+                    ok = false;
+
+                }
+            }
+            if (ok == true) {
+                window.alert("Gata jocul");
+                loadPuzzle();
+            }
+
+
+        };
+    </script>
+
+</head>
+
+<body onload="loadPuzzle()">
+
+    <table>
+
+        <tr>
+
+            <td id="1"></td>
+
+            <td id="2"></td>
+
+            <td id="3"></td>
+
+            <td id="4"></td>
+
+        </tr>
+
+        <tr>
+
+            <td id="5"></td>
+
+            <td id="6"></td>
+
+            <td id="7"></td>
+
+            <td id="8"></td>
+
+        </tr>
+
+        <tr>
+
+            <td id="9"></td>
+
+            <td id="10"></td>
+
+            <td id="11"></td>
+
+            <td id="12"></td>
+
+        </tr>
+
+        <tr>
+
+            <td id="13"></td>
+
+            <td id="14"></td>
+
+            <td id="15"></td>
+
+            <td id="16"></td>
+
+        </tr>
+
+    </table>
+
+</body>
+
+</html>

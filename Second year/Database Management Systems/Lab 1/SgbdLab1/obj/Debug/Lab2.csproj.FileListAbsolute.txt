@@ -1,0 +1,10 @@
+C:\Users\Scoican\Desktop\Facultate\Sisteme de gestiune a bazelor de date\Lab3\SgbdLab1\bin\Debug\SgbdLab1.exe.config
+C:\Users\Scoican\Desktop\Facultate\Sisteme de gestiune a bazelor de date\Lab3\SgbdLab1\bin\Debug\SgbdLab1.exe
+C:\Users\Scoican\Desktop\Facultate\Sisteme de gestiune a bazelor de date\Lab3\SgbdLab1\bin\Debug\SgbdLab1.pdb
+C:\Users\Scoican\Desktop\Facultate\Sisteme de gestiune a bazelor de date\Lab3\SgbdLab1\obj\Debug\Lab2.csprojAssemblyReference.cache
+C:\Users\Scoican\Desktop\Facultate\Sisteme de gestiune a bazelor de date\Lab3\SgbdLab1\obj\Debug\SgbdLab1.Form1.resources
+C:\Users\Scoican\Desktop\Facultate\Sisteme de gestiune a bazelor de date\Lab3\SgbdLab1\obj\Debug\SgbdLab1.Properties.Resources.resources
+C:\Users\Scoican\Desktop\Facultate\Sisteme de gestiune a bazelor de date\Lab3\SgbdLab1\obj\Debug\Lab2.csproj.GenerateResource.cache
+C:\Users\Scoican\Desktop\Facultate\Sisteme de gestiune a bazelor de date\Lab3\SgbdLab1\obj\Debug\Lab2.csproj.CoreCompileInputs.cache
+C:\Users\Scoican\Desktop\Facultate\Sisteme de gestiune a bazelor de date\Lab3\SgbdLab1\obj\Debug\SgbdLab1.exe
+C:\Users\Scoican\Desktop\Facultate\Sisteme de gestiune a bazelor de date\Lab3\SgbdLab1\obj\Debug\SgbdLab1.pdb

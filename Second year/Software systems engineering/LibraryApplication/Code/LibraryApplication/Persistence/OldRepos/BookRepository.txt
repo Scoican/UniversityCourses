@@ -1,0 +1,188 @@
+﻿/*
+        public Book Delete(int id)
+        {
+            Book book = this.Find(id);
+            SQLiteConnection connection = DatabaseConnection.GetConnection();
+            connection.Open();
+
+            if (book == null)
+            {
+                connection.Close();
+                return null;
+            }
+
+            string query = "delete from Books where id=@id";
+            using (var cmd = new SQLiteCommand(query, connection))
+            {
+                var idParam = cmd.CreateParameter();
+                {
+                    idParam.ParameterName = "@id";
+                    idParam.Value = book.Id;
+                    cmd.Parameters.Add(idParam);
+                    cmd.ExecuteNonQuery();
+                    connection.Close();
+                    return book;
+                }
+            }
+        }
+
+        public Book Find(int id)
+        {
+            if (id <= 0)
+            {
+                return null;
+            }
+            SQLiteConnection connection = DatabaseConnection.GetConnection();
+            connection.Open();
+
+            string query = "select id,name,author,year,quantity from Books where id=@id";
+            using (var cmd = new SQLiteCommand(query, connection))
+            {
+                var idParam = cmd.CreateParameter();
+                idParam.ParameterName = "@id";
+                idParam.Value = id;
+                cmd.Parameters.Add(idParam);
+
+                using (var reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        Book book = new Book((int)reader["id"], (string)reader["name"].ToString(), (string)reader["author"].ToString(), (int)reader["year"], (int)reader["quantity"]);
+                        connection.Close();
+                        return book;
+                    }
+                    else
+                    {
+                        connection.Close();
+                        return null;
+                    }
+                }
+            }
+        }
+
+        public List<Book> GetAll()
+        {
+            List<Book> books = new List<Book>();
+            SQLiteConnection connection = DatabaseConnection.GetConnection();
+            connection.Open();
+
+            string query = "select * from Books";
+
+            using (var cmd = new SQLiteCommand(query, connection))
+            {
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Book book = new Book((int)reader["id"], (string)reader["name"].ToString(), (string)reader["author"].ToString(), (int)reader["year"], (int)reader["quantity"]);
+                        books.Add(book);
+                    }
+                    connection.Close();
+                    return books;
+                }
+            }
+        }
+
+        public Book Save(Book book)
+        {
+            SQLiteConnection connection = DatabaseConnection.GetConnection();
+            connection.Open();
+
+            var query = "insert into Books(name,author,year,quantity) values (@name,@author,@year,@quantity)";
+
+            using (var cmd = new SQLiteCommand(query, connection))
+            {
+                var nameParam = cmd.CreateParameter();
+                nameParam.ParameterName = "@name";
+                nameParam.Value = book.Name;
+                cmd.Parameters.Add(nameParam);
+
+                var authorParam = cmd.CreateParameter();
+                authorParam.ParameterName = "@author";
+                authorParam.Value = book.Author;
+                cmd.Parameters.Add(authorParam);
+
+                var yearParam = cmd.CreateParameter();
+                yearParam.ParameterName = "@year";
+                yearParam.Value = book.Year;
+                cmd.Parameters.Add(yearParam);
+
+                var quantityParam = cmd.CreateParameter();
+                quantityParam.ParameterName = "@quantity";
+                quantityParam.Value = book.Quantity;
+                cmd.Parameters.Add(quantityParam);
+
+                int affectedRows = cmd.ExecuteNonQuery();
+                if (affectedRows != 0)
+                {
+                    string sql = @"select last_insert_rowid()";
+                    int lastId;
+                    using (var command = new SQLiteCommand(sql, connection))
+                    {
+                        lastId = (Int32)cmd.ExecuteScalar();
+                    }
+                    Book failedBook = new Book(lastId, book.Name, book.Author, book.Year, book.Year);
+                    connection.Close();
+                    return failedBook;
+                }
+                else
+                {
+                    connection.Close();
+                    return null;
+                }
+            }
+        }
+
+        public Book Update(int id, Book book)
+        {
+            Book helper = book;
+            if (id <= 0 || book == null)
+            {
+                return null;
+            }
+
+            SQLiteConnection connection = DatabaseConnection.GetConnection();
+            connection.Open();
+
+            string query = "update Books set name=@name,author=@author,year=@year,quantity=@quantity where id=@id";
+
+            using (var cmd = new SQLiteCommand(query, connection))
+            {
+                var idParam = cmd.CreateParameter();
+                idParam.ParameterName = "@id";
+                idParam.Value = id;
+                cmd.Parameters.Add(idParam);
+
+                var nameParam = cmd.CreateParameter();
+                nameParam.ParameterName = "@name";
+                nameParam.Value = book.Name;
+                cmd.Parameters.Add(nameParam);
+
+                var authorParam = cmd.CreateParameter();
+                authorParam.ParameterName = "@author";
+                authorParam.Value = book.Author;
+                cmd.Parameters.Add(authorParam);
+
+                var yearParam = cmd.CreateParameter();
+                yearParam.ParameterName = "@year";
+                yearParam.Value = book.Year;
+                cmd.Parameters.Add(yearParam);
+
+                var quantityParam = cmd.CreateParameter();
+                quantityParam.ParameterName = "@quantity";
+                quantityParam.Value = book.Quantity;
+                cmd.Parameters.Add(quantityParam);
+
+                int affectedRows = cmd.ExecuteNonQuery();
+                if (affectedRows != 0)
+                {
+                    connection.Close();
+                    return helper;
+                }
+                else
+                {
+                    connection.Close();
+                    return null;
+                }
+            }
+        }*/
