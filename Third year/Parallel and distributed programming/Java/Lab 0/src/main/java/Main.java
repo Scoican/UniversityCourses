@@ -24,7 +24,7 @@ public class Main {
     }
 
     private static void calculate(TxtFileOperations txtFile, int min, int max) {
-        txtFile.fileGenerator("Numbers.txt", 2, 1000, 1100);
+        //txtFile.fileGenerator("Numbers.txt", 2, 10000, 10000);
         List<String> numbers = txtFile.readNumbers("Numbers.txt");
         List<List<Integer>> convertedNumbers = new ArrayList<>();
         StringBuilder auxiliaryStringBuilder = new StringBuilder();

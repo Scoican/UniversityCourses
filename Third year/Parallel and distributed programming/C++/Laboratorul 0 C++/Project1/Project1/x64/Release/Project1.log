@@ -1,0 +1,10 @@
+﻿  BigNumber.cpp
+c:\users\scoican\desktop\work\university code\third year\parallel and distributed programming\c++\laboratorul 0 c++\project1\project1\bignumber.cpp(43): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+  FileOperations.cpp
+  Main.cpp
+  TxtOperations.cpp
+  XlsxOperations.cpp
+  Generating code
+  All 703 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  Project1.vcxproj -> C:\Users\Scoican\Desktop\Work\University Code\Third year\Parallel and distributed programming\C++\Laboratorul 0 C++\Project1\x64\Release\Project1.exe

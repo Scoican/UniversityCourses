@@ -2,7 +2,6 @@ package ThreadOperations;
 
 import Utils.Utils;
 
-import javax.print.attribute.IntegerSyntax;
 import java.util.List;
 
 public class MultiplyThread extends Thread {

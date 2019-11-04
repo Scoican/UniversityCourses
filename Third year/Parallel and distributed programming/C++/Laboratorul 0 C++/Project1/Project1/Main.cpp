@@ -32,7 +32,7 @@ void compare(TxtOperations txtFile) {
 void calculate(int numberOfThreads, int min, int max) {
 	TxtOperations txtFile;
 
-	txtFile.fileGenerator("numbers.txt", 2, min, max);
+	//txtFile.fileGenerator("numbers.txt", 2, min, max);
 	vector<BigNumber> numbers = txtFile.readNumbersFromFile("numbers.txt");
 
 	BigNumber firstNumber = numbers.at(0);
