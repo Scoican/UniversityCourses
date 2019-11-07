@@ -1,51 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="91a8c95b-4703-4b76-b098-92700be19cac" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../C++/Laboratorul 0 C++/Project1/.vs/Project1/v15/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../../C++/Laboratorul 0 C++/Project1/.vs/Project1/v15/.suo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../C++/Laboratorul 0 C++/Project1/.vs/Project1/v15/Browse.VC.db" beforeDir="false" afterPath="$PROJECT_DIR$/../../C++/Laboratorul 0 C++/Project1/.vs/Project1/v15/Browse.VC.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../C++/Laboratorul 0 C++/Project1/Debug/Project1.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../../C++/Laboratorul 0 C++/Project1/Debug/Project1.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../C++/Laboratorul 0 C++/Project1/Debug/Project1.ilk" beforeDir="false" afterPath="$PROJECT_DIR$/../../C++/Laboratorul 0 C++/Project1/Debug/Project1.ilk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../C++/Laboratorul 0 C++/Project1/Debug/Project1.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../C++/Laboratorul 0 C++/Project1/Debug/Project1.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../C++/Laboratorul 0 C++/Project1/Project1/Debug/BigNumber.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../../C++/Laboratorul 0 C++/Project1/Project1/Debug/BigNumber.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../C++/Laboratorul 0 C++/Project1/Project1/Debug/FileOperations.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../../C++/Laboratorul 0 C++/Project1/Project1/Debug/FileOperations.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../C++/Laboratorul 0 C++/Project1/Project1/Debug/Main.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../../C++/Laboratorul 0 C++/Project1/Project1/Debug/Main.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../C++/Laboratorul 0 C++/Project1/Project1/Debug/Project1.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../C++/Laboratorul 0 C++/Project1/Project1/Debug/Project1.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../C++/Laboratorul 0 C++/Project1/Project1/Debug/Project1.tlog/CL.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../../C++/Laboratorul 0 C++/Project1/Project1/Debug/Project1.tlog/CL.command.1.tlog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../C++/Laboratorul 0 C++/Project1/Project1/Debug/Project1.tlog/CL.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../../C++/Laboratorul 0 C++/Project1/Project1/Debug/Project1.tlog/CL.read.1.tlog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../C++/Laboratorul 0 C++/Project1/Project1/Debug/Project1.tlog/CL.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../../C++/Laboratorul 0 C++/Project1/Project1/Debug/Project1.tlog/CL.write.1.tlog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../C++/Laboratorul 0 C++/Project1/Project1/Debug/Project1.tlog/Project1.lastbuildstate" beforeDir="false" afterPath="$PROJECT_DIR$/../../C++/Laboratorul 0 C++/Project1/Project1/Debug/Project1.tlog/Project1.lastbuildstate" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../C++/Laboratorul 0 C++/Project1/Project1/Debug/Project1.tlog/link.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../../C++/Laboratorul 0 C++/Project1/Project1/Debug/Project1.tlog/link.command.1.tlog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../C++/Laboratorul 0 C++/Project1/Project1/Debug/Project1.tlog/link.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../../C++/Laboratorul 0 C++/Project1/Project1/Debug/Project1.tlog/link.read.1.tlog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../C++/Laboratorul 0 C++/Project1/Project1/Debug/Project1.tlog/link.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../../C++/Laboratorul 0 C++/Project1/Project1/Debug/Project1.tlog/link.write.1.tlog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../C++/Laboratorul 0 C++/Project1/Project1/Debug/Project1.tlog/rc.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../../C++/Laboratorul 0 C++/Project1/Project1/Debug/Project1.tlog/rc.command.1.tlog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../C++/Laboratorul 0 C++/Project1/Project1/Debug/Project1.tlog/rc.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../../C++/Laboratorul 0 C++/Project1/Project1/Debug/Project1.tlog/rc.read.1.tlog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../C++/Laboratorul 0 C++/Project1/Project1/Debug/Project1.tlog/rc.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../../C++/Laboratorul 0 C++/Project1/Project1/Debug/Project1.tlog/rc.write.1.tlog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../C++/Laboratorul 0 C++/Project1/Project1/Debug/TxtOperations.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../../C++/Laboratorul 0 C++/Project1/Project1/Debug/TxtOperations.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../C++/Laboratorul 0 C++/Project1/Project1/Debug/XlsxOperations.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../../C++/Laboratorul 0 C++/Project1/Project1/Debug/XlsxOperations.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../C++/Laboratorul 0 C++/Project1/Project1/Debug/vc141.idb" beforeDir="false" afterPath="$PROJECT_DIR$/../../C++/Laboratorul 0 C++/Project1/Project1/Debug/vc141.idb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../C++/Laboratorul 0 C++/Project1/Project1/Debug/vc141.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../C++/Laboratorul 0 C++/Project1/Project1/Debug/vc141.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../C++/Laboratorul 0 C++/Project1/Project1/multiplyParallel.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../C++/Laboratorul 0 C++/Project1/Project1/multiplyParallel.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../C++/Laboratorul 0 C++/Project1/Project1/multiplySequential.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../C++/Laboratorul 0 C++/Project1/Project1/multiplySequential.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../C++/Laboratorul 0 C++/Project1/Project1/numbers.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../C++/Laboratorul 0 C++/Project1/Project1/numbers.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../C++/Laboratorul 0 C++/Project1/Project1/parallelClassificationSum.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../C++/Laboratorul 0 C++/Project1/Project1/parallelClassificationSum.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../C++/Laboratorul 0 C++/Project1/Project1/parallelOptimisedSum.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../C++/Laboratorul 0 C++/Project1/Project1/parallelOptimisedSum.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../C++/Laboratorul 0 C++/Project1/Project1/sequentialSum.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../C++/Laboratorul 0 C++/Project1/Project1/sequentialSum.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Numbers.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Numbers.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Result.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Result.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Times.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Times.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ThreadOperations/MultiplyThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ThreadOperations/MultiplyThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/totalMultiplyParallel.txt" beforeDir="false" afterPath="$PROJECT_DIR$/totalMultiplyParallel.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/totalMultiplySequential.txt" beforeDir="false" afterPath="$PROJECT_DIR$/totalMultiplySequential.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/totalSumParallelClassification.txt" beforeDir="false" afterPath="$PROJECT_DIR$/totalSumParallelClassification.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/totalSumParallelOptimised.txt" beforeDir="false" afterPath="$PROJECT_DIR$/totalSumParallelOptimised.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/totalSumSequential.txt" beforeDir="false" afterPath="$PROJECT_DIR$/totalSumSequential.txt" afterDir="false" />
-    </list>
+    <list default="true" id="91a8c95b-4703-4b76-b098-92700be19cac" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +71,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1570630500007" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../University Files/Third year/Limbaje formale si tehnici de compilare/LFTC lab1" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Project" />
@@ -259,7 +215,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
