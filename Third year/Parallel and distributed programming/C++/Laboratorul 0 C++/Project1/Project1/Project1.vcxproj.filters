@@ -81,5 +81,8 @@
     <Text Include="parallelOptimisedSum.txt">
       <Filter>Resource Files</Filter>
     </Text>
+    <Text Include="MPISum.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>

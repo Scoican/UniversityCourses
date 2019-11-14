@@ -1,6 +1,7 @@
 #pragma once
 #include <vector>
 #include <iostream>
+#include <mpi.h>
 using namespace std;
 
 class BigNumber
@@ -133,6 +134,10 @@ public:
 	* Method that reverses the values in the number
 	*/
 	void reverseNumber();
+
+	void addMPI(BigNumber otherNumber);
+
+	vector<int> getSegment(int start, int end);
 
 	/**
 	* Method that adds two BigNumbers together, sequentially

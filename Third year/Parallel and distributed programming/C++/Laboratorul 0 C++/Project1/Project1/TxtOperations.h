@@ -7,6 +7,7 @@
 class TxtOperations : public FileOperations
 {
 public:
+	void ReadVectorsFromFilesSpecificPoint(const string file_name1, const string file_name2, int start, int end, vector<int>& a, vector<int>& b);
 	/**
 	 * Method that generates random numbers and writes them in a given file
 	 * @param fileName - File in which the numbers will be writen

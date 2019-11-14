@@ -2,6 +2,7 @@
 #include <iostream>
 #include <time.h>
 #include <chrono>
+#include <mpi.h>
 #include "TxtOperations.h"
 #include "XlsxOperations.h"
 
@@ -81,8 +82,22 @@ void calculate(int numberOfThreads, int min, int max) {
 	compare(txtFile);
 }
 
+void MPI_Calculcate(int min, int max) {
+	TxtOperations txtFile;
+
+	txtFile.fileGenerator("numbers.txt", 2, min, max);
+	vector<BigNumber> numbers = txtFile.readNumbersFromFile("numbers.txt");
+
+	BigNumber firstNumber = numbers.at(0);
+	BigNumber secondNumber = numbers.at(1);
+
+	firstNumber.addMPI(secondNumber);
+	txtFile.writeNumberToFile(firstNumber.addSequential(secondNumber), "sequentialSum.txt");
+}
+
 int main() {
 	srand(static_cast<int>(time(0)));
-	calculate(8, 1000, 1010);
+	//calculate(8, 1000, 1010);
+	MPI_Calculcate(1000, 1010);
 	return 0;
 }
