@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="91a8c95b-4703-4b76-b098-92700be19cac" name="Default Changelist" comment="" />
+    <list default="true" id="91a8c95b-4703-4b76-b098-92700be19cac" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../Formal languages and compilation techniques/Lab 2/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Formal languages and compilation techniques/Lab 2/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Formal languages and compilation techniques/Lab 2/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Formal languages and compilation techniques/Lab 2/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Formal languages and compilation techniques/Lab 2/src/main/java/Automaton/FiniteAutomaton.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Formal languages and compilation techniques/Lab 2/src/main/java/Automaton/Transition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Formal languages and compilation techniques/Lab 2/src/main/java/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Formal languages and compilation techniques/Lab 2/src/main/java/Utils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Formal languages and compilation techniques/Lab 2/src/main/resources/Matrix" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
