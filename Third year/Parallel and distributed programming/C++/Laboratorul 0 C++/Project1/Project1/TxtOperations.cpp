@@ -77,7 +77,7 @@ void TxtOperations::writeNumberToFile(BigNumber number, string fileName) {
 
 void TxtOperations::ReadVectorsFromFilesSpecificPoint(const string file_name1, const string file_name2, int start, int end, vector<int>& a, vector<int>& b) {
 	BigNumber number1 = readNumbersFromFile(file_name1)[0];
-	BigNumber number2 = readNumbersFromFile(file_name2)[0];
+	BigNumber number2 = readNumbersFromFile(file_name2)[1];
 
 	for (int i = start; i < end; i++) {
 		a.push_back(number1.getDigit(i));

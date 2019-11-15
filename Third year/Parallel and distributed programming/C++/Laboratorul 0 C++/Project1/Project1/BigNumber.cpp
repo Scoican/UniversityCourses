@@ -95,6 +95,283 @@ BigNumber BigNumber::addSequential(BigNumber otherNumber)
 	return largeNumber;
 }
 
+void BigNumber::addMPIParentReader(BigNumber otherNumber) {
+	TxtOperations txtOperations;
+
+	// pid -> process id
+	// np -> no. of processes
+	int pid;
+	int number_of_processors;
+	int elements_per_process;
+
+	MPI_Status status;
+
+	// Creation of parallel processes
+	int rc = MPI_Init(NULL, NULL);
+
+	if (rc != MPI_SUCCESS) {
+		std::cout << "Err MPI init\n";
+		MPI_Abort(MPI_COMM_WORLD, rc);
+	}
+
+	// find out process ID,
+	// and how many processes were started
+	MPI_Comm_rank(MPI_COMM_WORLD, &pid);
+	MPI_Comm_size(MPI_COMM_WORLD, &number_of_processors);
+
+	if (pid == 0) {
+		vector<BigNumber> numbers = txtOperations.readNumbersFromFile("numbers.txt");
+		BigNumber firstNumber = numbers.at(0);
+		BigNumber secondNumber = numbers.at(1);
+		BigNumber largeNumber = BigNumber();
+		BigNumber smallNumber = BigNumber();
+
+		if (firstNumber.getSize() > secondNumber.getSize()) {
+			largeNumber.digits = firstNumber.digits;
+			smallNumber.digits = secondNumber.digits;
+		}
+		else
+		{
+			largeNumber.digits = secondNumber.digits;
+			smallNumber.digits = firstNumber.digits;
+		}
+
+		vector<int> result;
+		vector<int> temp;
+
+		auto begin = chrono::high_resolution_clock::now();
+		int MAX = smallNumber.getSize();
+		int rest = MAX % (number_of_processors - 1);
+		elements_per_process = MAX / (number_of_processors - 1);
+		int initRest = rest;
+		int index = 0, i;
+
+		for (i = 0; i < number_of_processors - 1; i++) {
+			index = i * elements_per_process;
+			int sendDestination = elements_per_process + 1;
+			int start = index + initRest - rest;
+			if (rest > 0) {
+				MPI_Send(&sendDestination, 1, MPI_INT, i + 1, 0, MPI_COMM_WORLD);
+				MPI_Send(&largeNumber.getDigits()[start], sendDestination, MPI_INT, i + 1, 0, MPI_COMM_WORLD);
+				MPI_Send(&smallNumber.getDigits()[start], sendDestination, MPI_INT, i + 1, 0, MPI_COMM_WORLD);
+				rest--;
+			}
+			else {
+				MPI_Send(&elements_per_process, 1, MPI_INT, i + 1, 0, MPI_COMM_WORLD);
+				MPI_Send(&largeNumber.getDigits()[start], elements_per_process, MPI_INT, i + 1, 0, MPI_COMM_WORLD);
+				MPI_Send(&smallNumber.getDigits()[start], elements_per_process, MPI_INT, i + 1, 0, MPI_COMM_WORLD);
+			}
+		}
+
+		int length, size = 0, p = 0;
+		char carryFlag;
+
+		for (int i = MAX; i < largeNumber.getSize(); i++) {
+			result.insert(result.begin(), largeNumber.getDigit(i));
+		}
+
+		for (int i = number_of_processors - 1; i > 0; i--) {
+			MPI_Recv(&length, 1, MPI_INT, i, 0, MPI_COMM_WORLD, &status);
+
+			MPI_Recv(&carryFlag, 1, MPI_CHAR, i, 0, MPI_COMM_WORLD, &status);
+			temp.resize(length);
+			MPI_Recv(&temp[0], length, MPI_INT, i, 0, MPI_COMM_WORLD, &status);
+			int resultLength = result.size() - 1;
+			if (carryFlag == 'c') {
+				result.insert(result.end(), temp.begin() + 1, temp.end());
+				while (carryFlag == 'c'&& resultLength >= 0) {
+					int digit = result[resultLength] + 1;
+					result[resultLength] = digit % 10;
+					if (digit > 9) {
+						carryFlag = 'c';
+					}
+					else {
+						carryFlag = 'n';
+					}
+					resultLength--;
+				}
+				if (carryFlag == 'c') {
+					result.insert(result.begin(), 1);
+				}
+			}
+			else {
+				result.insert(result.end(), temp.begin(), temp.end());
+			}
+		}
+		auto end = chrono::high_resolution_clock::now();
+		cout << "Time:" << chrono::duration_cast<std::chrono::nanoseconds>(end - begin).count() << endl;
+
+		reverse(result.begin(), result.end());
+
+		txtOperations.writeNumberToFile(BigNumber(result), "MPISum.txt");
+		txtOperations.writeNumberToFile(firstNumber.addSequential(secondNumber), "sequentialSum.txt");
+	}
+	else {
+		int segment;
+		vector<int> temp1;
+		vector<int> temp2;
+		MPI_Status status;
+		char carry = 'c';
+		char nonCarry = 'n';
+
+		vector<int> result, aux, bux;
+		BigNumber chunkFromFirstNumber, chunkFromSecondNumber;
+
+		MPI_Recv(&segment, 1, MPI_INT, 0, 0, MPI_COMM_WORLD, &status);
+		temp1.resize(segment);
+		temp2.resize(segment);
+		MPI_Recv(&temp1[0], segment, MPI_INT, 0, 0, MPI_COMM_WORLD, &status);
+		MPI_Recv(&temp2[0], segment, MPI_INT, 0, 0, MPI_COMM_WORLD, &status);
+
+		chunkFromFirstNumber = BigNumber(temp1);
+		chunkFromSecondNumber = BigNumber(temp2);
+
+		/*chunkFromFirstNumber = BigNumber(this->getSegment(start, start + segment));
+		chunkFromSecondNumber = BigNumber(otherNumber.getSegment(start, start + segment));*/
+
+		result = chunkFromFirstNumber.addSequential(chunkFromSecondNumber).getDigits();
+
+		int sizeOfResult = result.size();
+
+		reverse(result.begin(), result.end());
+
+		MPI_Send(&sizeOfResult, 1, MPI_INT, 0, 0, MPI_COMM_WORLD);
+
+		if (sizeOfResult > segment) {
+			MPI_Send(&carry, 1, MPI_CHAR, 0, 0, MPI_COMM_WORLD);
+		}
+		else {
+			MPI_Send(&nonCarry, 1, MPI_CHAR, 0, 0, MPI_COMM_WORLD);
+		}
+		MPI_Send(&result[0], sizeOfResult, MPI_INT, 0, 0, MPI_COMM_WORLD);
+	}
+	MPI_Finalize();
+}
+
+void BigNumber::addMPIChildReader(BigNumber otherNumber) {
+	TxtOperations txtOperations;
+
+	// pid -> process id
+	// np -> no. of processes
+	int pid;
+	int number_of_processors;
+	int elements_per_process;
+
+	MPI_Status status;
+
+	// Creation of parallel processes
+	int rc = MPI_Init(NULL, NULL);
+
+	if (rc != MPI_SUCCESS) {
+		std::cout << "Err MPI init\n";
+		MPI_Abort(MPI_COMM_WORLD, rc);
+	}
+
+	// find out process ID,
+	// and how many processes were started
+	MPI_Comm_rank(MPI_COMM_WORLD, &pid);
+	MPI_Comm_size(MPI_COMM_WORLD, &number_of_processors);
+
+	if (pid == 0) {
+		vector<int> result;
+		vector<int> temp;
+
+		auto begin = chrono::high_resolution_clock::now();
+		int MAX = 6;
+		int rest = MAX % (number_of_processors - 1);
+		elements_per_process = MAX / (number_of_processors - 1);
+		int initRest = rest;
+		int index = 0, i;
+
+		for (i = 0; i < number_of_processors - 1; i++) {
+			index = i * elements_per_process;
+			int sendDestination = elements_per_process + 1;
+			int start = index + initRest - rest;
+			if (rest > 0) {
+				MPI_Send(&start, 1, MPI_INT, i + 1, 0, MPI_COMM_WORLD);
+				MPI_Send(&sendDestination, 1, MPI_INT, i + 1, 0, MPI_COMM_WORLD);
+				rest--;
+			}
+			else {
+				MPI_Send(&start, 1, MPI_INT, i + 1, 0, MPI_COMM_WORLD);
+				MPI_Send(&elements_per_process, 1, MPI_INT, i + 1, 0, MPI_COMM_WORLD);
+			}
+		}
+
+		int length, size = 0, p = 0;
+		char carryFlag;
+
+		for (int i = number_of_processors - 1; i > 0; i--) {
+			MPI_Recv(&length, 1, MPI_INT, i, 0, MPI_COMM_WORLD, &status);
+
+			MPI_Recv(&carryFlag, 1, MPI_CHAR, i, 0, MPI_COMM_WORLD, &status);
+			temp.resize(length);
+			MPI_Recv(&temp[0], length, MPI_INT, i, 0, MPI_COMM_WORLD, &status);
+			int resultLength = result.size() - 1;
+			if (carryFlag == 'c') {
+				result.insert(result.end(), temp.begin() + 1, temp.end());
+				while (carryFlag == 'c'&& resultLength >= 0) {
+					int digit = result[resultLength] + 1;
+					result[resultLength] = digit % 10;
+					if (digit > 9) {
+						carryFlag = 'c';
+					}
+					else {
+						carryFlag = 'n';
+					}
+					resultLength--;
+				}
+				if (carryFlag == 'c') {
+					result.insert(result.begin(), 1);
+				}
+			}
+			else {
+				result.insert(result.end(), temp.begin(), temp.end());
+			}
+		}
+		auto end = chrono::high_resolution_clock::now();
+		cout << "Time:" << chrono::duration_cast<std::chrono::nanoseconds>(end - begin).count() << endl;
+
+		reverse(result.begin(), result.end());
+
+		txtOperations.writeNumberToFile(BigNumber(result), "MPISum.txt");
+	}
+	else {
+		int start;
+		int segment;
+		MPI_Status status;
+		char carry = 'c';
+		char nonCarry = 'n';
+
+		vector<int> result, aux, bux;
+		BigNumber chunkFromFirstNumber, chunkFromSecondNumber;
+
+		MPI_Recv(&start, 1, MPI_INT, 0, 0, MPI_COMM_WORLD, &status);
+		MPI_Recv(&segment, 1, MPI_INT, 0, 0, MPI_COMM_WORLD, &status);
+
+		txtOperations.ReadVectorsFromFilesSpecificPoint("numbers.txt", "numbers.txt", start, start + segment, aux, bux);
+		chunkFromFirstNumber = BigNumber(aux);
+		chunkFromSecondNumber = BigNumber(bux);
+
+		result = chunkFromFirstNumber.addSequential(chunkFromSecondNumber).getDigits();
+
+		int sizeOfResult = result.size();
+
+		reverse(result.begin(), result.end());
+
+		MPI_Send(&sizeOfResult, 1, MPI_INT, 0, 0, MPI_COMM_WORLD);
+
+		if (sizeOfResult > segment) {
+			MPI_Send(&carry, 1, MPI_CHAR, 0, 0, MPI_COMM_WORLD);
+		}
+		else {
+			MPI_Send(&nonCarry, 1, MPI_CHAR, 0, 0, MPI_COMM_WORLD);
+		}
+		MPI_Send(&result[0], sizeOfResult, MPI_INT, 0, 0, MPI_COMM_WORLD);
+	}
+	MPI_Finalize();
+}
+
 void BigNumber::addMPI(BigNumber otherNumber) {
 	BigNumber largeNumber = BigNumber();
 	BigNumber smallNumber = BigNumber();

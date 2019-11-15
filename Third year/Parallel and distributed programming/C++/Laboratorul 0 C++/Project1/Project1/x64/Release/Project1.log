@@ -1,7 +1,7 @@
 ﻿  Main.cpp
   Generating code
-  2 of 479 functions ( 0.4%) were compiled, the rest were copied from previous compilation.
+  26 of 479 functions ( 5.4%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+    4 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   Project1.vcxproj -> C:\Users\Scoican\Desktop\Work\University Code\Third year\Parallel and distributed programming\C++\Laboratorul 0 C++\Project1\x64\Release\Project1.exe

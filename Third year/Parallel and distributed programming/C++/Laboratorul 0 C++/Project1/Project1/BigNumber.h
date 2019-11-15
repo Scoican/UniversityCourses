@@ -135,6 +135,8 @@ public:
 	*/
 	void reverseNumber();
 
+	void addMPIParentReader(BigNumber otherNumber);
+	void addMPIChildReader(BigNumber otherNumber);
 	void addMPI(BigNumber otherNumber);
 
 	vector<int> getSegment(int start, int end);

@@ -85,19 +85,17 @@ void calculate(int numberOfThreads, int min, int max) {
 void MPI_Calculcate(int min, int max) {
 	TxtOperations txtFile;
 
-	txtFile.fileGenerator("numbers.txt", 2, min, max);
-	vector<BigNumber> numbers = txtFile.readNumbersFromFile("numbers.txt");
+	//txtFile.fileGenerator("numbers.txt", 2, min, max);
 
-	BigNumber firstNumber = numbers.at(0);
-	BigNumber secondNumber = numbers.at(1);
+	BigNumber firstNumber = BigNumber();
+	BigNumber secondNumber = BigNumber();
 
-	firstNumber.addMPI(secondNumber);
-	txtFile.writeNumberToFile(firstNumber.addSequential(secondNumber), "sequentialSum.txt");
+	firstNumber.addMPIChildReader(secondNumber);
 }
 
 int main() {
 	srand(static_cast<int>(time(0)));
 	//calculate(8, 1000, 1010);
-	MPI_Calculcate(1000, 1010);
+	MPI_Calculcate(6, 6);
 	return 0;
 }
