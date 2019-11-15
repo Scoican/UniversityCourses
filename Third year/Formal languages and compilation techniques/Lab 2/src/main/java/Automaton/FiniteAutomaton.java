@@ -187,9 +187,11 @@ public class FiniteAutomaton {
 
     public void printLongestSequence(List<String> sequence) {
         List<String> subSequence = new ArrayList<>();
-        for (int i = 0; i <= sequence.size(); i++) {
-            if (sequenceValidator(sequence.subList(0, i))) {
-                subSequence = sequence.subList(0, i);
+        for (int i = 0; i < sequence.size(); i++) {
+            for (int j = i + 1; j <= sequence.size(); j++) {
+                if (sequenceValidator(sequence.subList(i, j)) && sequence.subList(i, j).size() > subSequence.size()) {
+                    subSequence = sequence.subList(i, j);
+                }
             }
         }
         for (String sequenceElement : subSequence) {
