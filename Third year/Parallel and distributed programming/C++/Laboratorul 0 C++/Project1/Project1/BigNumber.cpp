@@ -353,6 +353,11 @@ void BigNumber::addMPIChildReader(BigNumber otherNumber) {
 		chunkFromFirstNumber = BigNumber(aux);
 		chunkFromSecondNumber = BigNumber(bux);
 
+		cout << "First number:";
+		chunkFromFirstNumber.printBigNumber();
+		cout << "Second number:";
+		chunkFromFirstNumber.printBigNumber();
+
 		result = chunkFromFirstNumber.addSequential(chunkFromSecondNumber).getDigits();
 
 		int sizeOfResult = result.size();

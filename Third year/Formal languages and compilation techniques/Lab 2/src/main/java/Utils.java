@@ -24,7 +24,7 @@ class Utils {
     }
 
     private static FiniteAutomaton readNewAutomaton() throws IOException {
-        List<String> statesToBeRead = new ArrayList<>();
+        List<String> statesToBeRead;
         List<Integer> stateStatusesToBeRead = new ArrayList<>();
         List<String> alphabetToBeRead = new ArrayList<>();
         List<Transition> transitionsToBeRead = new ArrayList<>();
@@ -97,12 +97,7 @@ class Utils {
                 case "6":
                     System.out.println("Please enter sequence:");
                     sequence = Arrays.asList(reader.readLine().split(" "));
-                    if (automaton.sequenceValidator(sequence)) {
-                        System.out.println("Sequence is valid");
-                        automaton.printLongestSequence(sequence);
-                    } else {
-                        System.out.println("Sequence is invalid");
-                    }
+                    automaton.printLongestSequence(sequence);
                     break;
                 case "7":
                     automaton.printAutomaton();

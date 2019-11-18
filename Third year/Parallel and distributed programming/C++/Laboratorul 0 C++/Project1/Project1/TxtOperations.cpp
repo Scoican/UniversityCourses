@@ -76,12 +76,35 @@ void TxtOperations::writeNumberToFile(BigNumber number, string fileName) {
 }
 
 void TxtOperations::ReadVectorsFromFilesSpecificPoint(const string file_name1, const string file_name2, int start, int end, vector<int>& a, vector<int>& b) {
-	BigNumber number1 = readNumbersFromFile(file_name1)[0];
+	/*BigNumber number1 = readNumbersFromFile(file_name1)[0];
 	BigNumber number2 = readNumbersFromFile(file_name2)[1];
 
 	for (int i = start; i < end; i++) {
 		a.push_back(number1.getDigit(i));
 		b.push_back(number2.getDigit(i));
+	}*/
+
+	ifstream file(file_name1);
+	if (file.is_open()) {
+		file.seekg(start);
+		string numberFromFile;
+		numberFromFile.resize(end - start);
+		file.read(&numberFromFile[0], (end - start));
+		for (int i = 0; i < numberFromFile.size(); i++) {
+			if (numberFromFile[i] != ' ') {
+				a.push_back(numberFromFile[i] - '0');
+			}
+		}
+
+		file.seekg(6 + start + 2);
+		string numberFromFile2;
+		numberFromFile2.resize(end - start);
+		file.read(&numberFromFile2[0], (end - start));
+		for (int i = 0; i < numberFromFile2.size(); i++) {
+			if (numberFromFile2[i] != ' ') {
+				b.push_back(numberFromFile2[i] - '0');
+			}
+		}
 	}
 }
 
